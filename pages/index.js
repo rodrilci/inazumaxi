@@ -829,6 +829,62 @@ export default function Home() {
   const [cartasDesbloqueadas, setCartasDesbloqueadas] = useState([]);
   const [contadorCartas, setContadorCartas] = useState({});
 
+  // Cargar progreso al iniciar
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const savedPerfil = localStorage.getItem("perfil");
+      if (savedPerfil) setPerfil(JSON.parse(savedPerfil));
+
+      const savedLogros = localStorage.getItem("logrosCompletados");
+      if (savedLogros) setLogrosCompletados(JSON.parse(savedLogros));
+
+      const savedCartas = localStorage.getItem("cartasDesbloqueadas");
+      if (savedCartas) setCartasDesbloqueadas(JSON.parse(savedCartas));
+
+      const savedContador = localStorage.getItem("contadorCartas");
+      if (savedContador) setContadorCartas(JSON.parse(savedContador));
+
+      const savedSeleccionadas = localStorage.getItem("seleccionadas");
+      if (savedSeleccionadas) setSeleccionadas(JSON.parse(savedSeleccionadas));
+
+      const savedBloqueadas = localStorage.getItem("bloqueadas");
+      if (savedBloqueadas) setBloqueadas(JSON.parse(savedBloqueadas));
+
+      const savedMarkCount = localStorage.getItem("markCount");
+      if (savedMarkCount) setMarkCount(Number(savedMarkCount));
+    }
+  }, []);
+
+  // Guardar progreso en cada cambio
+  useEffect(() => {
+    localStorage.setItem("perfil", JSON.stringify(perfil));
+  }, [perfil]);
+
+  useEffect(() => {
+    localStorage.setItem("logrosCompletados", JSON.stringify(logrosCompletados));
+  }, [logrosCompletados]);
+
+  useEffect(() => {
+    localStorage.setItem("cartasDesbloqueadas", JSON.stringify(cartasDesbloqueadas));
+  }, [cartasDesbloqueadas]);
+
+  useEffect(() => {
+    localStorage.setItem("contadorCartas", JSON.stringify(contadorCartas));
+  }, [contadorCartas]);
+
+  useEffect(() => {
+    localStorage.setItem("seleccionadas", JSON.stringify(seleccionadas));
+  }, [seleccionadas]);
+
+  useEffect(() => {
+    localStorage.setItem("bloqueadas", JSON.stringify(bloqueadas));
+  }, [bloqueadas]);
+
+  useEffect(() => {
+    localStorage.setItem("markCount", String(markCount));
+  }, [markCount]);
+
+
   useEffect(() => {
   if (markCount === 10 && !cartasDesbloqueadas.includes("/img/mark.webp")) {
     setCartasDesbloqueadas(arr => [...arr, "/img/mark.webp"]);
