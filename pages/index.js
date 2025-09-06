@@ -606,6 +606,37 @@ function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
     onClose();
   };
 
+
+<style jsx global>{`
+  @media (max-width: 1200px) {
+    img {
+      width: 90px !important;
+      max-width: 100%;
+    }
+    .logros-container {
+      width: 90vw !important;
+      min-width: 0 !important;
+    }
+    .alineacion-modal {
+      min-width: 320px !important;
+      padding: 10px !important;
+    }
+  }
+  @media (max-width: 800px) {
+    img {
+      width: 60px !important;
+    }
+    .logros-container {
+      width: 100vw !important;
+      padding: 5px !important;
+    }
+    .alineacion-modal {
+      min-width: 200px !important;
+      padding: 5px !important;
+    }
+  }
+`}</style>
+
   return (
     <div style={{
       position: "fixed",
