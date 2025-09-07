@@ -408,21 +408,23 @@ const CARTAS_DESBLOQUEABLES = [
 
 function comprobarLogrosAutomaticos(logrosCompletados, setLogrosCompletados, setPerfil) {
   LOGROS.forEach(logro => {
-    // Solo logros automáticos: sin jugadores y sin tipo "manual"
     if (
       logro.jugadores.length === 0 &&
       (!logro.tipo || logro.tipo !== "manual") &&
       !logrosCompletados.includes(logro.id)
     ) {
-      setLogrosCompletados([...logrosCompletados, logro.id]);
+      setLogrosCompletados(prev => {
+        if (prev.includes(logro.id)) return prev;
+        return [...prev, logro.id];
+      });
       if (logro.recompensa.tipo === "escudo") {
-                setPerfil(p => ({
+        setPerfil(p => ({
           ...p,
           escudosDisponibles: [...p.escudosDisponibles, logro.recompensa.valor]
         }));
         alert(`¡Logro conseguido: ${logro.nombre}! Escudo desbloqueado: ${logro.recompensa.valor}`);
+      }
     }
-  }
   });
 }
 
@@ -606,7 +608,7 @@ function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
     onClose();
   };
 
-
+  // ...existing code...
 <style jsx global>{`
   @media (max-width: 1200px) {
     img {
@@ -636,6 +638,7 @@ function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
     }
   }
 `}</style>
+// ...existing code...
 
   return (
     <div style={{
@@ -818,72 +821,87 @@ const getRandomCard = (available, used) => {
 // ...existing code...
 
 export default function Home() {
-  // Estados principales
-  const [seleccionadas, setSeleccionadas] = useState({});
-  const [bloqueadas, setBloqueadas] = useState([]);
-  const [perfil, setPerfil] = useState({ nombre: "", escudo: "", escudosDisponibles: [] });
-  const [logrosCompletados, setLogrosCompletados] = useState([]);
-  const [showPerfil, setShowPerfil] = useState(false);
-  const [showAlineacion, setShowAlineacion] = useState(false);
-  const [markCount, setMarkCount] = useState(0);
-  const [cartasDesbloqueadas, setCartasDesbloqueadas] = useState([]);
-  const [contadorCartas, setContadorCartas] = useState({});
+const [seleccionadas, setSeleccionadas] = useState({});
+const [bloqueadas, setBloqueadas] = useState([]);
+const [perfil, setPerfil] = useState({ nombre: "", escudo: "", escudosDisponibles: [] });
+const [logrosCompletados, setLogrosCompletados] = useState([]);
+const [markCount, setMarkCount] = useState(0);
+const [cartasDesbloqueadas, setCartasDesbloqueadas] = useState([]);
+const [contadorCartas, setContadorCartas] = useState({});
+const [showPerfil, setShowPerfil] = useState(false);
+const [showAlineacion, setShowAlineacion] = useState(false);
+const [datosCargados, setDatosCargados] = useState(false);
 
-  // Cargar progreso al iniciar
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const savedPerfil = localStorage.getItem("perfil");
-      if (savedPerfil) setPerfil(JSON.parse(savedPerfil));
+useEffect(() => {
+  if (typeof window !== "undefined") {
+    const savedSeleccionadas = localStorage.getItem("seleccionadas");
+    if (savedSeleccionadas) setSeleccionadas(JSON.parse(savedSeleccionadas));
 
-      const savedLogros = localStorage.getItem("logrosCompletados");
-      if (savedLogros) setLogrosCompletados(JSON.parse(savedLogros));
+    const savedBloqueadas = localStorage.getItem("bloqueadas");
+    if (savedBloqueadas) setBloqueadas(JSON.parse(savedBloqueadas));
 
-      const savedCartas = localStorage.getItem("cartasDesbloqueadas");
-      if (savedCartas) setCartasDesbloqueadas(JSON.parse(savedCartas));
+    const savedPerfil = localStorage.getItem("perfil");
+    if (savedPerfil) setPerfil(JSON.parse(savedPerfil));
 
-      const savedContador = localStorage.getItem("contadorCartas");
-      if (savedContador) setContadorCartas(JSON.parse(savedContador));
+    const savedLogros = localStorage.getItem("logrosCompletados");
+    if (savedLogros) setLogrosCompletados(JSON.parse(savedLogros));
 
-      const savedSeleccionadas = localStorage.getItem("seleccionadas");
-      if (savedSeleccionadas) setSeleccionadas(JSON.parse(savedSeleccionadas));
+    const savedMarkCount = localStorage.getItem("markCount");
+    if (savedMarkCount) setMarkCount(JSON.parse(savedMarkCount));
 
-      const savedBloqueadas = localStorage.getItem("bloqueadas");
-      if (savedBloqueadas) setBloqueadas(JSON.parse(savedBloqueadas));
+    const savedCartasDesbloqueadas = localStorage.getItem("cartasDesbloqueadas");
+    if (savedCartasDesbloqueadas) setCartasDesbloqueadas(JSON.parse(savedCartasDesbloqueadas));
 
-      const savedMarkCount = localStorage.getItem("markCount");
-      if (savedMarkCount) setMarkCount(Number(savedMarkCount));
-    }
-  }, []);
+    const savedContadorCartas = localStorage.getItem("contadorCartas");
+    if (savedContadorCartas) setContadorCartas(JSON.parse(savedContadorCartas));
 
-  // Guardar progreso en cada cambio
-  useEffect(() => {
-    localStorage.setItem("perfil", JSON.stringify(perfil));
-  }, [perfil]);
+    setDatosCargados(true);
+  }
+}, []);
+useEffect(() => {
+  if (!datosCargados) return;
+  localStorage.setItem("perfil", JSON.stringify(perfil));
+}, [perfil, datosCargados]);
 
-  useEffect(() => {
-    localStorage.setItem("logrosCompletados", JSON.stringify(logrosCompletados));
-  }, [logrosCompletados]);
+useEffect(() => {
+  if (!datosCargados) return;
+  localStorage.setItem("logrosCompletados", JSON.stringify(logrosCompletados));
+}, [logrosCompletados, datosCargados]);
 
-  useEffect(() => {
-    localStorage.setItem("cartasDesbloqueadas", JSON.stringify(cartasDesbloqueadas));
-  }, [cartasDesbloqueadas]);
+// Guardar selección de cartas
+useEffect(() => {
+  if (!datosCargados) return;
+  localStorage.setItem("seleccionadas", JSON.stringify(seleccionadas));
+}, [seleccionadas, datosCargados]);
 
-  useEffect(() => {
-    localStorage.setItem("contadorCartas", JSON.stringify(contadorCartas));
-  }, [contadorCartas]);
+// Guardar bloqueadas
+useEffect(() => {
+  if (!datosCargados) return;
+  localStorage.setItem("bloqueadas", JSON.stringify(bloqueadas));
+}, [bloqueadas, datosCargados]);
 
-  useEffect(() => {
-    localStorage.setItem("seleccionadas", JSON.stringify(seleccionadas));
-  }, [seleccionadas]);
+// Guardar markCount
+useEffect(() => {
+  if (!datosCargados) return;
+  localStorage.setItem("markCount", JSON.stringify(markCount));
+}, [markCount, datosCargados]);
 
-  useEffect(() => {
-    localStorage.setItem("bloqueadas", JSON.stringify(bloqueadas));
-  }, [bloqueadas]);
+// Guardar cartas desbloqueadas
+useEffect(() => {
+  if (!datosCargados) return;
+  localStorage.setItem("cartasDesbloqueadas", JSON.stringify(cartasDesbloqueadas));
+}, [cartasDesbloqueadas, datosCargados]);
 
-  useEffect(() => {
-    localStorage.setItem("markCount", String(markCount));
-  }, [markCount]);
+// Guardar contador de cartas
+useEffect(() => {
+  if (!datosCargados) return;
+  localStorage.setItem("contadorCartas", JSON.stringify(contadorCartas));
+}, [contadorCartas, datosCargados]);
 
+useEffect(() => {
+  if (!datosCargados) return;
+  localStorage.setItem("perfil", JSON.stringify(perfil));
+}, [perfil, datosCargados]);
 
   useEffect(() => {
   if (markCount === 10 && !cartasDesbloqueadas.includes("/img/mark.webp")) {
@@ -892,9 +910,10 @@ export default function Home() {
   }
 }, [markCount, cartasDesbloqueadas]);
 
-  useEffect(() => {
+useEffect(() => {
+  if (!datosCargados) return;
   comprobarLogrosAutomaticos(logrosCompletados, setLogrosCompletados, setPerfil);
-  }, []);
+}, [datosCargados]);
 
   useEffect(() => {
   if (
