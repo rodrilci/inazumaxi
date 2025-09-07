@@ -264,7 +264,7 @@ const LOGROS = [
     jugadores: [
       "/img/hurley.webp", "/img/soundtown.webp",
     ],
-    recompensa: { tipo: "escudo", valor: "Kirkwood" },
+    recompensa: { tipo: "escudo", valor: "MaryTimes" },
     drops: ["/img/hurley.webp", "/img/soundtown.webp"]
   },
                 {
@@ -460,13 +460,13 @@ function TutorialModal({ onClose }) {
         flexDirection: "column",
         alignItems: "center"
       }}>
-        <h2 style={{ marginBottom: "16px", fontWeight: "bold" }}>¿Cómo jugar?</h2>
+        <h2 style={{ marginBottom: "16px", fontWeight: "bold" }}>¿CÓMO JUGARr?</h2>
         <ol style={{ textAlign: "left", marginBottom: "18px", fontSize: "1.1em" }}>
-          <li>Haz clic en las cartas para bloquear jugadores en tu alineación.</li>
-          <li>Cuando bloquees 11, ¡puedes conseguir logros y desbloquear escudos o cartas!</li>
+          <li>Haz clic en las cartas para elegir jugadores en la alineación.</li>
+          <li>Cuando bloqueas los 11, ¡puedes conseguir logros y desbloquear escudos y cartas!</li>
           <li>Haz clic en <b>PERFIL</b> arriba a la derecha para personalizar tu nombre y escudo.</li>
-          <li>Pulsa el botón <b>ALINEACION</b> en tu perfil para crear tu propio 11 con las cartas desbloqueadas.</li>
-          <li>¡Reinicia para probar nuevas combinaciones y conseguir más logros!</li>
+          <li>Pulsa el botón <b>ALINEACIÓN</b> en tu perfil para crear tu propio 11 con las cartas conseguidas.</li>
+          <li>¡Dale al botón <b>REINICIAR</b> para empezar una nueva alineación y poder conseguir más logros!</li>
         </ol>
         <button
           onClick={onClose}
