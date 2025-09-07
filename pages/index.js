@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"></link>
 const posiciones = {
-  portero: ["/img/mark.webp", "/img/king.webp", "/img/darren.webp", "/img/mask.webp", "/img/feldt.webp", "/img/idol.webp", "/img/poseidon.webp", "/img/hillman.webp", "/img/ropes.webp", "/img/daisy.webp", "/img/galileo.webp", "/img/dvalin.webp", "/img/zell.webp", "/img/grent.webp",  "/img/nero.webp", "/img/blasi.webp",  "/img/dasilva.webp",  "/img/fox.webp",  "/img/helio.webp", "/img/iñigo.webp",  "/img/luceafar.webp",  "https://i.postimg.cc/SNT4PWyr/astaroth.webp"],
+  portero: ["/img/mark.webp", "/img/king.webp", "/img/darren.webp", "/img/mask.webp", "/img/feldt.webp", "/img/idol.webp", "/img/poseidon.webp", "/img/hillman.webp", "/img/ropes.webp", "/img/daisy.webp", "/img/galileo.webp", "/img/dvalin.webp", "/img/zell.webp", "/img/grent.webp",  "/img/nero.webp", "/img/blasi.webp",  "/img/dasilva.webp",  "/img/fox.webp",  "/img/helio.webp", "/img/iñigo.webp",  "/img/luceafar.webp",  "/img/astaroth.webp"],
   defensa1: ["/img/nathan.webp","/img/tod.webp", "/img/scotty.webp", "/img/aitor.webp", "/img/archer.webp", "/img/martin.webp", "/img/master.webp", "/img/monkey.webp", "/img/malcolm.webp", "/img/apollo.webp", "/img/hephestus.webp", "/img/sweet.webp", "/img/smith.webp", "/img/shawn.webp", "/img/hurley.webp", "/img/bomber.webp",  "/img/icer.webp",  "/img/arkew.webp",  "/img/gocker.webp",  "/img/zohen.webp",  "/img/hauser.webp",  "/img/lagarto.webp",  "/img/vitesse.webp",  "/img/ferrum.webp",  "/img/mangrove.webp", "/img/ischer.webp",  "/img/jenkins.webp",  "/img/lephiel.webp",  "/img/hebimos.webp"],
   defensa2: ["/img/jack.webp", "/img/sor.webp", "/img/thiago.webp", "/img/gabi.webp", "/img/aitor.webp", "/img/bobby.webp", "/img/jim.webp", "/img/sam.webp", "/img/drent.webp", "/img/lion.webp", "/img/simmons.webp", "/img/hillvalley.webp", "/img/sherman.webp", "/img/ares.webp", "/img/dionysus.webp", "/img/island.webp", "/img/downtown.webp", "/img/shawn.webp", "/img/ganymede.webp", "/img/baller.webp", "/img/clear.webp",  "/img/gele.webp",  "/img/kiburn.webp",  "/img/thor.webp", "/img/kalil.webp",  "/img/minion.webp",  "/img/mountain.webp",  "/img/gaines.webp", "/img/garcia.webp",  "/img/bump.webp",  "/img/lump.webp",  "/img/rubu.webp", "/img/nenel.webp"],
   defensa3: ["/img/jack.webp", "/img/sor.webp", "/img/thiago.webp", "/img/gabi.webp", "/img/aitor.webp", "/img/bobby.webp", "/img/jim.webp", "/img/sam.webp", "/img/drent.webp", "/img/lion.webp", "/img/simmons.webp", "/img/hillvalley.webp", "/img/sherman.webp", "/img/ares.webp", "/img/dionysus.webp", "/img/island.webp", "/img/downtown.webp", "/img/shawn.webp", "/img/ganymede.webp", "/img/baller.webp", "/img/clear.webp",  "/img/gele.webp",  "/img/kiburn.webp",  "/img/thor.webp", "/img/kalil.webp",  "/img/minion.webp",  "/img/mountain.webp",  "/img/gaines.webp", "/img/garcia.webp",  "/img/bump.webp",  "/img/lump.webp",  "/img/rubu.webp", "/img/nenel.webp"],
@@ -9,9 +9,9 @@ const posiciones = {
   medio1: ["/img/nathan.webp", "/img/arion.webp", "/img/jude.webp", "/img/tori.webp", "/img/caleb.webp", "/img/riccardo.webp", "/img/timmy.webp", "/img/max.webp", "/img/steve.webp", "/img/erik.webp", "/img/bloom.webp", "/img/chicken.webp", "/img/eagle.webp", "/img/master.webp", "/img/monkey.webp", "/img/swing.webp", "/img/artemis.webp", "/img/hermes.webp", "/img/hera.webp", "/img/athena.webp", "/img/byron.webp", "/img/agentem.webp", "/img/soundtown.webp", "/img/pandora.webp", "/img/jordan.webp", "/img/dvalin.webp", "/img/sparrow.webp", "/img/bomber.webp",  "/img/bellatrix.webp",  "/img/heat.webp",  "/img/lean.webp",  "/img/droll.webp",  "/img/rhine.webp",  "/img/kiwill.webp",  "/img/ark.webp",  "/img/dolphin.webp", "/img/choi.webp", "/img/acuto.webp", "/img/krueger.webp", "/img/gabrini.webp", "/img/nakata.webp", "/img/diavolo.webp", "/img/ryan.webp", "/img/haddad.webp", "/img/hampton.webp", "/img/maximino.webp", "/img/vitrum.webp", "/img/leung.webp", "/img/stark.webp",  "/img/triumvir.webp",  "/img/gunter.webp",  "/img/lephiel.webp",  "/img/wenel.webp"],
   medio2: ["/img/arion.webp", "/img/jude.webp", "/img/tori.webp", "/img/caleb.webp", "/img/riccardo.webp", "/img/timmy.webp", "/img/steve.webp", "/img/sam.webp", "/img/erik.webp", "/img/chicken.webp", "/img/eagle.webp", "/img/waldon.webp", "/img/hermes.webp", "/img/hera.webp", "/img/byron.webp", "/img/agentem.webp", "/img/soundtown.webp", "/img/jordan.webp", "/img/pandora.webp", "/img/dvalin.webp", "/img/metron.webp", "/img/sparrow.webp", "/img/bomber.webp",  "/img/heat.webp",  "/img/lean.webp",  "/img/neppten.webp",  "/img/kormer.webp",  "/img/bellatrix.webp",  "/img/thor.webp",  "/img/dolphin.webp", "/img/choi.webp", "/img/acuto.webp", "/img/krueger.webp", "/img/gabrini.webp", "/img/nakata.webp", "/img/diavolo.webp", "/img/ryan.webp", "/img/haddad.webp", "/img/hampton.webp", "/img/maximino.webp", "/img/vitrum.webp", "/img/leung.webp", "/img/stark.webp",  "/img/triumvir.webp",  "/img/gunter.webp",  "/img/lephiel.webp",  "/img/wenel.webp",  "/img/zanos.webp",  "/img/gaiel.webp"],
   medio3: ["/img/nathan.webp", "/img/arion.webp", "/img/jude.webp", "/img/tori.webp", "/img/caleb.webp", "/img/riccardo.webp", "/img/timmy.webp", "/img/max.webp", "/img/steve.webp", "/img/erik.webp", "/img/bloom.webp", "/img/chicken.webp", "/img/eagle.webp", "/img/master.webp", "/img/monkey.webp", "/img/swing.webp", "/img/artemis.webp", "/img/hermes.webp", "/img/hera.webp", "/img/athena.webp", "/img/byron.webp", "/img/agentem.webp", "/img/soundtown.webp", "/img/pandora.webp", "/img/jordan.webp", "/img/dvalin.webp", "/img/sparrow.webp", "/img/bomber.webp",  "/img/bellatrix.webp", "/img/heat.webp",  "/img/lean.webp",  "/img/droll.webp",  "/img/rhine.webp",  "/img/kiwill.webp",  "/img/ark.webp",  "/img/dolphin.webp", "/img/choi.webp", "/img/acuto.webp", "/img/krueger.webp", "/img/gabrini.webp", "/img/nakata.webp", "/img/diavolo.webp", "/img/ryan.webp", "/img/haddad.webp", "/img/hampton.webp", "/img/maximino.webp", "/img/vitrum.webp", "/img/leung.webp", "/img/stark.webp",  "/img/triumvir.webp",  "/img/gunter.webp",  "/img/lephiel.webp",  "/img/wenel.webp"],
-  delantero1: ["/img/axel.webp", "/img/samford.webp", "/img/bailong.webp", "/img/fei.webp", "/img/sol.webp", "/img/zanark.webp", "/img/victor.webp", "/img/max.webp", "/img/kevin.webp", "/img/artist.webp", "/img/cheetah.webp", "/img/gamer.webp", "/img/gorilla.webp", "/img/hatch.webp", "/img/swing.webp", "/img/talisman.webp", "/img/turner.webp", "/img/cloak.webp", "/img/tyler.webp", "/img/marvin.webp", "/img/thomas.webp", "/img/byron.webp", "/img/shawn.webp", "/img/sue.webp", "/img/diam.webp", "/img/rihm.webp",  "/img/neppten.webp",  "/img/torch.webp",  "/img/gazelle.webp",  "/img/wittz.webp",  "/img/shadow.webp",  "/img/austin.webp",  "/img/xavier.webp", "/img/partinus.webp", "/img/balone.webp", "/img/keats.webp", "/img/generani.webp", "/img/paolo.webp", "/img/robingo.webp", "/img/coyote.webp", "/img/flare.webp", "/img/drago.webp", "/img/hedgeer.webp",  "/img/callous.webp",  "/img/malice.webp",  "/img/lancer.webp",  "/img/sael.webp",  "/img/destra.webp"],
-  delantero2: ["/img/axel.webp", "/img/samford.webp", "/img/bailong.webp", "/img/fei.webp", "/img/sol.webp", "/img/zanark.webp", "/img/victor.webp", "/img/kevin.webp", "/img/willy.webp", "/img/artist.webp", "/img/cheetah.webp", "/img/gamer.webp", "/img/gorilla.webp", "/img/hatch.webp", "/img/talisman.webp", "/img/turner.webp", "/img/cloak.webp", "/img/tyler.webp", "/img/marvin.webp", "/img/thomas.webp", "/img/byron.webp", "/img/demeter.webp", "/img/shawn.webp", "/img/sue.webp", "/img/diam.webp", "/img/rihm.webp", "/img/dvalin.webp", "/img/metron.webp", "/img/zell.webp",  "/img/torch.webp",  "/img/gazelle.webp",  "/img/wittz.webp",  "/img/shadow.webp",  "/img/austin.webp",  "/img/xavier.webp", "/img/partinus.webp", "/img/balone.webp", "/img/keats.webp", "/img/generani.webp", "/img/paolo.webp", "/img/robingo.webp", "/img/coyote.webp", "/img/flare.webp", "/img/drago.webp", "/img/hedgeer.webp",  "/img/zanos.webp",  "/img/gaiel.webp"],
-  delantero3: ["/img/axel.webp", "/img/samford.webp", "/img/bailong.webp", "/img/fei.webp", "/img/sol.webp", "/img/zanark.webp", "/img/victor.webp", "/img/max.webp", "/img/kevin.webp", "/img/artist.webp", "/img/cheetah.webp", "/img/gamer.webp", "/img/gorilla.webp", "/img/hatch.webp", "/img/swing.webp", "/img/talisman.webp", "/img/turner.webp", "/img/cloak.webp", "/img/tyler.webp", "/img/marvin.webp", "/img/thomas.webp", "/img/byron.webp", "/img/shawn.webp", "/img/sue.webp", "/img/diam.webp", "/img/rihm.webp",  "/img/neppten.webp",  "/img/torch.webp",  "/img/gazelle.webp",  "/img/wittz.webp",  "/img/shadow.webp",  "/img/austin.webp",  "/img/xavier.webp", "/img/partinus.webp", "/img/balone.webp", "/img/keats.webp", "/img/generani.webp", "/img/paolo.webp", "/img/robingo.webp", "/img/coyote.webp", "/img/flare.webp", "/img/drago.webp", "/img/hedgeer.webp",  "/img/callous.webp",  "/img/malice.webp",  "/img/lancer.webp",  "/img/sael.webp",  "/img/destra.webp"]
+  delantero1: ["/img/axel.webp", "/img/samford.webp", "/img/bailong.webp", "/img/fei.webp", "/img/sol.webp", "/img/zanark.webp", "/img/victor.webp", "/img/max.webp", "/img/kevin.webp", "/img/artist.webp", "/img/cheetah.webp", "/img/gamer.webp", "/img/gorilla.webp", "/img/hatch.webp", "/img/swing.webp", "/img/talisman.webp", "/img/turner.webp", "/img/cloak.webp", "/img/tyler.webp", "/img/marvin.webp", "/img/thomas.webp", "/img/byron.webp", "/img/shawn.webp", "/img/sue.webp", "/img/diam.webp", "/img/rihm.webp",  "/img/neppten.webp",  "/img/torch.webp",  "/img/gazelle.webp", "/img/mercury.webp",  "/img/wittz.webp",  "/img/shadow.webp",  "/img/austin.webp",  "/img/xavier.webp", "/img/partinus.webp", "/img/balone.webp", "/img/keats.webp", "/img/generani.webp", "/img/paolo.webp", "/img/robingo.webp", "/img/coyote.webp", "/img/flare.webp", "/img/drago.webp", "/img/hedgeer.webp",  "/img/callous.webp",  "/img/malice.webp",  "/img/lancer.webp",  "/img/sael.webp",  "/img/destra.webp"],
+  delantero2: ["/img/axel.webp", "/img/samford.webp", "/img/bailong.webp", "/img/fei.webp", "/img/sol.webp", "/img/zanark.webp", "/img/victor.webp", "/img/kevin.webp", "/img/willy.webp", "/img/artist.webp", "/img/cheetah.webp", "/img/gamer.webp", "/img/gorilla.webp", "/img/hatch.webp", "/img/talisman.webp", "/img/turner.webp", "/img/cloak.webp", "/img/tyler.webp", "/img/marvin.webp", "/img/thomas.webp", "/img/byron.webp", "/img/demeter.webp", "/img/shawn.webp", "/img/sue.webp", "/img/diam.webp", "/img/rihm.webp", "/img/dvalin.webp", "/img/metron.webp", "/img/zell.webp", "/img/mercury.webp",  "/img/torch.webp",  "/img/gazelle.webp",  "/img/wittz.webp",  "/img/shadow.webp",  "/img/austin.webp",  "/img/xavier.webp", "/img/partinus.webp", "/img/balone.webp", "/img/keats.webp", "/img/generani.webp", "/img/paolo.webp", "/img/robingo.webp", "/img/coyote.webp", "/img/flare.webp", "/img/drago.webp", "/img/hedgeer.webp",  "/img/zanos.webp",  "/img/gaiel.webp"],
+  delantero3: ["/img/axel.webp", "/img/samford.webp", "/img/bailong.webp", "/img/fei.webp", "/img/sol.webp", "/img/zanark.webp", "/img/victor.webp", "/img/max.webp", "/img/kevin.webp", "/img/artist.webp", "/img/cheetah.webp", "/img/gamer.webp", "/img/gorilla.webp", "/img/hatch.webp", "/img/swing.webp", "/img/talisman.webp", "/img/turner.webp", "/img/cloak.webp", "/img/tyler.webp", "/img/marvin.webp", "/img/thomas.webp", "/img/byron.webp", "/img/shawn.webp", "/img/sue.webp", "/img/diam.webp", "/img/rihm.webp",  "/img/neppten.webp",  "/img/torch.webp",  "/img/gazelle.webp","/img/mercury.webp",  "/img/wittz.webp",  "/img/shadow.webp",  "/img/austin.webp",  "/img/xavier.webp", "/img/partinus.webp", "/img/balone.webp", "/img/keats.webp", "/img/generani.webp", "/img/paolo.webp", "/img/robingo.webp", "/img/coyote.webp", "/img/flare.webp", "/img/drago.webp", "/img/hedgeer.webp",  "/img/callous.webp",  "/img/malice.webp",  "/img/lancer.webp",  "/img/sael.webp",  "/img/destra.webp"]
 };
 
 const ESCUDOS = {
@@ -76,7 +76,8 @@ const LOGROS = [
     jugadores: [
       "/img/mask.webp", "/img/talisman.webp"
     ],
-    recompensa: { tipo: "escudo", valor: "Occult" }
+    recompensa: { tipo: "escudo", valor: "Occult" },
+    drops: ["/img/mask.webp", "/img/talisman.webp"] 
   },
     {
     id: "wild",
@@ -85,7 +86,9 @@ const LOGROS = [
     jugadores: [
       "/img/chicken.webp", "/img/cheetah.webp", "/img/gorilla.webp"
     ],
-    recompensa: { tipo: "escudo", valor: "Wild" }
+    recompensa: { tipo: "escudo", valor: "Wild" },
+    drops: ["/img/lion.webp", "/img/chicken.webp", "/img/cheetah.webp", 
+      "/img/gorilla.webp", "/img/eagle.webp", "/img/monkey.webp"]
   },
       {
     id: "brain",
@@ -94,7 +97,8 @@ const LOGROS = [
     jugadores: [
       "/img/feldt.webp", "/img/turner.webp",
     ],
-    recompensa: { tipo: "escudo", valor: "Brain" }
+    recompensa: { tipo: "escudo", valor: "Brain" },
+    drops: ["/img/feldt.webp", "/img/turner.webp"]
   },
         {
     id: "otaku",
@@ -103,7 +107,8 @@ const LOGROS = [
     jugadores: [
       "/img/idol.webp", "/img/gamer.webp",  "/img/artist.webp",
     ],
-    recompensa: { tipo: "escudo", valor: "Otaku" }
+    recompensa: { tipo: "escudo", valor: "Otaku" },
+    drops: ["/img/idol.webp", "/img/gamer.webp",  "/img/artist.webp"]
   },
           {
     id: "royal",
@@ -112,7 +117,11 @@ const LOGROS = [
     jugadores: [
       "/img/king.webp", "/img/jude.webp",  "/img/samford.webp",
     ],
-    recompensa: { tipo: "escudo", valor: "Royal" }
+    recompensa: { tipo: "escudo", valor: "Royal" },
+    drops: ["/img/king.webp", "/img/jude.webp",  "/img/samford.webp",
+       "/img/hatch.webp", "/img/simmons.webp", "/img/martin.webp",
+       "/img/drent.webp", "/img/swing.webp", "/img/waldon.webp",
+       "/img/master.webp", "/img/bloom.webp"]
   },
                   {
     id: "veteranos",
@@ -121,7 +130,8 @@ const LOGROS = [
     jugadores: [
       "/img/hillman.webp", "/img/island.webp", "/img/sweet.webp"
     ],
-    recompensa: { tipo: "escudo", valor: "Veteranos" }
+    recompensa: { tipo: "escudo", valor: "Veteranos" },
+    drops: ["/img/hillman.webp", "/img/island.webp", "/img/sweet.webp"]
   },
             {
     id: "shuriken",
@@ -130,7 +140,8 @@ const LOGROS = [
     jugadores: [
       "/img/cloak.webp", "/img/hillman.webp",
     ],
-    recompensa: { tipo: "escudo", valor: "Shuriken" }
+    recompensa: { tipo: "escudo", valor: "Shuriken" },
+    drops: ["/img/cloak.webp"]
   },
               {
     id: "farm",
@@ -139,7 +150,8 @@ const LOGROS = [
     jugadores: [
       "/img/sherman.webp", "/img/hillvalley.webp",
     ],
-    recompensa: { tipo: "escudo", valor: "Farm" }
+    recompensa: { tipo: "escudo", valor: "Farm" },
+    drops: ["/img/sherman.webp", "/img/hillvalley.webp"]
   },
               {
     id: "kirkwood",
@@ -148,7 +160,8 @@ const LOGROS = [
     jugadores: [
       "/img/malcolm.webp", "/img/axel.webp", "/img/marvin.webp"
     ],
-    recompensa: { tipo: "escudo", valor: "Kirkwood" }
+    recompensa: { tipo: "escudo", valor: "Kirkwood" },
+    drops: ["/img/malcolm.webp", "/img/tyler.webp", "/img/marvin.webp", "/img/thomas.webp"]
   },
   {
     id: "inazumaeleven1",
@@ -169,7 +182,10 @@ const LOGROS = [
       "/img/gorilla.webp", "/img/hatch.webp", "/img/talisman.webp", "/img/turner.webp", 
       "/img/cloak.webp", "/img/tyler.webp", "/img/marvin.webp", "/img/thomas.webp", "/img/samford.webp",
     ],
-    recompensa: { tipo: "escudo", valor: "Zeus" }
+    recompensa: { tipo: "escudo", valor: "Zeus" },
+    drops: ["/img/apollo.webp", "/img/hephestus.webp", "/img/athena.webp", "/img/ares.webp", 
+      "/img/dionysus.webp", "/img/poseidon.webp", "/img/byron.webp", "/img/hera.webp", "/img/demeter.webp",
+      "/img/hermes.webp", "/img/artemis.webp",]
   },
     {
     id: "raimon11",
@@ -183,7 +199,13 @@ const LOGROS = [
       "/img/scotty.webp", "/img/hurley.webp", "/img/tori.webp", "/img/jim.webp",
       "/img/darren.webp", "/img/sue.webp", "/img/shadow.webp"
     ],
-    recompensa: { tipo: "escudo", valor: "Raimon" }
+    recompensa: { tipo: "escudo", valor: "Raimon" },
+    drops: ["/img/mark.webp", "/img/jude.webp", "/img/axel.webp", "/img/nathan.webp",
+      "/img/shawn.webp", "/img/tod.webp", "/img/max.webp", "/img/jack.webp",
+      "/img/kevin.webp", "/img/timmy.webp", "/img/willy.webp", "/img/bobby.webp",
+      "/img/steve.webp", "/img/erik.webp", "/img/sam.webp", 
+      "/img/scotty.webp", "/img/hurley.webp", "/img/tori.webp", "/img/jim.webp",
+      "/img/darren.webp", "/img/sue.webp", "/img/shadow.webp"]
   },
                 {
     id: "servicio",
@@ -192,7 +214,8 @@ const LOGROS = [
     jugadores: [
       "/img/smith.webp", "/img/agentem.webp", "/img/tori.webp"
     ],
-    recompensa: { tipo: "escudo", valor: "Servicio" }
+    recompensa: { tipo: "escudo", valor: "Servicio" },
+    drops: ["/img/smith.webp", "/img/agentem.webp", "/img/tori.webp"]
   },
                   {
     id: "alpino",
@@ -201,7 +224,8 @@ const LOGROS = [
     jugadores: [
       "/img/ropes.webp", "/img/downtown.webp", "/img/shawn.webp"
     ],
-    recompensa: { tipo: "escudo", valor: "Alpino" }
+    recompensa: { tipo: "escudo", valor: "Alpino" },
+    drops: ["/img/ropes.webp", "/img/downtown.webp", "/img/shawn.webp"]
   },
                     {
     id: "claustro",
@@ -210,7 +234,8 @@ const LOGROS = [
     jugadores: [
       "/img/scotty.webp", "/img/timmy.webp",
     ],
-    recompensa: { tipo: "escudo", valor: "Claustro" }
+    recompensa: { tipo: "escudo", valor: "Claustro" },
+    drops: ["/img/scotty.webp"]
   },
                      {
     id: "triplec",
@@ -219,7 +244,8 @@ const LOGROS = [
     jugadores: [
       "/img/daisy.webp", "/img/sue.webp",
     ],
-    recompensa: { tipo: "escudo", valor: "TripleC" }
+    recompensa: { tipo: "escudo", valor: "TripleC" },
+    drops: ["/img/daisy.webp", "/img/sue.webp"]
   },
                        {
     id: "fauxshore",
@@ -228,7 +254,8 @@ const LOGROS = [
     jugadores: [
       "/img/darren.webp",
     ],
-    recompensa: { tipo: "escudo", valor: "Fauxshore" }
+    recompensa: { tipo: "escudo", valor: "Fauxshore" },
+    drops: ["/img/darren.webp"]
   },
                   {
     id: "marytimes",
@@ -237,7 +264,8 @@ const LOGROS = [
     jugadores: [
       "/img/hurley.webp", "/img/soundtown.webp",
     ],
-    recompensa: { tipo: "escudo", valor: "Kirkwood" }
+    recompensa: { tipo: "escudo", valor: "Kirkwood" },
+    drops: ["/img/hurley.webp", "/img/soundtown.webp"]
   },
                 {
     id: "tormentadegeminis",
@@ -246,7 +274,9 @@ const LOGROS = [
     jugadores: [
       "/img/galileo.webp", "/img/ganymede.webp","/img/jordan.webp", "/img/diam.webp",
     ],
-    recompensa: { tipo: "escudo", valor: "TormentadeGéminis" }
+    recompensa: { tipo: "escudo", valor: "TormentadeGéminis" },
+    drops: ["/img/galileo.webp", "/img/ganymede.webp","/img/jordan.webp", 
+      "/img/pandora.webp", "/img/diam.webp", "/img/rihm.webp"]
   },
                   {
     id: "epsilon",
@@ -255,7 +285,8 @@ const LOGROS = [
     jugadores: [
       "/img/dvalin.webp", "/img/mercury.webp","/img/metron.webp", "/img/zell.webp",
     ],
-    recompensa: { tipo: "escudo", valor: "Épsilon" }
+    recompensa: { tipo: "escudo", valor: "Épsilon" },
+    drops: ["/img/dvalin.webp", "/img/mercury.webp","/img/metron.webp", "/img/zell.webp"]
   },
                     {
     id: "royalredux",
@@ -264,7 +295,8 @@ const LOGROS = [
     jugadores: [
       "/img/king.webp", "/img/caleb.webp","/img/samford.webp",
     ],
-    recompensa: { tipo: "escudo", valor: "Royalredux" }
+    recompensa: { tipo: "escudo", valor: "Royalredux" },
+    drops: ["/img/king.webp", "/img/caleb.webp","/img/samford.webp", "/img/sparrow.webp",]
   },
                       {
     id: "prominence",
@@ -273,7 +305,9 @@ const LOGROS = [
     jugadores: [
       "/img/grent.webp", "/img/bomber.webp","/img/torch.webp",
     ],
-    recompensa: { tipo: "escudo", valor: "Prominence" }
+    recompensa: { tipo: "escudo", valor: "Prominence" },
+    drops: ["/img/grent.webp", "/img/bomber.webp", "/img/baller.webp", 
+      "/img/torch.webp", "/img/lean.webp", "/img/neppten.webp", "/img/heat.webp"]
   },                    {
     id: "diamond",
     nombre: "Reúne a las estrellas del Polvo de Diamantes",
@@ -281,7 +315,9 @@ const LOGROS = [
     jugadores: [
       "/img/clear.webp", "/img/gocker.webp","/img/gazelle.webp",
     ],
-    recompensa: { tipo: "escudo", valor: "Royalredux" }
+    recompensa: { tipo: "escudo", valor: "Diamond" },
+    drops: ["/img/clear.webp", "/img/gocker.webp","/img/gazelle.webp", 
+      "/img/arkew.webp", "/img/icer.webp", "/img/rhine.webp", "/img/droll.webp"]
   },                    {
     id: "caos",
     nombre: "Reúne a las estrellas del Caos",
@@ -289,7 +325,10 @@ const LOGROS = [
     jugadores: [
       "/img/grent.webp", "/img/bomber.webp","/img/clear.webp","/img/torch.webp","/img/gazelle.webp",
     ],
-    recompensa: { tipo: "escudo", valor: "Caos" }
+    recompensa: { tipo: "escudo", valor: "Caos" },
+    drops: ["/img/clear.webp", "/img/gocker.webp","/img/gazelle.webp", 
+      "/img/rhine.webp", "/img/droll.webp", "/img/grent.webp", "/img/bomber.webp", 
+      "/img/baller.webp", "/img/torch.webp", "/img/neppten.webp", "/img/heat.webp"]
   },                    {
     id: "Emperadoresoscuros",
     nombre: "Reúne a las estrellas de los Emperadores Oscuros",
@@ -297,7 +336,10 @@ const LOGROS = [
     jugadores: [
       "/img/feldt.webp", "/img/nathan.webp","/img/shadow.webp","/img/kevin.webp",
     ],
-    recompensa: { tipo: "escudo", valor: "Emperadoresoscuros" }
+    recompensa: { tipo: "escudo", valor: "Emperadoresoscuros" },
+    drops: ["/img/feldt.webp", "/img/nathan.webp","/img/shadow.webp","/img/kevin.webp", 
+      "/img/jim.webp", "/img/sam.webp","/img/malcolm.webp","/img/steve.webp", 
+      "/img/timmy.webp","/img/tod.webp","/img/max.webp",]
   },
     {
    id: "alius11",
@@ -314,7 +356,16 @@ const LOGROS = [
      "/img/xavier.webp", "/img/diam.webp", "/img/rihm.webp",  "/img/torch.webp",  
      "/img/gazelle.webp",  "/img/wittz.webp"
    ],
-   recompensa: { tipo: "escudo", valor: "Alius" }
+   recompensa: { tipo: "escudo", valor: "Alius" },
+    drops: [     "/img/galileo.webp", "/img/dvalin.webp", "/img/zell.webp", "/img/grent.webp",
+     "/img/nero.webp", "/img/icer.webp", "/img/arkew.webp", "/img/gocker.webp",
+     "/img/zohen.webp", "/img/hauser.webp", "/img/ganymede.webp", "/img/baller.webp",
+     "/img/clear.webp",  "/img/gele.webp",  "/img/kiburn.webp",  "/img/bomber.webp", 
+     "/img/jordan.webp",  "/img/heat.webp",  "/img/lean.webp",  "/img/droll.webp",  
+     "/img/rhine.webp",  "/img/kiwill.webp",  "/img/ark.webp", "/img/pandora.webp", 
+     "/img/metron.webp",  "/img/neppten.webp",  "/img/kormer.webp",  "/img/bellatrix.webp",
+     "/img/xavier.webp", "/img/diam.webp", "/img/rihm.webp",  "/img/torch.webp",  
+     "/img/gazelle.webp",  "/img/wittz.webp"]
 },
   {
       id: "inazumaeleven2",
@@ -333,7 +384,10 @@ const LOGROS = [
       "/img/gazelle.webp",  "/img/wittz.webp",  "/img/shadow.webp",  "/img/xavier.webp"
 
     ],
-    recompensa: { tipo: "escudo", valor: "Génesis" }
+    recompensa: { tipo: "escudo", valor: "Génesis" },
+    drops: ["/img/ark.webp", "/img/xavier.webp", "/img/bellatrix.webp", "/img/hauser.webp", "/img/zohen.webp",
+      "/img/gele.webp", "/img/kiburn.webp", "/img/kiwill.webp", "/img/nero.webp", "/img/wittz.webp", 
+      "/img/kormer.webp"]
   },
     {
       id: "inazumaeleven3",
@@ -348,11 +402,12 @@ const LOGROS = [
       "/img/dolphin.webp", "/img/choi.webp", "/img/acuto.webp", "/img/krueger.webp", "/img/gabrini.webp", "/img/nakata.webp", 
       "/img/diavolo.webp", "/img/ryan.webp", "/img/haddad.webp", "/img/hampton.webp", "/img/maximino.webp", "/img/vitrum.webp", 
       "/img/leung.webp", "/img/stark.webp",  "/img/triumvir.webp",  "/img/gunter.webp",  "/img/lephiel.webp",  "/img/wenel.webp",  
-      "/img/zanos.webp",  "/img/gaiel.webp", ,  "/img/austin.webp", "/img/partinus.webp", "/img/balone.webp", "/img/keats.webp", 
+      "/img/zanos.webp",  "/img/gaiel.webp",  "/img/austin.webp", "/img/partinus.webp", "/img/balone.webp", "/img/keats.webp", 
       "/img/generani.webp", "/img/paolo.webp", "/img/robingo.webp", "/img/coyote.webp", "/img/flare.webp", "/img/drago.webp", 
       "/img/hedgeer.webp",  "/img/callous.webp",  "/img/malice.webp",  "/img/lancer.webp",  "/img/sael.webp",  "/img/destra.webp"
     ],
-    recompensa: { tipo: "escudo", valor: "Orfeo" }
+    recompensa: { tipo: "escudo", valor: "Orfeo" },
+    drops: ["/img/blasi.webp",  "/img/nakata.webp",  "/img/generani.webp",  "/img/paolo.webp", "/img/gabrini.webp"]
   },
   {
    id: "littlegiants11",
@@ -368,7 +423,11 @@ const LOGROS = [
      "/img/mangrove.webp",  "/img/scotty.webp",  "/img/willy.webp",  "/img/vitrum.webp",
      "/img/leung.webp", "/img/shawn.webp", "/img/hedgeer.webp",  "/img/hurley.webp"
    ],
-   recompensa: { tipo: "escudo", valor: "LittleGiants" }
+   recompensa: { tipo: "escudo", valor: "LittleGiants" },
+    drops: ["/img/helio.webp", "/img/vitesse.webp", "/img/mountain.webp", "/img/gaines.webp", 
+      "/img/ferrum.webp", "/img/hampton.webp", "/img/haddad.webp", "/img/ryan.webp",  
+      "/img/maximino.webp",  "/img/flare.webp", "/img/drago.webp",  "/img/difortune.webp", 
+      "/img/mangrove.webp",  "/img/scotty.webp",  "/img/vitrum.webp","/img/leung.webp", "/img/hedgeer.webp",]
 },
   {
    id: "marvin",
@@ -381,30 +440,62 @@ const LOGROS = [
 },
 ];
 
-const CARTAS_DESBLOQUEABLES = [
-  { carta: "/img/mark.webp", veces: 10 },
-  { carta: "/img/king.webp", veces: 10 },
-  { carta: "/img/darren.webp", veces: 10 },
-  { carta: "/img/mask.webp", veces: 2 },
-  { carta: "/img/feldt.webp", veces: 10 },
-  { carta: "/img/idol.webp", veces: 10 },
-  { carta: "/img/poseidon.webp", veces: 10 },
-  { carta: "/img/hillman.webp", veces: 10 },
-  { carta: "/img/ropes.webp", veces: 10 },
-  { carta: "/img/daisy.webp", veces: 10 },
-  { carta: "/img/galileo.webp", veces: 10 },
-  { carta: "/img/dvalin.webp", veces: 10 },
-  { carta: "/img/zell.webp", veces: 10 },
-  { carta: "/img/grent.webp", veces: 10 },
-  { carta: "/img/nero.webp", veces: 10 },
-  { carta: "/img/blasi.webp", veces: 10 },
-  { carta: "/img/dasilva.webp", veces: 10 },
-  { carta: "/img/fox.webp", veces: 10 },
-  { carta: "/img/helio.webp", veces: 10 },
-  { carta: "/img/iñigo.webp", veces: 10 },
-  { carta: "/img/luceafar.webp", veces: 10 },
-  { carta: "/img/astaroth.webp", veces: 10 }
-];
+function TutorialModal({ onClose }) {
+  return (
+    <div style={{
+      position: "fixed",
+      top: 0, left: 0, right: 0, bottom: 0,
+      background: "rgba(0,0,0,0.7)",
+      display: "flex", alignItems: "center", justifyContent: "center",
+      zIndex: 2000
+    }}>
+      <div style={{
+        background: "#fff",
+        padding: "30px 40px",
+        borderRadius: "20px",
+        minWidth: "350px",
+        maxWidth: "90vw",
+        boxShadow: "0 0 50px #333",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center"
+      }}>
+        <h2 style={{ marginBottom: "16px", fontWeight: "bold" }}>¿Cómo jugar?</h2>
+        <ol style={{ textAlign: "left", marginBottom: "18px", fontSize: "1.1em" }}>
+          <li>Haz clic en las cartas para bloquear jugadores en tu alineación.</li>
+          <li>Cuando bloquees 11, ¡puedes conseguir logros y desbloquear escudos o cartas!</li>
+          <li>Haz clic en <b>PERFIL</b> arriba a la derecha para personalizar tu nombre y escudo.</li>
+          <li>Pulsa el botón <b>ALINEACION</b> en tu perfil para crear tu propio 11 con las cartas desbloqueadas.</li>
+          <li>¡Reinicia para probar nuevas combinaciones y conseguir más logros!</li>
+        </ol>
+        <button
+          onClick={onClose}
+          style={{
+            padding: "8px 22px",
+            borderRadius: "8px",
+            background: "#00bfff",
+            color: "#fff",
+            fontWeight: "bold",
+            fontSize: "1.1em",
+            cursor: "pointer"
+          }}
+        >
+          ¡Entendido!
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function darDrop(logro, cartasDesbloqueadas, setCartasDesbloqueadas) {
+  if (!logro.drops || !Array.isArray(logro.drops)) return null;
+  const posibles = logro.drops.filter(c => !cartasDesbloqueadas.includes(c));
+  if (posibles.length === 0) return null;
+  const carta = posibles[Math.floor(Math.random() * posibles.length)];
+  setCartasDesbloqueadas(prev => [...prev, carta]);
+  return carta;
+}
+
 
 function comprobarLogrosAutomaticos(logrosCompletados, setLogrosCompletados, setPerfil) {
   LOGROS.forEach(logro => {
@@ -429,62 +520,82 @@ function comprobarLogrosAutomaticos(logrosCompletados, setLogrosCompletados, set
 }
 
 
-function completarLogroManual(logroId, logrosCompletados, setLogrosCompletados, setPerfil) {
+function completarLogroManual(logroId, logrosCompletados, setLogrosCompletados, setPerfil, cartasDesbloqueadas, setCartasDesbloqueadas) {
   const logro = LOGROS.find(l => l.id === logroId);
-
   if (!logro) return;
 
   if (!logrosCompletados.includes(logro.id)) {
     setLogrosCompletados([...logrosCompletados, logro.id]);
-
     if (logro.recompensa.tipo === "escudo") {
       setPerfil(p => ({
         ...p,
         escudosDisponibles: [...p.escudosDisponibles, logro.recompensa.valor]
       }));
-
       alert(`¡Logro completado: ${logro.nombre}! Has conseguido el escudo de ${logro.recompensa.valor}`);
+    }
+    const carta = darDrop(logro, cartasDesbloqueadas, setCartasDesbloqueadas);
+    if (carta) {
+      alert(`¡Has conseguido la carta: ${carta.replace("/img/", "").replace(".webp", "")}!`);
+    }
+  } else if (logro.drops) {
+    const posibles = logro.drops.filter(c => !cartasDesbloqueadas.includes(c));
+    if (posibles.length > 0) {
+      const carta = darDrop(logro, cartasDesbloqueadas, setCartasDesbloqueadas);
+      if (carta) {
+        alert(`¡Has conseguido la carta: ${carta.replace("/img/", "").replace(".webp", "")}!`);
+      }
     }
   }
 }
 
 
-function comprobarLogros(nuevaSeleccion, logrosCompletados, setLogrosCompletados, setPerfil, bloqueadas) {
+function comprobarLogros(nuevaSeleccion, logrosCompletados, setLogrosCompletados, setPerfil, bloqueadas, cartasDesbloqueadas, setCartasDesbloqueadas) {
   LOGROS.forEach(logro => {
-    // Obtén los jugadores que están en posiciones bloqueadas
     const jugadoresBloqueados = bloqueadas.map(pos => nuevaSeleccion[pos]);
     const jugadoresUnicos = [...new Set(jugadoresBloqueados)];
 
     let completado = false;
 
     if (logro.jugadores.length > 0 && logro.jugadores.length <= 11) {
-      // Caso: el logro pide un grupo específico (ej. trillizos)
       completado = logro.jugadores.every(j => jugadoresUnicos.includes(j));
     } else {
-      // Caso: el logro pide un mínimo de 11 de una lista grande (ej. Inazuma Eleven 1)
       const enComun = jugadoresUnicos.filter(j => logro.jugadores.includes(j));
       completado = enComun.length >= 11;
     }
 
-    // Solo si están bloqueados los 11 jugadores
     completado = completado && bloqueadas.length === 11;
 
-    if (completado && !logrosCompletados.includes(logro.id)) {
-      setLogrosCompletados([...logrosCompletados, logro.id]);
-
-      if (logro.recompensa.tipo === "escudo") {
-        setPerfil(p => ({
-          ...p,
-          escudosDisponibles: [...p.escudosDisponibles, logro.recompensa.valor]
-        }));
-
-        alert(`¡Logro completado: ${logro.nombre}! Has conseguido el escudo de ${logro.recompensa.valor}`);
+    // Si el logro se completa...
+    if (completado) {
+      // Si no se ha completado nunca, añade escudo y drop
+      if (!logrosCompletados.includes(logro.id)) {
+        setLogrosCompletados([...logrosCompletados, logro.id]);
+        if (logro.recompensa.tipo === "escudo") {
+          setPerfil(p => ({
+            ...p,
+            escudosDisponibles: [...p.escudosDisponibles, logro.recompensa.valor]
+          }));
+          alert(`¡Logro completado: ${logro.nombre}! Has conseguido el escudo de ${logro.recompensa.valor}`);
+        }
+        // Da drop si hay
+        const carta = darDrop(logro, cartasDesbloqueadas, setCartasDesbloqueadas);
+        if (carta) {
+          alert(`¡Has conseguido la carta: ${carta.replace("/img/", "").replace(".webp", "")}!`);
+        }
+      } else if (logro.drops) {
+        // Si ya tienes el escudo pero quedan drops, sigue dando carta
+        const posibles = logro.drops.filter(c => !cartasDesbloqueadas.includes(c));
+        if (posibles.length > 0) {
+          const carta = darDrop(logro, cartasDesbloqueadas, setCartasDesbloqueadas);
+          if (carta) {
+            alert(`¡Has conseguido la carta: ${carta.replace("/img/", "").replace(".webp", "")}!`);
+          }
+        }
       }
     }
   });
 }
 
-// ...existing code...
 function PerfilModal({ perfil, setPerfil, onClose, onAlineacion }) {
   return (
     <div style={{
@@ -577,6 +688,10 @@ function PerfilModal({ perfil, setPerfil, onClose, onAlineacion }) {
 }
 // ...existing code...
 
+// ...existing code...
+
+// ...existing code...
+
 function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
   const [alineacion, setAlineacion] = useState(() => {
     const saved = localStorage.getItem("alineacion");
@@ -588,197 +703,283 @@ function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
     width: "110px",
     aspectRatio: "1080 / 1280",
     objectFit: "cover",
-    borderRadius: 5,
-    margin: "0 10px"
+    borderRadius: 8,
+    margin: "0 10px",
+    cursor: "pointer",
+    boxShadow: "0 4px 16px #0002"
   };
+
+  // No permitir cartas repetidas en varias posiciones
+  const cartasUsadas = Object.values(alineacion);
 
   const handleSelect = (pos, carta) => {
     setAlineacion(a => {
       const copia = { ...a };
       if (carta === "") {
-        delete copia[pos]; // Quita la carta si se selecciona vacío
+        delete copia[pos];
       } else {
         copia[pos] = carta;
       }
       return copia;
     });
   };
+
+  // Quitar carta con clic derecho
+  const handleRightClick = (e, pos) => {
+    e.preventDefault();
+    setAlineacion(a => {
+      const copia = { ...a };
+      delete copia[pos];
+      return copia;
+    });
+  };
+
   const handleGuardar = () => {
     localStorage.setItem("alineacion", JSON.stringify(alineacion));
     onClose();
   };
 
-  // ...existing code...
-<style jsx global>{`
-  @media (max-width: 1200px) {
-    img {
-      width: 90px !important;
-      max-width: 100%;
-    }
-    .logros-container {
-      width: 90vw !important;
-      min-width: 0 !important;
-    }
-    .alineacion-modal {
-      min-width: 320px !important;
-      padding: 10px !important;
-    }
-  }
-  @media (max-width: 800px) {
-    img {
-      width: 60px !important;
-    }
-    .logros-container {
-      width: 100vw !important;
-      padding: 5px !important;
-    }
-    .alineacion-modal {
-      min-width: 200px !important;
-      padding: 5px !important;
-    }
-  }
-`}</style>
-// ...existing code...
+
 
   return (
     <div style={{
       position: "fixed",
       top: 0, left: 0, right: 0, bottom: 0,
-      background: "rgba(0,0,0,0.5)",
+      background: "rgba(0,0,0,0.7)",
       display: "flex", alignItems: "center", justifyContent: "center",
-      zIndex: 1000
+      zIndex: 1000,
+      fontFamily: "'Bebas Neue', Arial, sans-serif"
     }}>
       <div style={{
-        background: "#fff",
-        padding: "30px 40px",
-        borderRadius: "20px",
+        padding: "20px 20px",
+        borderRadius: "24px",
         minWidth: "600px",
-        boxShadow: "0 0 50px #333"
+        boxShadow: "0 0 50px #333",
+        position: "relative",
+        overflow: "hidden"
       }}>
-        <h2 style={{ marginBottom: "20px" }}>Tu Alineación (4-3-3)</h2>
-        {/* Portero */}
-        <div style={{ display: "flex", justifyContent: "center", marginBottom: "25px" }}>
-          <div style={{ textAlign: "center" }}>
-            <span>PORTERO:</span><br />
-            {alineacion.portero ? (
-              <img src={alineacion.portero} alt="portero" style={imageStyle} />
-            ) : (
-              <select
-                onChange={e => handleSelect("portero", e.target.value)}
-                value={alineacion.portero || ""}
-                style={{ padding: "4px", borderRadius: "4px", width: "110px" }}
-              >
-                <option value="">Quitar carta</option>
-                {cartasDisponibles.map(carta => (
-                  <option key={carta} value={carta}>{carta.replace("/img/", "").replace(".webp", "")}</option>
-                ))}
-              </select>
-            )}
-          </div>
-        </div>
-        {/* Defensas */}
-        <div style={{ display: "flex", justifyContent: "center", gap: "20px", marginBottom: "25px" }}>
-          {["defensa1","defensa2","defensa3","defensa4"].map(pos => (
-            <div key={pos} style={{ textAlign: "center" }}>
-              <span>{pos.toUpperCase()}:</span><br />
-              {alineacion[pos] ? (
-                <img src={alineacion[pos]} alt={pos} style={imageStyle} />
-              ) : (
-                <select
-                  onChange={e => handleSelect(pos, e.target.value)}
-                  value={alineacion[pos] || ""}
-                  style={{ padding: "4px", borderRadius: "4px", width: "110px" }}
-                >
-                  <option value="">Selecciona carta</option>
-                  {cartasDisponibles.map(carta => (
-                    <option key={carta} value={carta}>{carta.replace("/img/", "").replace(".webp", "")}</option>
-                  ))}
-                </select>
-              )}
-            </div>
-          ))}
-        </div>
-        {/* Medios */}
-        <div style={{ display: "flex", justifyContent: "center", gap: "20px", marginBottom: "25px" }}>
-          {["medio1","medio2","medio3"].map(pos => (
-            <div key={pos} style={{ textAlign: "center" }}>
-              <span>{pos.toUpperCase()}:</span><br />
-              {alineacion[pos] ? (
-                <img src={alineacion[pos]} alt={pos} style={imageStyle} />
-              ) : (
-                <select
-                  onChange={e => handleSelect(pos, e.target.value)}
-                  value={alineacion[pos] || ""}
-                  style={{ padding: "4px", borderRadius: "4px", width: "110px" }}
-                >
-                  <option value="">Selecciona carta</option>
-                  {cartasDisponibles.map(carta => (
-                    <option key={carta} value={carta}>{carta.replace("/img/", "").replace(".webp", "")}</option>
-                  ))}
-                </select>
-              )}
-            </div>
-          ))}
-        </div>
-        {/* Delanteros */}
-        <div style={{ display: "flex", justifyContent: "center", gap: "20px", marginBottom: "10px" }}>
-          {["delantero1","delantero2","delantero3"].map(pos => (
-            <div key={pos} style={{ textAlign: "center" }}>
-              <span>{pos.toUpperCase()}:</span><br />
-              {alineacion[pos] ? (
-                <img src={alineacion[pos]} alt={pos} style={imageStyle} />
-              ) : (
-                <select
-                  onChange={e => handleSelect(pos, e.target.value)}
-                  value={alineacion[pos] || ""}
-                  style={{ padding: "4px", borderRadius: "4px", width: "110px" }}
-                >
-                  <option value="">Selecciona carta</option>
-                  {cartasDisponibles.map(carta => (
-                    <option key={carta} value={carta}>{carta.replace("/img/", "").replace(".webp", "")}</option>
-                  ))}
-                </select>
-              )}
-            </div>
-          ))}
-        </div>
-        <button
-          onClick={handleGuardar}
+        {/* Fondo decorativo */}
+        <img
+          src="https://img.freepik.com/vector-gratis/campo-futbol-verde_225004-1137.jpg?semt=ais_hybrid&w=740&q=80"
+          alt="fondo"
           style={{
-            marginTop: "20px",
-            padding: "8px 18px",
-            borderRadius: "6px",
-            cursor: "pointer",
-            background: "green",
-            color: "#fff",
-            fontWeight: "bold"
+            position: "absolute",
+            left: 0, top: 0, width: "100%", height: "100%",
+            objectFit: "cover",
+            opacity: 0.9,
+            zIndex: 0,
+            borderRadius: "24px"
           }}
-        >
-          GUARDAR
-        </button>
+        />
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <h2 style={{
+            marginBottom: "20px",
+            fontFamily: "'Bebas Neue', Arial, sans-serif",
+            fontWeight: 700,
+            fontSize: "2rem",
+            color: "#1a2a3a",
+            letterSpacing: "1px"
+          }}>
+            <b>ALINEACIÓN</b>
+            <span style={{
+              fontFamily: "'Bebas Neue', Arial, sans-serif",
+              textShadow: "0 0 6px #ffffffff",
+              fontWeight: 400,
+              fontSize: "1rem",
+              color: "#000000ff",
+              marginLeft: 20
+            }}>
+              (clic derecho para quitar una carta)
+            </span>
+          </h2>
+          {/* Portero */}
+          <div style={{ display: "flex", justifyContent: "center", marginBottom: "25px" }}>
+            <div style={{ textAlign: "center" }}>
+              <span style={{
+                fontWeight: 600,
+                fontSize: "1.1rem",
+                letterSpacing: "1px",
+                color: "#2a3a4a"
+              }}>PORTERO:</span><br />
+              {alineacion.portero ? (
+                <img
+                  src={alineacion.portero}
+                  alt="portero"
+                  style={imageStyle}
+                  onContextMenu={e => handleRightClick(e, "portero")}
+                  title="Clic derecho para quitar"
+                />
+              ) : (
+                <select
+                  onChange={e => handleSelect("portero", e.target.value)}
+                  value={alineacion.portero || ""}
+                  style={{
+                    padding: "6px",
+                    borderRadius: "6px",
+                    width: "120px",
+                    fontFamily: "'Montserrat', Arial, sans-serif",
+                    fontWeight: 600,
+                    fontSize: "1rem"
+                  }}
+                >
+                  <option value="">Selecciona carta</option>
+                  {cartasDisponibles
+                    .filter(carta => !cartasUsadas.includes(carta))
+                    .map(carta => (
+                      <option key={carta} value={carta}>{carta.replace("/img/", "").replace(".webp", "")}</option>
+                    ))}
+                </select>
+              )}
+            </div>
+          </div>
+          {/* Defensas */}
+          <div style={{ display: "flex", justifyContent: "center", gap: "20px", marginBottom: "25px" }}>
+            {["defensa1", "defensa2", "defensa3", "defensa4"].map(pos => (
+              <div key={pos} style={{ textAlign: "center" }}>
+                <span style={{
+                  fontWeight: 600,
+                  fontSize: "1.1rem",
+                  color: "#2a3a4a"
+                }}>{pos.toUpperCase()}:</span><br />
+                {alineacion[pos] ? (
+                  <img
+                    src={alineacion[pos]}
+                    alt={pos}
+                    style={imageStyle}
+                    onContextMenu={e => handleRightClick(e, pos)}
+                    title="Clic derecho para quitar"
+                  />
+                ) : (
+                  <select
+                    onChange={e => handleSelect(pos, e.target.value)}
+                    value={alineacion[pos] || ""}
+                    style={{
+                      padding: "6px",
+                      borderRadius: "6px",
+                      width: "120px",
+                      fontFamily: "'Montserrat', Arial, sans-serif",
+                      fontWeight: 600,
+                      fontSize: "1rem"
+                    }}
+                  >
+                    <option value="">Selecciona carta</option>
+                    {cartasDisponibles
+                      .filter(carta => !cartasUsadas.includes(carta))
+                      .map(carta => (
+                        <option key={carta} value={carta}>{carta.replace("/img/", "").replace(".webp", "")}</option>
+                      ))}
+                  </select>
+                )}
+              </div>
+            ))}
+          </div>
+          {/* Medios */}
+          <div style={{ display: "flex", justifyContent: "center", gap: "20px", marginBottom: "25px" }}>
+            {["medio1", "medio2", "medio3"].map(pos => (
+              <div key={pos} style={{ textAlign: "center" }}>
+                <span style={{
+                  fontWeight: 600,
+                  fontSize: "1.1rem",
+                  color: "#2a3a4a"
+                }}>{pos.toUpperCase()}:</span><br />
+                {alineacion[pos] ? (
+                  <img
+                    src={alineacion[pos]}
+                    alt={pos}
+                    style={imageStyle}
+                    onContextMenu={e => handleRightClick(e, pos)}
+                    title="Clic derecho para quitar"
+                  />
+                ) : (
+                  <select
+                    onChange={e => handleSelect(pos, e.target.value)}
+                    value={alineacion[pos] || ""}
+                    style={{
+                      padding: "6px",
+                      borderRadius: "6px",
+                      width: "120px",
+                      fontFamily: "'Montserrat', Arial, sans-serif",
+                      fontWeight: 600,
+                      fontSize: "1rem"
+                    }}
+                  >
+                    <option value="">Selecciona carta</option>
+                    {cartasDisponibles
+                      .filter(carta => !cartasUsadas.includes(carta))
+                      .map(carta => (
+                        <option key={carta} value={carta}>{carta.replace("/img/", "").replace(".webp", "")}</option>
+                      ))}
+                  </select>
+                )}
+              </div>
+            ))}
+          </div>
+          {/* Delanteros */}
+          <div style={{ display: "flex", justifyContent: "center", gap: "20px", marginBottom: "10px" }}>
+            {["delantero1", "delantero2", "delantero3"].map(pos => (
+              <div key={pos} style={{ textAlign: "center" }}>
+                <span style={{
+                  fontWeight: 600,
+                  fontSize: "1.1rem",
+                  color: "#2a3a4a"
+                }}>{pos.toUpperCase()}:</span><br />
+                {alineacion[pos] ? (
+                  <img
+                    src={alineacion[pos]}
+                    alt={pos}
+                    style={imageStyle}
+                    onContextMenu={e => handleRightClick(e, pos)}
+                    title="Clic derecho para quitar"
+                  />
+                ) : (
+                  <select
+                    onChange={e => handleSelect(pos, e.target.value)}
+                    value={alineacion[pos] || ""}
+                    style={{
+                      padding: "6px",
+                      borderRadius: "6px",
+                      width: "120px",
+                      fontFamily: "'Montserrat', Arial, sans-serif",
+                      fontWeight: 600,
+                      fontSize: "1rem"
+                    }}
+                  >
+                    <option value="">Selecciona carta</option>
+                    {cartasDisponibles
+                      .filter(carta => !cartasUsadas.includes(carta))
+                      .map(carta => (
+                        <option key={carta} value={carta}>{carta.replace("/img/", "").replace(".webp", "")}</option>
+                      ))}
+                  </select>
+                )}
+              </div>
+            ))}
+          </div>
+          <button
+            onClick={handleGuardar}
+            style={{
+              marginTop: "20px",
+              padding: "10px 28px",
+              borderRadius: "8px",
+              cursor: "pointer",
+              background: "linear-gradient(90deg, #1fa800 60%, #0e6b00 100%)",
+              color: "#fff",
+              fontWeight: "bold",
+              fontSize: "1.1rem",
+              letterSpacing: "1px",
+              border: "none",
+              boxShadow: "0 2px 8px #0002"
+            }}
+          >
+            GUARDAR
+          </button>
+        </div>
       </div>
     </div>
   );
 }
+// ...existing code...
 
-function getJugadoresDesbloqueados(logrosCompletados) {
-  const jugadores = [];
-  LOGROS.forEach(logro => {
-    if (logrosCompletados.includes(logro.id)) {
-      // Si el logro desbloquea jugadores
-      if (logro.jugadores && logro.jugadores.length > 0) {
-        logro.jugadores.forEach(j => {
-          if (!jugadores.includes(j)) jugadores.push(j);
-        });
-      }
-      // Si el logro desbloquea una carta específica
-      if (logro.recompensa.tipo === "carta" && logro.recompensa.valor) {
-        if (!jugadores.includes(logro.recompensa.valor)) jugadores.push(logro.recompensa.valor);
-      }
-    }
-  });
-  return jugadores;
-}
 
 function Logros({ logrosCompletados }) {
   return (
@@ -818,19 +1019,18 @@ const getRandomCard = (available, used) => {
   return choices[Math.floor(Math.random() * choices.length)];
 };
 
-// ...existing code...
 
 export default function Home() {
 const [seleccionadas, setSeleccionadas] = useState({});
 const [bloqueadas, setBloqueadas] = useState([]);
 const [perfil, setPerfil] = useState({ nombre: "", escudo: "", escudosDisponibles: [] });
 const [logrosCompletados, setLogrosCompletados] = useState([]);
-const [markCount, setMarkCount] = useState(0);
 const [cartasDesbloqueadas, setCartasDesbloqueadas] = useState([]);
 const [contadorCartas, setContadorCartas] = useState({});
 const [showPerfil, setShowPerfil] = useState(false);
 const [showAlineacion, setShowAlineacion] = useState(false);
 const [datosCargados, setDatosCargados] = useState(false);
+const [showTutorial, setShowTutorial] = useState(false);
 
 useEffect(() => {
   if (typeof window !== "undefined") {
@@ -846,9 +1046,6 @@ useEffect(() => {
     const savedLogros = localStorage.getItem("logrosCompletados");
     if (savedLogros) setLogrosCompletados(JSON.parse(savedLogros));
 
-    const savedMarkCount = localStorage.getItem("markCount");
-    if (savedMarkCount) setMarkCount(JSON.parse(savedMarkCount));
-
     const savedCartasDesbloqueadas = localStorage.getItem("cartasDesbloqueadas");
     if (savedCartasDesbloqueadas) setCartasDesbloqueadas(JSON.parse(savedCartasDesbloqueadas));
 
@@ -863,6 +1060,19 @@ useEffect(() => {
   localStorage.setItem("perfil", JSON.stringify(perfil));
 }, [perfil, datosCargados]);
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const yaVioTutorial = localStorage.getItem("tutorialVisto");
+      if (!yaVioTutorial) setShowTutorial(true);
+    }
+  }, []);
+
+    function cerrarTutorial() {
+    setShowTutorial(false);
+    localStorage.setItem("tutorialVisto", "1");
+  }
+
+  
 useEffect(() => {
   if (!datosCargados) return;
   localStorage.setItem("logrosCompletados", JSON.stringify(logrosCompletados));
@@ -879,12 +1089,6 @@ useEffect(() => {
   if (!datosCargados) return;
   localStorage.setItem("bloqueadas", JSON.stringify(bloqueadas));
 }, [bloqueadas, datosCargados]);
-
-// Guardar markCount
-useEffect(() => {
-  if (!datosCargados) return;
-  localStorage.setItem("markCount", JSON.stringify(markCount));
-}, [markCount, datosCargados]);
 
 // Guardar cartas desbloqueadas
 useEffect(() => {
@@ -903,54 +1107,19 @@ useEffect(() => {
   localStorage.setItem("perfil", JSON.stringify(perfil));
 }, [perfil, datosCargados]);
 
-  useEffect(() => {
-  if (markCount === 10 && !cartasDesbloqueadas.includes("/img/mark.webp")) {
-    setCartasDesbloqueadas(arr => [...arr, "/img/mark.webp"]);
-    alert("¡Has desbloqueado la carta de Mark Evans para tu alineación!");
-  }
-}, [markCount, cartasDesbloqueadas]);
 
 useEffect(() => {
   if (!datosCargados) return;
   comprobarLogrosAutomaticos(logrosCompletados, setLogrosCompletados, setPerfil);
 }, [datosCargados]);
 
-  useEffect(() => {
-  if (
-    bloqueadas.length === 11 &&
-    seleccionadas &&
-    Object.values(seleccionadas).length === 11
-  ) {
-    // Para cada carta desbloqueable, si está en la alineación, suma 1
-    CARTAS_DESBLOQUEABLES.forEach(({ carta }) => {
-      if (bloqueadas.some(pos => seleccionadas[pos] === carta)) {
-        setContadorCartas(prev => ({
-          ...prev,
-          [carta]: (prev[carta] || 0) + 1
-        }));
-      }
-    });
-  }
-}, [bloqueadas]);
-
-useEffect(() => {
-  CARTAS_DESBLOQUEABLES.forEach(({ carta, veces }) => {
-    if (
-      (contadorCartas[carta] || 0) >= veces &&
-      !cartasDesbloqueadas.includes(carta)
-    ) {
-      setCartasDesbloqueadas(arr => [...arr, carta]);
-      alert(`¡Has desbloqueado la carta de ${carta.replace("/img/", "").replace(".webp", "")} para tu alineación!`);
-    }
-  });
-}, [contadorCartas, cartasDesbloqueadas]);
 
   useEffect(() => {
     inicializarCartas();
   }, []);
 
   useEffect(() => {
-    comprobarLogros(seleccionadas, logrosCompletados, setLogrosCompletados, setPerfil, bloqueadas);
+    comprobarLogros(seleccionadas, logrosCompletados, setLogrosCompletados, setPerfil,  bloqueadas, cartasDesbloqueadas, setCartasDesbloqueadas);
   }, [seleccionadas, bloqueadas]);
 
   function inicializarCartas() {
@@ -964,18 +1133,6 @@ useEffect(() => {
     setBloqueadas([]);
   };
 
-  useEffect(() => {
-  // Solo sumar si la alineación está completa y Mark está entre los bloqueados
-  if (
-    bloqueadas.length === 11 &&
-    seleccionadas &&
-    Object.values(seleccionadas).length === 11 &&
-    bloqueadas.some(pos => seleccionadas[pos] === "/img/mark.webp")
-  ) {
-    setMarkCount(count => count + 1);
-  }
-  // eslint-disable-next-line
-}, [bloqueadas]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -1030,6 +1187,7 @@ useEffect(() => {
       overflow: "hidden"
     }}>
       {/* Barra superior */}
+      {showTutorial && <TutorialModal onClose={cerrarTutorial} />}
       <div style={{
         position: "absolute",
         top: 0, left: 0, right: 0,
@@ -1080,7 +1238,7 @@ useEffect(() => {
       boxShadow: "0 0 8px #00000055",
       cursor: "pointer"
     }}
-    onClick={() => completarLogroManual("caravana", logrosCompletados, setLogrosCompletados, setPerfil)}
+    onClick={() => completarLogroManual("caravana", logrosCompletados, setLogrosCompletados, setPerfil, cartasDesbloqueadas, setCartasDesbloqueadas)}
   >
         <svg width="32" height="32" viewBox="0 0 32 32">
       <rect width="32" height="32" rx="6" fill="none"/>
