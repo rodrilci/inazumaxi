@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"></link>
+
 const posiciones = {
   portero: ["/img/mark.webp", "/img/king.webp", "/img/darren.webp", "/img/mask.webp", "/img/feldt.webp", "/img/idol.webp", "/img/poseidon.webp", "/img/hillman.webp", "/img/ropes.webp", "/img/daisy.webp", "/img/galileo.webp", "/img/dvalin.webp", "/img/zell.webp", "/img/grent.webp",  "/img/nero.webp", "/img/blasi.webp",  "/img/dasilva.webp",  "/img/fox.webp",  "/img/helio.webp", "/img/iñigo.webp",  "/img/luceafar.webp",  "/img/astaroth.webp",  "/img/jp.webp"],
   defensa1: ["/img/nathan.webp","/img/tod.webp", "/img/scotty.webp", "/img/aitor.webp", "/img/archer.webp", "/img/martin.webp", "/img/master.webp", "/img/monkey.webp", "/img/malcolm.webp", "/img/apollo.webp", "/img/hephestus.webp", "/img/sweet.webp", "/img/smith.webp", "/img/shawn.webp", "/img/hurley.webp", "/img/bomber.webp",  "/img/icer.webp",  "/img/arkew.webp",  "/img/gocker.webp",  "/img/zohen.webp",  "/img/hauser.webp",  "/img/lagarto.webp",  "/img/vitesse.webp",  "/img/ferrum.webp",  "/img/mangrove.webp", "/img/ischer.webp",  "/img/jenkins.webp",  "/img/lephiel.webp",  "/img/hebimos.webp",  "/img/jp.webp"],
@@ -139,13 +140,11 @@ const LOGROS = [
     recompensa: { tipo: "escudo", valor: "Otaku" },
     drops: ["/img/idol.webp", "/img/gamer.webp",  "/img/artist.webp"]
   },
-          {
+    {
     id: "royal",
     nombre: "La vieja guarda de la Royal",
     descripcion: "Escoge a King, Jude y Samford  entre tus 11 jugadores.",
-    jugadores: [
-      "/img/king.webp", "/img/jude.webp",  "/img/samford.webp",
-    ],
+    jugadores: ["/img/king.webp", "/img/jude.webp", "/img/samford.webp"],
     recompensa: { tipo: "escudo", valor: "Royal" },
     drops: ["/img/king.webp", "/img/jude.webp",  "/img/samford.webp",
        "/img/hatch.webp", "/img/simmons.webp", "/img/martin.webp",
@@ -1416,6 +1415,11 @@ const [logrosVisibles, setLogrosVisibles] = useState(true);
 const [showSecretBar, setShowSecretBar] = useState(false);
 const [secretCode, setSecretCode] = useState("");
 const [keySequence, setKeySequence] = useState([]);
+const [customBg, setCustomBg] = useState(() =>
+  typeof window !== "undefined"
+    ? localStorage.getItem("customBg") || ""
+    : ""
+);
 
 
 useEffect(() => {
@@ -1449,25 +1453,6 @@ useEffect(() => {
   }
 }, []);
 
-// Sincroniza después de cargar logros/perfil
-useEffect(() => {
-  if (!datosCargados) return;
-  // Busca logros que deberían estar completados por tener el escudo
-  const logrosPorEscudo = LOGROS
-    .filter(
-      l =>
-        l.recompensa &&
-        l.recompensa.tipo === "escudo" &&
-        !l.recompensa.soloVisual &&
-        perfil.escudosDisponibles.includes(l.recompensa.valor)
-    )
-    .map(l => l.id);
-  // Añade los que falten y elimina duplicados
-  const nuevos = Array.from(new Set([...logrosCompletados, ...logrosPorEscudo]));
-  if (nuevos.length !== logrosCompletados.length) {
-    setLogrosCompletados(nuevos);
-  }
-}, [perfil.escudosDisponibles, datosCargados]);
 
 useEffect(() => {
   if (typeof window !== "undefined") {
@@ -1587,21 +1572,6 @@ useEffect(() => {
   };
 
 
-function sincronizarLogrosYEscudos() {
-  // Para cada logro con recompensa de escudo...
-  LOGROS.forEach(logro => {
-    if (
-      logro.recompensa &&
-      logro.recompensa.tipo === "escudo" &&
-      !logro.recompensa.soloVisual &&
-      perfil.escudosDisponibles.includes(logro.recompensa.valor) &&
-      !logrosCompletados.includes(logro.id)
-    ) {
-      setLogrosCompletados(prev => [...prev, logro.id]);
-    }
-  });
-}
-
 function exportarProgreso() {
   const data = {
     perfil,
@@ -1657,6 +1627,13 @@ function canjearCodigo() {
         setCartasDesbloqueadas
       );
       alert("¡Código Alius canjeado!");
+      codigosUsados.push(code);
+      localStorage.setItem("codigosUsados", JSON.stringify(codigosUsados));
+    }
+        else if (code === "kalise") {
+      setCustomBg("https://i.postimg.cc/TYVb8sQg/kalise.jpg");
+      localStorage.setItem("customBg", "https://i.postimg.cc/TYVb8sQg/kalise.jpg");
+      alert("¡Fondo especial Kalise activado!");
       codigosUsados.push(code);
       localStorage.setItem("codigosUsados", JSON.stringify(codigosUsados));
     }
@@ -1725,18 +1702,18 @@ function canjearCodigo() {
     boxShadow: bloqueadas.includes(pos) ? "0 0 5px 5px yellow" : "none"
   });
 
-  return (
-    <div style={{
-      backgroundImage: "url(https://i.postimg.cc/qRZj8Mcp/campo.jpg)",
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      minHeight: "100vh",
-      width: "100vw",
-      padding: 0,
-      margin: 0,
-      position: "relative",
-      overflow: "hidden"
-    }}>
+return (
+  <div style={{
+    backgroundImage: `url(${customBg || "https://i.postimg.cc/qRZj8Mcp/campo.jpg"})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    minHeight: "100vh",
+    width: "100vw",
+    padding: 0,
+    margin: 0,
+    position: "relative",
+    overflow: "hidden"
+  }}>
 {showSecretBar && (
   <div style={{
     position: "fixed",
