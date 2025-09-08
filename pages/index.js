@@ -33,8 +33,8 @@ const ESCUDOS = {
   Fauxshore: "/img/fauxshore.webp",
   MaryTimes: "/img/marytimes.webp",
   TormentadeGéminis: "/img/tormentadegeminis.webp",
-  Epsilon: "/img/epsilon.webp",
-  Royalredux: "/img/royalredux.webp",
+  Epsilon: "/img/epsilon1.webp",
+  Royalredux: "/img/royalredux1.webp",
   Prominence: "/img/prominence.webp",
   Diamond: "/img/diamond.webp",
   Caos: "/img/caos.webp",
@@ -59,7 +59,6 @@ const ESCUDOS = {
   Caseta: "/img/caseta.webp",
   Caravana: "/img/caravana.webp",
   Marvin: "/img/neogod.webp"
-
   // Añade más escudos aquí
 };
 
