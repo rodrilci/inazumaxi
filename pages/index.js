@@ -57,6 +57,20 @@ const ESCUDOS = {
   Ogro: "/img/ogro.webp",
   AngelOscuro: "/img/angeloscuro.webp",
   SeleccionMundial: "/img/seleccionmundial.webp",
+  InazumaJapon: "/img/inazumajapon.webp",
+  RaimonB: "/img/raimonb.webp",
+  Empollones: "/img/empollones.webp",
+  ViaLactea: "/img/vialactea.webp",
+  PoderosaFe: "/img/poderosafe.webp",
+  RoyalGo: "/img/royalgo.webp",
+  CalaPirata: "/img/calapirata.webp",
+  MardeLuna: "/img/mardeluna.webp",
+  AlpinoGo: "/img/alpinogo.webp",
+  KirkwoodGo: "/img/kirkwoodgo.webp",
+  Espejismo: "/img/espejismo.webp",
+  Universal: "/img/universal.webp",
+  MonteOlimpo: "/img/monteolimpo.webp",
+  DragonLink: "/img/dragonlink.webp",
   Caseta: "/img/caseta.webp",
   Caravana: "/img/caravana.webp",
   Peabody: "/img/peabody.webp",
@@ -601,6 +615,23 @@ const LOGROS = [
   },
 
                         {
+      id: "inazumajapon",
+    nombre: "¡Campeones del Mundo!",
+    descripcion: "Escoge a integrantes del Inazuma Japón entre tus 11 jugadores.",
+    jugadores: [
+      "/img/mark.webp", "/img/nathan.webp", "/img/hurley.webp", "/img/jack.webp", "/img/tod.webp", 
+      "/img/scotty.webp", "/img/shawn.webp", "/img/jude.webp", "/img/caleb.webp", "/img/thor.webp", 
+      "/img/xavier.webp", "/img/jordan.webp", "/img/samford.webp", "/img/kevin.webp", "/img/axel.webp"
+      , "/img/austin.webp", "/img/darren.webp", "/img/archer.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "InazumaJapon" },
+    drops: ["/img/mark.webp", "/img/nathan.webp", "/img/hurley.webp", "/img/jack.webp", "/img/tod.webp", 
+      "/img/scotty.webp", "/img/shawn.webp", "/img/jude.webp", "/img/caleb.webp", "/img/thor.webp", 
+      "/img/xavier.webp", "/img/jordan.webp", "/img/samford.webp", "/img/kevin.webp", "/img/axel.webp"
+      , "/img/austin.webp", "/img/darren.webp", "/img/archer.webp"]
+  },
+
+                        {
       id: "ogro",
     nombre: "La Amenaza del Ogro",
     descripcion: "Escoge a Lars Luceafar, los gemelos Trungus, Lancer, Callous y Malice entre tus 11 jugadores.",
@@ -612,6 +643,65 @@ const LOGROS = [
     drops: ["/img/luceafar.webp", "/img/bump.webp", "/img/lump.webp", "/img/ischer.webp", "/img/jenkins.webp", 
        "/img/triumvir.webp", "/img/stark.webp", "/img/gunter.webp", "/img/lancer.webp", "/img/callous.webp", "/img/malice.webp", ]
   },
+
+                          {
+      id: "Raimonreservas",
+    nombre: "La unidad B del Raimon",
+    descripcion: "Escoge a Hugh Baudet y Shun Aoyama entre tus 11 jugadores.",
+    jugadores: [
+      "/img/hugh.webp", "/img/shun.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "RaimonB" },
+    drops: [ "/img/hugh.webp", "/img/shun.webp" ]
+  },
+
+                            {
+      id: "Empollones",
+    nombre: "Los empollones",
+    descripcion: "Escoge a Dave Inchy entre tus 11 jugadores.",
+    jugadores: [
+      "/img/inchy.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "Empollones" },
+    drops: [ "/img/inchy.webp" ]
+  },
+                            {
+      id: "Vialactea",
+    nombre: "El equipo del capitán Kyrk",
+    descripcion: "Escoge a Jimmy Kirk y Riker Zaphod entre tus 11 jugadores.",
+    jugadores: [
+      "/img/kyrk.webp", "/img/zaphod.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "ViaLactea" },
+    drops: [ "/img/kyrk.webp", "/img/zaphod.webp" ]
+  },
+                            {
+      id: "Poderosafe",
+    nombre: "Hasta el infinito y más allá",
+    descripcion: "Escoge a Infinity Beyond, Aum Nirvana y Maxim Millennium entre tus 11 jugadores.",
+    jugadores: ["/img/infinity.webp", "/img/nirvana.webp", "/img/maxim.webp"],
+    recompensa: { tipo: "escudo", valor: "PoderosaFe" },
+    drops: [ "/img/infinity.webp", "/img/nirvana.webp", "/img/maxim.webp" ]
+  },
+                             {
+      id: "Royalgo",
+    nombre: "La nueva Royal Academy",
+    descripcion: "Escoge a Preston Princeton, Dracon Yale y Rex Remington entre tus 11 jugadores.",
+    jugadores: ["/img/preston.webp", "/img/yale.webp", "/img/remington.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "RoyalGo" },
+    drops: [ "/img/preston.webp", "/img/yale.webp", "/img/remington.webp" ]
+  },
+                             {
+      id: "Calapirata",
+    nombre: "La nueva Royal Academy",
+    descripcion: "Escoge a Preston Princeton, Dracon Yale y Rex Remington entre tus 11 jugadores.",
+    jugadores: ["/img/preston.webp", "/img/yale.webp", "/img/remington.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "CalaPirata" },
+    drops: [ "/img/preston.webp", "/img/yale.webp", "/img/remington.webp" ]
+  },
+
 
 {
   id: "peabody",
@@ -811,7 +901,8 @@ function comprobarLogros(nuevaSeleccion, logrosCompletados, setLogrosCompletados
 
 // ...existing code...
 
-function PerfilModal({ perfil, setPerfil, onClose, onAlineacion }) {
+function PerfilModal({ perfil, setPerfil, onClose, onAlineacion, exportarProgreso, importarProgreso }) {
+  // ...resto igual...
   // Divide los escudos en filas de 20
   const filasEscudos = [];
   for (let i = 0; i < perfil.escudosDisponibles.length; i += 20) {
@@ -893,6 +984,35 @@ function PerfilModal({ perfil, setPerfil, onClose, onAlineacion }) {
         >
           Guardar
         </button>
+<button
+  onClick={exportarProgreso}
+  style={{
+    marginTop: "10px",
+    padding: "8px 18px",
+    borderRadius: "6px",
+    cursor: "pointer",
+    background: "#ffb300",
+    color: "#222",
+    fontWeight: "bold",
+    marginRight: "8px"
+  }}
+>
+  Exportar progreso
+</button>
+<button
+  onClick={importarProgreso}
+  style={{
+    marginTop: "10px",
+    padding: "8px 18px",
+    borderRadius: "6px",
+    cursor: "pointer",
+    background: "#00bfff",
+    color: "#fff",
+    fontWeight: "bold"
+  }}
+>
+  Importar progreso
+</button>
         <button
           onClick={onAlineacion}
           style={{
@@ -912,6 +1032,7 @@ function PerfilModal({ perfil, setPerfil, onClose, onAlineacion }) {
   );
 }
 
+// ...existing code..
 
 function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
   const [alineacion, setAlineacion] = useState(() => {
@@ -1421,10 +1542,51 @@ useEffect(() => {
     setBloqueadas([]);
   };
 
-    function canjearCodigo() {
-    try {
+// ...existing code...
+function exportarProgreso() {
+  const data = {
+    perfil,
+    logrosCompletados,
+    cartasDesbloqueadas,
+    contadorCartas,
+  };
+  const code = btoa(unescape(encodeURIComponent(JSON.stringify(data))));
+  prompt("Copia este código y guárdalo para importar tu progreso en otro dispositivo:", code);
+}
 
-          if (secretCode.trim().toLowerCase() === "alius") {
+function importarProgreso() {
+  const code = prompt("Pega aquí tu código de progreso:");
+  if (!code) return;
+  try {
+    const data = JSON.parse(decodeURIComponent(escape(atob(code))));
+    if (data.perfil) setPerfil(data.perfil);
+    if (data.logrosCompletados) setLogrosCompletados(data.logrosCompletados);
+    if (data.cartasDesbloqueadas) setCartasDesbloqueadas(data.cartasDesbloqueadas);
+    if (data.contadorCartas) setContadorCartas(data.contadorCartas);
+    alert("¡Progreso importado correctamente!");
+  } catch (e) {
+    alert("Código no válido.");
+  }
+}
+
+function canjearCodigo() {
+  try {
+    // Recupera los códigos ya canjeados del localStorage
+    const codigosUsados = JSON.parse(localStorage.getItem("codigosUsados") || "[]");
+
+    // Normaliza el código introducido
+    const code = secretCode.trim().toLowerCase();
+
+    // Si ya se ha usado, no dejar canjear
+    if (codigosUsados.includes(code)) {
+      alert("¡Este código ya ha sido canjeado!");
+      setSecretCode("");
+      setShowSecretBar(false);
+      return;
+    }
+
+    // Código especial Alius
+    if (code === "alius") {
       completarLogroManual(
         "alius11",
         logrosCompletados,
@@ -1434,28 +1596,33 @@ useEffect(() => {
         setCartasDesbloqueadas
       );
       alert("¡Código Alius canjeado!");
-    } 
-      // Solo permite ciertas funciones seguras, por ejemplo: "logro:occult"
-      else if (secretCode.startsWith("logro:")) {
-        const logroId = secretCode.replace("logro:", "");
-        completarLogroManual(
-          logroId,
-          logrosCompletados,
-          setLogrosCompletados,
-          setPerfil,
-          cartasDesbloqueadas,
-          setCartasDesbloqueadas
-        );
-        alert("¡Logro canjeado!");
-      } else {
-        alert("Código no válido.");
-      }
-    } catch (e) {
-      alert("Error al canjear el código.");
+      codigosUsados.push(code);
+      localStorage.setItem("codigosUsados", JSON.stringify(codigosUsados));
     }
-    setSecretCode("");
-    setShowSecretBar(false);
+    // Códigos tipo logro:xxxx
+    else if (code.startsWith("logro:")) {
+      const logroId = code.replace("logro:", "");
+      completarLogroManual(
+        logroId,
+        logrosCompletados,
+        setLogrosCompletados,
+        setPerfil,
+        cartasDesbloqueadas,
+        setCartasDesbloqueadas
+      );
+      alert("¡Logro canjeado!");
+      codigosUsados.push(code);
+      localStorage.setItem("codigosUsados", JSON.stringify(codigosUsados));
+    } else {
+      alert("Código no válido.");
+    }
+  } catch (e) {
+    alert("Error al canjear el código.");
   }
+  setSecretCode("");
+  setShowSecretBar(false);
+}
+// ...existing code...
 
 
   useEffect(() => {
@@ -1623,14 +1790,16 @@ useEffect(() => {
 </div>
 
 
-    {showPerfil && !showAlineacion && (
-      <PerfilModal
-        perfil={perfil}
-        setPerfil={setPerfil}
-        onClose={() => setShowPerfil(false)}
-        onAlineacion={() => setShowAlineacion(true)}
-      />
-    )}
+{showPerfil && !showAlineacion && (
+  <PerfilModal
+    perfil={perfil}
+    setPerfil={setPerfil}
+    onClose={() => setShowPerfil(false)}
+    onAlineacion={() => setShowAlineacion(true)}
+    exportarProgreso={exportarProgreso}
+    importarProgreso={importarProgreso}
+  />
+)}
     {showAlineacion && (
       <AlineacionModal
       perfil={perfil}
