@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"></link>
 const posiciones = {
-  portero: ["/img/mark.webp", "/img/king.webp", "/img/darren.webp", "/img/mask.webp", "/img/feldt.webp", "/img/idol.webp", "/img/poseidon.webp", "/img/hillman.webp", "/img/ropes.webp", "/img/daisy.webp", "/img/galileo.webp", "/img/dvalin.webp", "/img/zell.webp", "/img/grent.webp",  "/img/nero.webp", "/img/blasi.webp",  "/img/dasilva.webp",  "/img/fox.webp",  "/img/helio.webp", "/img/iñigo.webp",  "/img/luceafar.webp",  "/img/astaroth.webp"],
-  defensa1: ["/img/nathan.webp","/img/tod.webp", "/img/scotty.webp", "/img/aitor.webp", "/img/archer.webp", "/img/martin.webp", "/img/master.webp", "/img/monkey.webp", "/img/malcolm.webp", "/img/apollo.webp", "/img/hephestus.webp", "/img/sweet.webp", "/img/smith.webp", "/img/shawn.webp", "/img/hurley.webp", "/img/bomber.webp",  "/img/icer.webp",  "/img/arkew.webp",  "/img/gocker.webp",  "/img/zohen.webp",  "/img/hauser.webp",  "/img/lagarto.webp",  "/img/vitesse.webp",  "/img/ferrum.webp",  "/img/mangrove.webp", "/img/ischer.webp",  "/img/jenkins.webp",  "/img/lephiel.webp",  "/img/hebimos.webp"],
+  portero: ["/img/mark.webp", "/img/king.webp", "/img/darren.webp", "/img/mask.webp", "/img/feldt.webp", "/img/idol.webp", "/img/poseidon.webp", "/img/hillman.webp", "/img/ropes.webp", "/img/daisy.webp", "/img/galileo.webp", "/img/dvalin.webp", "/img/zell.webp", "/img/grent.webp",  "/img/nero.webp", "/img/blasi.webp",  "/img/dasilva.webp",  "/img/fox.webp",  "/img/helio.webp", "/img/iñigo.webp",  "/img/luceafar.webp",  "/img/astaroth.webp",  "/img/jp.webp"],
+  defensa1: ["/img/nathan.webp","/img/tod.webp", "/img/scotty.webp", "/img/aitor.webp", "/img/archer.webp", "/img/martin.webp", "/img/master.webp", "/img/monkey.webp", "/img/malcolm.webp", "/img/apollo.webp", "/img/hephestus.webp", "/img/sweet.webp", "/img/smith.webp", "/img/shawn.webp", "/img/hurley.webp", "/img/bomber.webp",  "/img/icer.webp",  "/img/arkew.webp",  "/img/gocker.webp",  "/img/zohen.webp",  "/img/hauser.webp",  "/img/lagarto.webp",  "/img/vitesse.webp",  "/img/ferrum.webp",  "/img/mangrove.webp", "/img/ischer.webp",  "/img/jenkins.webp",  "/img/lephiel.webp",  "/img/hebimos.webp",  "/img/jp.webp"],
   defensa2: ["/img/jack.webp", "/img/sor.webp", "/img/thiago.webp", "/img/bargie.webp", "/img/gabi.webp", "/img/aitor.webp", "/img/bobby.webp", "/img/jim.webp", "/img/sam.webp", "/img/drent.webp", "/img/lion.webp", "/img/simmons.webp", "/img/hillvalley.webp", "/img/sherman.webp", "/img/ares.webp", "/img/dionysus.webp", "/img/island.webp", "/img/downtown.webp", "/img/shawn.webp", "/img/ganymede.webp", "/img/baller.webp", "/img/clear.webp",  "/img/gele.webp",  "/img/kiburn.webp",  "/img/thor.webp", "/img/kalil.webp",  "/img/minion.webp",  "/img/mountain.webp",  "/img/gaines.webp", "/img/garcia.webp",  "/img/bump.webp",  "/img/lump.webp",  "/img/rubu.webp", "/img/nenel.webp"],
   defensa3: ["/img/jack.webp", "/img/sor.webp", "/img/thiago.webp", "/img/bargie.webp", "/img/gabi.webp", "/img/aitor.webp", "/img/bobby.webp", "/img/jim.webp", "/img/sam.webp", "/img/drent.webp", "/img/lion.webp", "/img/simmons.webp", "/img/hillvalley.webp", "/img/sherman.webp", "/img/ares.webp", "/img/dionysus.webp", "/img/island.webp", "/img/downtown.webp", "/img/shawn.webp", "/img/ganymede.webp", "/img/baller.webp", "/img/clear.webp",  "/img/gele.webp",  "/img/kiburn.webp",  "/img/thor.webp", "/img/kalil.webp",  "/img/minion.webp",  "/img/mountain.webp",  "/img/gaines.webp", "/img/garcia.webp",  "/img/bump.webp",  "/img/lump.webp",  "/img/rubu.webp", "/img/nenel.webp"],
-  defensa4: ["/img/nathan.webp", "/img/tod.webp", "/img/scotty.webp", "/img/aitor.webp", "/img/archer.webp", "/img/martin.webp", "/img/master.webp", "/img/monkey.webp", "/img/malcolm.webp", "/img/apollo.webp", "/img/hephestus.webp", "/img/sweet.webp", "/img/smith.webp", "/img/shawn.webp", "/img/hurley.webp", "/img/bomber.webp",  "/img/icer.webp",  "/img/arkew.webp",  "/img/gocker.webp",  "/img/zohen.webp",  "/img/hauser.webp",  "/img/lagarto.webp",  "/img/vitesse.webp",  "/img/ferrum.webp",  "/img/mangrove.webp", "/img/ischer.webp",  "/img/jenkins.webp",  "/img/lephiel.webp",  "/img/hebimos.webp"],
+  defensa4: ["/img/nathan.webp", "/img/tod.webp", "/img/scotty.webp", "/img/aitor.webp", "/img/archer.webp", "/img/martin.webp", "/img/master.webp", "/img/monkey.webp", "/img/malcolm.webp", "/img/apollo.webp", "/img/hephestus.webp", "/img/sweet.webp", "/img/smith.webp", "/img/shawn.webp", "/img/hurley.webp", "/img/bomber.webp",  "/img/icer.webp",  "/img/arkew.webp",  "/img/gocker.webp",  "/img/zohen.webp",  "/img/hauser.webp",  "/img/lagarto.webp",  "/img/vitesse.webp",  "/img/ferrum.webp",  "/img/mangrove.webp", "/img/ischer.webp",  "/img/jenkins.webp",  "/img/lephiel.webp",  "/img/hebimos.webp",  "/img/jp.webp"],
   medio1: ["/img/nathan.webp", "/img/arion.webp", "/img/jude.webp", "/img/tori.webp", "/img/caleb.webp", "/img/riccardo.webp", "/img/timmy.webp", "/img/max.webp", "/img/steve.webp", "/img/erik.webp", "/img/bloom.webp", "/img/chicken.webp", "/img/eagle.webp", "/img/master.webp", "/img/monkey.webp", "/img/swing.webp", "/img/artemis.webp", "/img/hermes.webp", "/img/hera.webp", "/img/athena.webp", "/img/byron.webp", "/img/agentem.webp", "/img/soundtown.webp", "/img/pandora.webp", "/img/jordan.webp", "/img/dvalin.webp", "/img/sparrow.webp", "/img/bomber.webp",  "/img/bellatrix.webp",  "/img/heat.webp",  "/img/lean.webp",  "/img/droll.webp",  "/img/rhine.webp",  "/img/kiwill.webp",  "/img/ark.webp",  "/img/dolphin.webp", "/img/choi.webp", "/img/acuto.webp", "/img/krueger.webp", "/img/gabrini.webp", "/img/nakata.webp", "/img/diavolo.webp", "/img/ryan.webp", "/img/haddad.webp", "/img/hampton.webp", "/img/maximino.webp", "/img/vitrum.webp", "/img/leung.webp", "/img/stark.webp",  "/img/triumvir.webp",  "/img/gunter.webp",  "/img/lephiel.webp",  "/img/wenel.webp"],
   medio2: ["/img/arion.webp", "/img/jude.webp", "/img/tori.webp", "/img/caleb.webp", "/img/riccardo.webp", "/img/timmy.webp", "/img/steve.webp", "/img/sam.webp", "/img/erik.webp", "/img/chicken.webp", "/img/eagle.webp", "/img/waldon.webp", "/img/hermes.webp", "/img/hera.webp", "/img/byron.webp", "/img/agentem.webp", "/img/soundtown.webp", "/img/jordan.webp", "/img/pandora.webp", "/img/dvalin.webp", "/img/metron.webp", "/img/sparrow.webp", "/img/bomber.webp",  "/img/heat.webp",  "/img/lean.webp",  "/img/neppten.webp",  "/img/kormer.webp",  "/img/bellatrix.webp",  "/img/thor.webp",  "/img/dolphin.webp", "/img/choi.webp", "/img/acuto.webp", "/img/krueger.webp", "/img/gabrini.webp", "/img/nakata.webp", "/img/diavolo.webp", "/img/ryan.webp", "/img/haddad.webp", "/img/hampton.webp", "/img/maximino.webp", "/img/vitrum.webp", "/img/leung.webp", "/img/stark.webp",  "/img/triumvir.webp",  "/img/gunter.webp",  "/img/lephiel.webp",  "/img/wenel.webp",  "/img/zanos.webp",  "/img/gaiel.webp"],
   medio3: ["/img/nathan.webp", "/img/arion.webp", "/img/jude.webp", "/img/tori.webp", "/img/caleb.webp", "/img/riccardo.webp", "/img/timmy.webp", "/img/max.webp", "/img/steve.webp", "/img/erik.webp", "/img/bloom.webp", "/img/chicken.webp", "/img/eagle.webp", "/img/master.webp", "/img/monkey.webp", "/img/swing.webp", "/img/artemis.webp", "/img/hermes.webp", "/img/hera.webp", "/img/athena.webp", "/img/byron.webp", "/img/agentem.webp", "/img/soundtown.webp", "/img/pandora.webp", "/img/jordan.webp", "/img/dvalin.webp", "/img/sparrow.webp", "/img/bomber.webp",  "/img/bellatrix.webp", "/img/heat.webp",  "/img/lean.webp",  "/img/droll.webp",  "/img/rhine.webp",  "/img/kiwill.webp",  "/img/ark.webp",  "/img/dolphin.webp", "/img/choi.webp", "/img/acuto.webp", "/img/krueger.webp", "/img/gabrini.webp", "/img/nakata.webp", "/img/diavolo.webp", "/img/ryan.webp", "/img/haddad.webp", "/img/hampton.webp", "/img/maximino.webp", "/img/vitrum.webp", "/img/leung.webp", "/img/stark.webp",  "/img/triumvir.webp",  "/img/gunter.webp",  "/img/lephiel.webp",  "/img/wenel.webp"],
@@ -55,10 +55,11 @@ const ESCUDOS = {
   ZoolanTeam: "/img/zoolanteam.webp",
   LittleGiants: "/img/littlegiants.webp",
   Ogro: "/img/ogro.webp",
-  ÁngelOscuro: "/img/angeloscuro.webp",
+  AngelOscuro: "/img/angeloscuro.webp",
   SeleccionMundial: "/img/seleccionmundial.webp",
   Caseta: "/img/caseta.webp",
   Caravana: "/img/caravana.webp",
+  Peabody: "/img/peabody.webp",
   Marvin: "/img/neogod.webp"
   // Añade más escudos aquí
 };
@@ -548,6 +549,18 @@ const LOGROS = [
     recompensa: { tipo: "escudo", valor: "ZoolanTeam" },
     drops: ["/img/minion.webp", "/img/fox.webp", "/img/coyote.webp"]
   },
+
+                            {
+      id: "angeloscuro",
+    nombre: "Ángeles Oscuros  ",
+    descripcion: "Escoge a Astaroth, Zanos, Gaiel, Destra y Sael entre tus 11 jugadores.",
+    jugadores: [
+      "/img/astaroth.webp", "/img/zanos.webp", "/img/gaiel.webp", "/img/sael.webp", "/img/destra.webp", 
+    ],
+    recompensa: { tipo: "escudo", valor: "AngelOscuro" },
+    drops: ["/img/astaroth.webp", "/img/rubu.webp", "/img/hebimos.webp", "/img/nenel.webp", "/img/lephiel.webp", 
+       "/img/wenel.webp", "/img/malphas.webp", "/img/zanos.webp", "/img/gaiel.webp", "/img/sael.webp", "/img/destra.webp", ]
+  },
   
   {
    id: "littlegiants11",
@@ -587,6 +600,29 @@ const LOGROS = [
       , "/img/choi.webp"]
   },
 
+                        {
+      id: "ogro",
+    nombre: "La Amenaza del Ogro",
+    descripcion: "Escoge a Lars Luceafar, los gemelos Trungus, Lancer, Callous y Malice entre tus 11 jugadores.",
+    jugadores: [
+      "/img/luceafar.webp", "/img/bump.webp", "/img/lump.webp", "/img/lancer.webp", "/img/callous.webp", 
+      "/img/malice.webp", 
+    ],
+    recompensa: { tipo: "escudo", valor: "Ogro" },
+    drops: ["/img/luceafar.webp", "/img/bump.webp", "/img/lump.webp", "/img/ischer.webp", "/img/jenkins.webp", 
+       "/img/triumvir.webp", "/img/stark.webp", "/img/gunter.webp", "/img/lancer.webp", "/img/callous.webp", "/img/malice.webp", ]
+  },
+
+{
+  id: "peabody",
+  nombre: "Persigue a Peabody",
+  descripcion: "Escoge a Mark Evans y JP Lapin en tu equipo.",
+  jugadores: [
+    "/img/mark.webp", "/img/jp.webp"
+  ],
+  recompensa: { tipo: "escudo", valor: "Peabody", soloVisual: true },
+  drops: ["/img/peabody.webp" ],
+},
 
   {
    id: "marvin",
@@ -671,17 +707,24 @@ function comprobarLogrosAutomaticos(logrosCompletados, setLogrosCompletados, set
         if (prev.includes(logro.id)) return prev;
         return [...prev, logro.id];
       });
-      if (logro.recompensa.tipo === "escudo") {
-        setPerfil(p => ({
-          ...p,
-          escudosDisponibles: [...p.escudosDisponibles, logro.recompensa.valor]
-        }));
-        alert(`¡Logro conseguido: ${logro.nombre}! Escudo desbloqueado: ${logro.recompensa.valor}`);
-      }
+// ...existing code...
+if (
+  logro.recompensa.tipo === "escudo" &&
+  !logro.recompensa.soloVisual // <-- solo añade si NO es soloVisual
+) {
+  setPerfil(p => ({
+    ...p,
+    escudosDisponibles: [...p.escudosDisponibles, logro.recompensa.valor]
+  }));
+  alert(`¡Logro completado: ${logro.nombre}! Has conseguido el escudo de ${logro.recompensa.valor}`);
+}
+// ...existing code...
     }
   });
 }
 
+
+// ...existing code...
 
 function completarLogroManual(logroId, logrosCompletados, setLogrosCompletados, setPerfil, cartasDesbloqueadas, setCartasDesbloqueadas) {
   const logro = LOGROS.find(l => l.id === logroId);
@@ -689,7 +732,10 @@ function completarLogroManual(logroId, logrosCompletados, setLogrosCompletados, 
 
   if (!logrosCompletados.includes(logro.id)) {
     setLogrosCompletados([...logrosCompletados, logro.id]);
-    if (logro.recompensa.tipo === "escudo") {
+    if (
+      logro.recompensa.tipo === "escudo" &&
+      !logro.recompensa.soloVisual // <-- solo añade si NO es soloVisual
+    ) {
       setPerfil(p => ({
         ...p,
         escudosDisponibles: [...p.escudosDisponibles, logro.recompensa.valor]
@@ -711,6 +757,7 @@ function completarLogroManual(logroId, logrosCompletados, setLogrosCompletados, 
   }
 }
 
+// ...existing code...
 
 function comprobarLogros(nuevaSeleccion, logrosCompletados, setLogrosCompletados, setPerfil, bloqueadas, cartasDesbloqueadas, setCartasDesbloqueadas) {
   LOGROS.forEach(logro => {
@@ -733,7 +780,10 @@ function comprobarLogros(nuevaSeleccion, logrosCompletados, setLogrosCompletados
       // Si no se ha completado nunca, añade escudo y drop
       if (!logrosCompletados.includes(logro.id)) {
         setLogrosCompletados([...logrosCompletados, logro.id]);
-        if (logro.recompensa.tipo === "escudo") {
+        if (
+          logro.recompensa.tipo === "escudo" &&
+          !logro.recompensa.soloVisual // <-- solo añade si NO es soloVisual
+        ) {
           setPerfil(p => ({
             ...p,
             escudosDisponibles: [...p.escudosDisponibles, logro.recompensa.valor]
@@ -759,7 +809,15 @@ function comprobarLogros(nuevaSeleccion, logrosCompletados, setLogrosCompletados
   });
 }
 
+// ...existing code...
+
 function PerfilModal({ perfil, setPerfil, onClose, onAlineacion }) {
+  // Divide los escudos en filas de 20
+  const filasEscudos = [];
+  for (let i = 0; i < perfil.escudosDisponibles.length; i += 20) {
+    filasEscudos.push(perfil.escudosDisponibles.slice(i, i + 20));
+  }
+
   return (
     <div style={{
       position: "fixed",
@@ -800,20 +858,24 @@ function PerfilModal({ perfil, setPerfil, onClose, onAlineacion }) {
         </div>
         <div style={{ marginBottom: "20px" }}>
           <strong>Escudos desbloqueados:</strong>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginTop: "8px" }}>
-            {perfil.escudosDisponibles.map(e => (
-              <img
-                key={e}
-                src={ESCUDOS[e]}
-                alt={e}
-                style={{
-                  width: "36px",
-                  border: perfil.escudo === e ? "2px solid #00bfff" : "2px solid transparent",
-                  borderRadius: "6px",
-                  cursor: "pointer"
-                }}
-                onClick={() => setPerfil(p => ({ ...p, escudo: e }))}
-              />
+          <div style={{ display: "flex", flexDirection: "column", gap: "6px", marginTop: "8px" }}>
+            {filasEscudos.map((fila, idx) => (
+              <div key={idx} style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+                {fila.map(e => (
+                  <img
+                    key={e}
+                    src={ESCUDOS[e]}
+                    alt={e}
+                    style={{
+                      width: "36px",
+                      border: perfil.escudo === e ? "2px solid #00bfff" : "2px solid transparent",
+                      borderRadius: "6px",
+                      cursor: "pointer"
+                    }}
+                    onClick={() => setPerfil(p => ({ ...p, escudo: e }))}
+                  />
+                ))}
+              </div>
             ))}
           </div>
         </div>
@@ -849,11 +911,7 @@ function PerfilModal({ perfil, setPerfil, onClose, onAlineacion }) {
     </div>
   );
 }
-// ...existing code...
 
-// ...existing code...
-
-// ...existing code...
 
 function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
   const [alineacion, setAlineacion] = useState(() => {
