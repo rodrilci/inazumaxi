@@ -1295,6 +1295,30 @@ const [showAlineacion, setShowAlineacion] = useState(false);
 const [datosCargados, setDatosCargados] = useState(false);
 const [showTutorial, setShowTutorial] = useState(false);
 const [logrosVisibles, setLogrosVisibles] = useState(true);
+const [showSecretBar, setShowSecretBar] = useState(false);
+const [secretCode, setSecretCode] = useState("");
+const [keySequence, setKeySequence] = useState([]);
+
+
+useEffect(() => {
+  const SECRET = "akihirocabron";
+  const handleKeyDown = (e) => {
+    const key = e.key.toLowerCase();
+    // Solo letras
+    if (!/^[a-z]$/.test(key)) return;
+    setKeySequence(seq => {
+      const newSeq = [...seq, key].slice(-SECRET.length); // Solo guarda las últimas N teclas
+      if (newSeq.join("") === SECRET) {
+        setShowSecretBar(true);
+        return [];
+      }
+      return newSeq;
+    });
+  };
+  window.addEventListener("keydown", handleKeyDown);
+  return () => window.removeEventListener("keydown", handleKeyDown);
+}, []);
+
 
 useEffect(() => {
   if (typeof window !== "undefined") {
@@ -1397,6 +1421,42 @@ useEffect(() => {
     setBloqueadas([]);
   };
 
+    function canjearCodigo() {
+    try {
+
+          if (secretCode.trim().toLowerCase() === "alius") {
+      completarLogroManual(
+        "alius11",
+        logrosCompletados,
+        setLogrosCompletados,
+        setPerfil,
+        cartasDesbloqueadas,
+        setCartasDesbloqueadas
+      );
+      alert("¡Código Alius canjeado!");
+    } 
+      // Solo permite ciertas funciones seguras, por ejemplo: "logro:occult"
+      else if (secretCode.startsWith("logro:")) {
+        const logroId = secretCode.replace("logro:", "");
+        completarLogroManual(
+          logroId,
+          logrosCompletados,
+          setLogrosCompletados,
+          setPerfil,
+          cartasDesbloqueadas,
+          setCartasDesbloqueadas
+        );
+        alert("¡Logro canjeado!");
+      } else {
+        alert("Código no válido.");
+      }
+    } catch (e) {
+      alert("Error al canjear el código.");
+    }
+    setSecretCode("");
+    setShowSecretBar(false);
+  }
+
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -1450,6 +1510,57 @@ useEffect(() => {
       position: "relative",
       overflow: "hidden"
     }}>
+{showSecretBar && (
+  <div style={{
+    position: "fixed",
+    top: 0,
+    left: 0,
+    width: "100vw",
+    background: "#222",
+    color: "#fff",
+    zIndex: 3000,
+    padding: "16px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
+  }}>
+    <input
+      autoFocus
+      type="text"
+      value={secretCode}
+      onChange={e => setSecretCode(e.target.value)}
+      onKeyDown={e => {
+        if (e.key === "Enter") canjearCodigo();
+        if (e.key === "Escape") setShowSecretBar(false);
+      }}
+      placeholder="Introduce tu código regalo y pulsa Enter"
+      style={{
+        fontSize: "1.2em",
+        padding: "8px 16px",
+        borderRadius: "8px",
+        border: "2px solid #00bfff",
+        width: "350px",
+        marginRight: "12px",
+        color: "#000" // <-- Añade esta línea
+      }}
+    />
+    <button
+      onClick={canjearCodigo}
+      style={{
+        padding: "8px 18px",
+        borderRadius: "8px",
+        background: "#00bfff",
+        color: "#fff",
+        fontWeight: "bold",
+        fontSize: "1.1em",
+        cursor: "pointer"
+      }}
+    >
+      Canjear
+    </button>
+  </div>
+)}
+
       {/* Barra superior */}
       {showTutorial && <TutorialModal onClose={cerrarTutorial} />}
       <div style={{
