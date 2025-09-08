@@ -369,7 +369,7 @@ const LOGROS = [
      "/img/rhine.webp",  "/img/kiwill.webp",  "/img/ark.webp", "/img/pandora.webp", 
      "/img/metron.webp",  "/img/neppten.webp",  "/img/kormer.webp",  "/img/bellatrix.webp",
      "/img/xavier.webp", "/img/diam.webp", "/img/rihm.webp",  "/img/torch.webp",  
-     "/img/gazelle.webp",  "/img/wittz.webp"
+     "/img/gazelle.webp",  "/img/wittz.webp", "/img/mercury.webp"
    ],
    recompensa: { tipo: "escudo", valor: "Alius" },
     drops: [     "/img/galileo.webp", "/img/dvalin.webp", "/img/zell.webp", "/img/grent.webp",
@@ -380,7 +380,7 @@ const LOGROS = [
      "/img/rhine.webp",  "/img/kiwill.webp",  "/img/ark.webp", "/img/pandora.webp", 
      "/img/metron.webp",  "/img/neppten.webp",  "/img/kormer.webp",  "/img/bellatrix.webp",
      "/img/xavier.webp", "/img/diam.webp", "/img/rihm.webp",  "/img/torch.webp",  
-     "/img/gazelle.webp",  "/img/wittz.webp"]
+     "/img/gazelle.webp",  "/img/wittz.webp", "/img/mercury.webp"]
 },
   {
       id: "inazumaeleven2",
@@ -397,7 +397,7 @@ const LOGROS = [
       "/img/rhine.webp",  "/img/kiwill.webp",  "/img/ark.webp", "/img/pandora.webp",  "/img/bellatrix.webp",
       "/img/sue.webp", "/img/diam.webp", "/img/rihm.webp",  "/img/neppten.webp",  "/img/torch.webp",  
       "/img/gazelle.webp",  "/img/wittz.webp",  "/img/shadow.webp",  "/img/xavier.webp", "/img/bargie.webp"
-
+      , "/img/mercury.webp"
     ],
     recompensa: { tipo: "escudo", valor: "Génesis" },
     drops: ["/img/ark.webp", "/img/xavier.webp", "/img/bellatrix.webp", "/img/hauser.webp", "/img/zohen.webp",
@@ -995,6 +995,8 @@ function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
         <div style={{ position: "relative", zIndex: 1 }}>
           <h2 style={{
             marginBottom: "20px",
+            marginTop: "-22px",
+            marginLeft: "13px",
             fontFamily: "'Bebas Neue', Arial, sans-serif",
             fontWeight: 700,
             fontSize: "2rem",
@@ -1002,16 +1004,6 @@ function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
             letterSpacing: "1px"
           }}>
             <b>ALINEACIÓN</b>
-            <span style={{
-              fontFamily: "'Bebas Neue', Arial, sans-serif",
-              textShadow: "0 0 6px #ffffffff",
-              fontWeight: 400,
-              fontSize: "1rem",
-              color: "#000000ff",
-              marginLeft: 20
-            }}>
-              (clic derecho para quitar una carta)
-            </span>
           </h2>
           {/* Portero */}
           <div style={{ display: "flex", justifyContent: "center", marginBottom: "25px" }}>
