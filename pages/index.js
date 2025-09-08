@@ -1312,8 +1312,6 @@ function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
     </div>
   );
 }
-// ...existing code...
-
 
 function Logros({ logrosCompletados, visible, onToggle }) {
   if (!visible) {
@@ -1403,7 +1401,6 @@ const getRandomCard = (available, used) => {
   return choices[Math.floor(Math.random() * choices.length)];
 };
 
-
 export default function Home() {
 const [seleccionadas, setSeleccionadas] = useState({});
 const [bloqueadas, setBloqueadas] = useState([]);
@@ -1438,22 +1435,41 @@ useEffect(() => {
   };
   window.addEventListener("keydown", handleKeyDown);
   return () => window.removeEventListener("keydown", handleKeyDown);
-}, []);
+});
 
-
+// Después de cargar perfil en useEffect:
 useEffect(() => {
-  
   if (typeof window !== "undefined") {
     const savedPerfil = localStorage.getItem("perfil");
-  
     if (savedPerfil) {
       const perfilCargado = JSON.parse(savedPerfil);
-      // Elimina escudos duplicados
       perfilCargado.escudosDisponibles = [...new Set(perfilCargado.escudosDisponibles)];
       setPerfil(perfilCargado);
     }
   }
-  
+}, []);
+
+// Sincroniza después de cargar logros/perfil
+useEffect(() => {
+  if (!datosCargados) return;
+  // Busca logros que deberían estar completados por tener el escudo
+  const logrosPorEscudo = LOGROS
+    .filter(
+      l =>
+        l.recompensa &&
+        l.recompensa.tipo === "escudo" &&
+        !l.recompensa.soloVisual &&
+        perfil.escudosDisponibles.includes(l.recompensa.valor)
+    )
+    .map(l => l.id);
+  // Añade los que falten y elimina duplicados
+  const nuevos = Array.from(new Set([...logrosCompletados, ...logrosPorEscudo]));
+  if (nuevos.length !== logrosCompletados.length) {
+    setLogrosCompletados(nuevos);
+  }
+}, [perfil.escudosDisponibles, datosCargados]);
+
+useEffect(() => {
   if (typeof window !== "undefined") {
     const savedSeleccionadas = localStorage.getItem("seleccionadas");
     if (savedSeleccionadas) setSeleccionadas(JSON.parse(savedSeleccionadas));
@@ -1570,7 +1586,22 @@ useEffect(() => {
     setBloqueadas([]);
   };
 
-// ...existing code...
+
+function sincronizarLogrosYEscudos() {
+  // Para cada logro con recompensa de escudo...
+  LOGROS.forEach(logro => {
+    if (
+      logro.recompensa &&
+      logro.recompensa.tipo === "escudo" &&
+      !logro.recompensa.soloVisual &&
+      perfil.escudosDisponibles.includes(logro.recompensa.valor) &&
+      !logrosCompletados.includes(logro.id)
+    ) {
+      setLogrosCompletados(prev => [...prev, logro.id]);
+    }
+  });
+}
+
 function exportarProgreso() {
   const data = {
     perfil,
@@ -1581,7 +1612,6 @@ function exportarProgreso() {
   const code = btoa(unescape(encodeURIComponent(JSON.stringify(data))));
   prompt("Copia este código y guárdalo para importar tu progreso en otro dispositivo:", code);
 }
-
 function importarProgreso() {
   const code = prompt("Pega aquí tu código de progreso:");
   if (!code) return;
@@ -1591,6 +1621,9 @@ function importarProgreso() {
     if (data.logrosCompletados) setLogrosCompletados(data.logrosCompletados);
     if (data.cartasDesbloqueadas) setCartasDesbloqueadas(data.cartasDesbloqueadas);
     if (data.contadorCartas) setContadorCartas(data.contadorCartas);
+    setTimeout(() => {
+      sincronizarLogrosYEscudos();
+    }, 100);
     alert("¡Progreso importado correctamente!");
   } catch (e) {
     alert("Código no válido.");
@@ -1650,7 +1683,6 @@ function canjearCodigo() {
   setSecretCode("");
   setShowSecretBar(false);
 }
-// ...existing code...
 
 
   useEffect(() => {
@@ -1937,5 +1969,4 @@ function canjearCodigo() {
       </div>
       );
     }
-      
 
