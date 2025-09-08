@@ -59,6 +59,7 @@ const ESCUDOS = {
   Caseta: "/img/caseta.webp",
   Caravana: "/img/caravana.webp",
   Marvin: "/img/neogod.webp"
+
   // Añade más escudos aquí
 };
 
