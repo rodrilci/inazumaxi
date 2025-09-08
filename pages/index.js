@@ -84,7 +84,7 @@ const LOGROS = [
 
   {
     id: "occult",
-    nombre: "Reúne al Instituto Occult",
+    nombre: "El aterrador Instituto Occult",
     descripcion: "Escoge a Mask y Talisman entre tus 11 jugadores.",
     jugadores: [
       "/img/mask.webp", "/img/talisman.webp"
@@ -94,7 +94,7 @@ const LOGROS = [
   },
     {
     id: "wild",
-    nombre: "Reúne al Instituto Wild",
+    nombre: "El salvaje Instituto Wild",
     descripcion: "Escoge a Chicken, Cheetah y Gorilla entre tus 11 jugadores.",
     jugadores: [
       "/img/chicken.webp", "/img/cheetah.webp", "/img/gorilla.webp"
@@ -105,7 +105,7 @@ const LOGROS = [
   },
       {
     id: "brain",
-    nombre: "Reúne al Instituto Brain",
+    nombre: "El extraño Instituto Brain",
     descripcion: "Escoge a Thomas Feldt y Neil Turner entre tus 11 jugadores.",
     jugadores: [
       "/img/feldt.webp", "/img/turner.webp",
@@ -115,7 +115,7 @@ const LOGROS = [
   },
         {
     id: "otaku",
-    nombre: "Reúne al Instituto Otaku",
+    nombre: "El curioso Instituto Otaku",
     descripcion: "Escoge a Idol, Gamer y Artist  entre tus 11 jugadores.",
     jugadores: [
       "/img/idol.webp", "/img/gamer.webp",  "/img/artist.webp",
@@ -125,7 +125,7 @@ const LOGROS = [
   },
           {
     id: "royal",
-    nombre: "Reúne a la vieja guarda de la Royal",
+    nombre: "La vieja guarda de la Royal",
     descripcion: "Escoge a King, Jude y Samford  entre tus 11 jugadores.",
     jugadores: [
       "/img/king.webp", "/img/jude.webp",  "/img/samford.webp",
@@ -138,7 +138,7 @@ const LOGROS = [
   },
                   {
     id: "veteranos",
-    nombre: "Junta a 3 leyendas del mítico Inazuma Eleven",
+    nombre: "Leyendas del mítico Inazuma Eleven",
     descripcion: "Escoge a Seymour Hillman, Charles Island y Arthur Sweet entre tus 11 jugadores.",
     jugadores: [
       "/img/hillman.webp", "/img/island.webp", "/img/sweet.webp"
@@ -148,7 +148,7 @@ const LOGROS = [
   },
             {
     id: "shuriken",
-    nombre: "Junta al capitán del Shuriken con un viejo rival",
+    nombre: "El Shuriken y una vieja rivalidad",
     descripcion: "Escoge a Sail Bluesea y Seymour Hillman, viejo rival del entrenador Igajima, entre tus 11 jugadores.",
     jugadores: [
       "/img/cloak.webp", "/img/hillman.webp",
@@ -158,7 +158,7 @@ const LOGROS = [
   },
               {
     id: "farm",
-    nombre: "Junta a la defensa del Instituto Farm",
+    nombre: "La defensa impenetrable del Instituto Farm",
     descripcion: "Escoge a Herb Sherman y Mark Hillvalley entre tus 11 jugadores.",
     jugadores: [
       "/img/sherman.webp", "/img/hillvalley.webp",
@@ -168,7 +168,7 @@ const LOGROS = [
   },
               {
     id: "kirkwood",
-    nombre: "Junta a 3 antiguos compañeros del Instituto Kirkwood",
+    nombre: "El viejo Instituto Kirkwood",
     descripcion: "Escoge a Malcolm Night, Axel Blaze y Marvin Murdock entre tus 11 jugadores.",
     jugadores: [
       "/img/malcolm.webp", "/img/axel.webp", "/img/marvin.webp"
@@ -178,7 +178,7 @@ const LOGROS = [
   },
   {
     id: "inazumaeleven1",
-    nombre: "Reúne un 11 de Inazuma Eleven 1",
+    nombre: "Un 11 de Inazuma Eleven 1",
     descripcion: "Escoge 11 jugadores originales de Inazuma Eleven 1.",
     jugadores: [
       "/img/mark.webp", "/img/king.webp", "/img/mask.webp", "/img/feldt.webp", 
@@ -202,7 +202,7 @@ const LOGROS = [
   },
     {
     id: "raimon11",
-    nombre: "Reúne el 11 del Raimon de Mark",
+    nombre: "El mítico Raimon de Mark Evans",
     descripcion: "Escoge 11 jugadores del Raimon de la saga de Mark Evans.",
     jugadores: [
       "/img/mark.webp", "/img/jude.webp", "/img/axel.webp", "/img/nathan.webp",
@@ -222,7 +222,7 @@ const LOGROS = [
   },
                 {
     id: "servicio",
-    nombre: "Junta a 3 jugadores del Servicio Secreto",
+    nombre: "El Servicio Secreto, al servicio del presidente",
     descripcion: "Escoge a Ian Smith, la Agente M y a Tori Vanguard entre tus 11 jugadores.",
     jugadores: [
       "/img/smith.webp", "/img/agentem.webp", "/img/tori.webp"
@@ -232,7 +232,7 @@ const LOGROS = [
   },
                   {
     id: "alpino",
-    nombre: "Junta a 3 jugadores del Instituto Alpino",
+    nombre: "El gélido Instituto Alpino",
     descripcion: "Escoge a Adam Ropes, Joaquine Downtown y Shawn Froste entre tus 11 jugadores.",
     jugadores: [
       "/img/ropes.webp", "/img/downtown.webp", "/img/shawn.webp"
@@ -242,7 +242,7 @@ const LOGROS = [
   },
                     {
     id: "claustro",
-    nombre: "Junta a un antiguo estudiante del Claustro con un fan",
+    nombre: "El admirado Claustro Sagrado",
     descripcion: "Escoge a Scotty Banyan y Tim Saunders entre tus 11 jugadores.",
     jugadores: [
       "/img/scotty.webp", "/img/timmy.webp",
@@ -252,7 +252,7 @@ const LOGROS = [
   },
                      {
     id: "triplec",
-    nombre: "Junta a dos compañeras del Triple C de Osaka",
+    nombre: "Las compañeras del Triple C de Osaka",
     descripcion: "Escoge a Daisy Ropes y Sue Hartland entre tus 11 jugadores.",
     jugadores: [
       "/img/daisy.webp", "/img/sue.webp",
@@ -262,7 +262,7 @@ const LOGROS = [
   },
                        {
     id: "fauxshore",
-    nombre: "Escoge al prodigio del Fauxshore",
+    nombre: "El prodigio del Fauxshore",
     descripcion: "Escoge a Darren LaChance entre tus 11 jugadores.",
     jugadores: [
       "/img/darren.webp",
@@ -271,7 +271,7 @@ const LOGROS = [
   },
                   {
     id: "marytimes",
-    nombre: "Junta a la estrella y el capitán del Mary Times",
+    nombre: "El Mary Times, un equipo marítimo",
     descripcion: "Escoge a Hurley Kane y Cadence Soundtown entre tus 11 jugadores.",
     jugadores: [
       "/img/hurley.webp", "/img/soundtown.webp",
@@ -281,7 +281,7 @@ const LOGROS = [
   },
                 {
     id: "tormentadegeminis",
-    nombre: "Reúne a un jugador por línea del Tormenta de Géminis",
+    nombre: "Los destructores, el Tormenta de Géminis",
     descripcion: "Escoge a Galileo, Ganymede, Janus y Diam entre tus 11 jugadores.",
     jugadores: [
       "/img/galileo.webp", "/img/ganymede.webp","/img/jordan.webp", "/img/diam.webp",
@@ -292,7 +292,7 @@ const LOGROS = [
   },
                   {
     id: "epsilon",
-    nombre: "Reúne a los 4 delanteros del Épsilon",
+    nombre: "Los 4 delanteros del Épsilon",
     descripcion: "Escoge a Dvalin, Mercury, Metron y Zell entre tus 11 jugadores.",
     jugadores: [
       "/img/dvalin.webp", "/img/mercury.webp","/img/metron.webp", "/img/zell.webp",
@@ -302,7 +302,7 @@ const LOGROS = [
   },
                     {
     id: "royalredux",
-    nombre: "Reúne a las estrellas de la Royal Academy Redux",
+    nombre: "La oscura Royal Academy Redux",
     descripcion: "Escoge a Joe King, Caleb Stonewall y David Samford entre tus 11 jugadores.",
     jugadores: [
       "/img/king.webp", "/img/caleb.webp","/img/samford.webp",
@@ -313,7 +313,7 @@ const LOGROS = [
   },
                       {
     id: "prominence",
-    nombre: "Reúne a las estrellas del Prominence",
+    nombre: "Las estrellas del Prominence",
     descripcion: "Escoge a Grent, Bomber y Torch entre tus 11 jugadores.",
     jugadores: [
       "/img/grent.webp", "/img/bomber.webp","/img/torch.webp",
@@ -323,7 +323,7 @@ const LOGROS = [
       "/img/torch.webp", "/img/lean.webp", "/img/neppten.webp", "/img/heat.webp"]
   },                    {
     id: "diamond",
-    nombre: "Reúne a las estrellas del Polvo de Diamantes",
+    nombre: "Las estrellas del Polvo de Diamantes",
     descripcion: "Escoge a Clear, Gocker y Gazelle entre tus 11 jugadores.",
     jugadores: [
       "/img/clear.webp", "/img/gocker.webp","/img/gazelle.webp",
@@ -333,7 +333,7 @@ const LOGROS = [
       "/img/arkew.webp", "/img/icer.webp", "/img/rhine.webp", "/img/droll.webp"]
   },                    {
     id: "caos",
-    nombre: "Reúne a las estrellas del Caos",
+    nombre: "El Caos, la fusión de Prominence y Diamond",
     descripcion: "Escoge a Grent, Bomber, Clear, Torch y Gazelle entre tus 11 jugadores.",
     jugadores: [
       "/img/grent.webp", "/img/bomber.webp","/img/clear.webp","/img/torch.webp","/img/gazelle.webp",
@@ -344,7 +344,7 @@ const LOGROS = [
       "/img/baller.webp", "/img/torch.webp", "/img/neppten.webp", "/img/heat.webp"]
   },                    {
     id: "Emperadoresoscuros",
-    nombre: "Reúne a las estrellas de los Emperadores Oscuros",
+    nombre: "Los Emperadores Oscuros",
     descripcion: "Escoge a Thomas Feldt, Nathan Swift, Shadow Cimmerian y Kevin Dragonfly entre tus 11 jugadores.",
     jugadores: [
       "/img/feldt.webp", "/img/nathan.webp","/img/shadow.webp","/img/kevin.webp",
@@ -356,7 +356,7 @@ const LOGROS = [
   },
     {
    id: "alius11",
-   nombre: "Reúne el 11 de la Academia Alius",
+   nombre: "La malvada Academia Alius",
    descripcion: "Escoge 11 jugadores de la Academia Alius de Inazuma Eleven 2.",
    jugadores: [
      "/img/galileo.webp", "/img/dvalin.webp", "/img/zell.webp", "/img/grent.webp",
@@ -382,7 +382,7 @@ const LOGROS = [
 },
   {
       id: "inazumaeleven2",
-    nombre: "Reúne un 11 de Inazuma Eleven 2",
+    nombre: "Un 11 de Inazuma Eleven 2",
     descripcion: "Escoge 11 jugadores originales de Inazuma Eleven 2.",
     jugadores: [
       "/img/darren.webp", "/img/ropes.webp", "/img/daisy.webp", "/img/galileo.webp", "/img/dvalin.webp", 
@@ -405,7 +405,7 @@ const LOGROS = [
 
   {
       id: "neojapon",
-    nombre: "Reúne a estrellas del Neo Japón",
+    nombre: "El todopoderoso Neo Japón",
     descripcion: "Escoge a Joseph King, Zohen, Dave Quagmire y Wilbur Watkins entre tus 11 jugadores.",
     jugadores: [
       "/img/king.webp", "/img/zohen.webp","/img/dvalin.webp","/img/wittz.webp",
@@ -419,7 +419,7 @@ const LOGROS = [
 
       {
       id: "bigwaves",
-    nombre: "Reúne a estrellas de la Fase Asiática del FFI",
+    nombre: "Estrellas de la Fase Asiática del FFI",
     descripcion: "Escoge a Dolph Hensen y Bilal Kalil entre tus 11 jugadores.",
     jugadores: [
       "/img/dolphin.webp", "/img/kalil.webp"
@@ -430,7 +430,7 @@ const LOGROS = [
   
       {
       id: "leonesdeldesierto",
-    nombre: "Reúne a estrellas de la Fase Asiática del FFI",
+    nombre: "Estrellas de la Fase Asiática del FFI",
     descripcion: "Escoge a Dolph Hensen y Bilal Kalil entre tus 11 jugadores.",
     jugadores: [
       "/img/dolphin.webp", "/img/kalil.webp"
@@ -441,7 +441,7 @@ const LOGROS = [
 
         {
       id: "dragonesdefuego",
-    nombre: "Reúne a las estrellas de los Dragones de Fuego",
+    nombre: "Los Dragones de Corea",
     descripcion: "Escoge a Changsu Choi, Byron Love, Bryce Withingale y Claude Beacons entre tus 11 jugadores.",
     jugadores: [
       "/img/choi.webp", "/img/byron.webp", "/img/torch.webp", "/img/gazelle.webp"
@@ -452,7 +452,7 @@ const LOGROS = [
 
           {
       id: "knightsofqueen",
-    nombre: "Reúne a tres temibles delanteros del FFI",
+    nombre: "Los delanteros más temibles del FFI",
     descripcion: "Escoge a Edgar Partinus, Paolo Bianchi y Mac Robingo entre tus 11 jugadores.",
     jugadores: [
       "/img/partinus.webp", "/img/paolo.webp", "/img/robingo.webp"
@@ -470,6 +470,39 @@ const LOGROS = [
     ],
     recompensa: { tipo: "escudo", valor: "EquipoD" },
     drops: ["/img/acuto.webp"]
+  },
+
+              {
+      id: "emperadores",
+    nombre: "Garra argentina",
+    descripcion: "Escoge a Thiago Torres y Leone Balone entre tus 11 jugadores.",
+    jugadores: [
+      "/img/thiago.webp", "/img/balone.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "Emperadores" },
+    drops: ["/img/thiago.webp", "/img/balone.webp"]
+  },
+
+                {
+      id: "losrojos",
+    nombre: "¡Arriba España!",
+    descripcion: "Escoge a Víctor García y Alfonso Íñigo entre tus 11 jugadores.",
+    jugadores: [
+      "/img/garcia.webp", "/img/iñigo.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "LosRojos" },
+    drops: ["/img/garcia.webp", "/img/iñigo.webp"]
+  },
+
+                  {
+      id: "unicorn",
+    nombre: "Los 3 pistoleros del Unicorn",
+    descripcion: "Escoge a Mark Krueger, Erik Eagle y Dylan Keats entre tus 11 jugadores.",
+    jugadores: [
+      "/img/krueger.webp", "/img/erik.webp", "/img/keats.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "Unicorn" },
+    drops: ["/img/krueger.webp", "/img/erik.webp", "/img/keats.webp"]
   },
 
     {
@@ -492,6 +525,29 @@ const LOGROS = [
     recompensa: { tipo: "escudo", valor: "Orfeo" },
     drops: ["/img/blasi.webp",  "/img/nakata.webp",  "/img/generani.webp",  "/img/paolo.webp", "/img/gabrini.webp"]
   },
+
+                    {
+      id: "osreis",
+    nombre: "Samba do Brasil",
+    descripcion: "Escoge a Mac Robingo, Falcao da Silva y Carlos Lagarto entre tus 11 jugadores.",
+    jugadores: [
+      "/img/robingo.webp", "/img/dasilva.webp", "/img/lagarto.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "OsReis" },
+    drops: ["/img/robingo.webp", "/img/dasilva.webp", "/img/lagarto.webp"]
+  },
+
+                      {
+      id: "zoolanteam",
+    nombre: "Los secuaces de Zoolan Rice",
+    descripcion: "Escoge a Minion, Zorro y Coyote entre tus 11 jugadores.",
+    jugadores: [
+      "/img/minion.webp", "/img/fox.webp", "/img/coyote.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "ZoolanTeam" },
+    drops: ["/img/minion.webp", "/img/fox.webp", "/img/coyote.webp"]
+  },
+  
   {
    id: "littlegiants11",
    nombre: "Reúne un 11 entre los Little Giants y el Raimon",
