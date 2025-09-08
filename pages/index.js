@@ -56,6 +56,7 @@ const ESCUDOS = {
   LittleGiants: "/img/littlegiants.webp",
   Ogro: "/img/ogro.webp",
   ÁngelOscuro: "/img/angeloscuro.webp",
+  SeleccionMundial: "/img/seleccionmundial.webp",
   Caseta: "/img/caseta.webp",
   Caravana: "/img/caravana.webp",
   Marvin: "/img/neogod.webp"
@@ -550,7 +551,7 @@ const LOGROS = [
   
   {
    id: "littlegiants11",
-   nombre: "Reúne un 11 entre los Little Giants y el Raimon",
+   nombre: "El Raimon de África",
    descripcion: "Escoge 11 jugadores de entre jugadores del Raimon que tengan su contraparte en Costail con estos mismos.",
    jugadores: [
      "/img/helio.webp", "/img/mark.webp", "/img/vitesse.webp", "/img/nathan.webp",
@@ -568,9 +569,28 @@ const LOGROS = [
       "/img/maximino.webp",  "/img/flare.webp", "/img/drago.webp",  "/img/difortune.webp", 
       "/img/mangrove.webp",  "/img/scotty.webp",  "/img/vitrum.webp","/img/leung.webp", "/img/hedgeer.webp",]
 },
+
+                      {
+      id: "seleccionmundial",
+    nombre: "Las estrellas del Mundial",
+    descripcion: "Escoge a integrantes de la Selección Mundial entre tus 11 jugadores.",
+    jugadores: [
+      "/img/helio.webp", "/img/bobby.webp", "/img/kalil.webp", "/img/thiago.webp", "/img/byron.webp", 
+      "/img/krueger.webp", "/img/erik.webp", "/img/keats.webp", "/img/paolo.webp", "/img/robingo.webp", 
+      "/img/partinus.webp", "/img/blasi.webp", "/img/mountain.webp", "/img/lagarto.webp", "/img/dolphin.webp"
+      , "/img/choi.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "SeleccionMundial" },
+    drops: ["/img/helio.webp", "/img/bobby.webp", "/img/kalil.webp", "/img/thiago.webp", "/img/byron.webp", 
+      "/img/krueger.webp", "/img/erik.webp", "/img/keats.webp", "/img/paolo.webp", "/img/robingo.webp", 
+      "/img/partinus.webp", "/img/blasi.webp", "/img/mountain.webp", "/img/lagarto.webp", "/img/dolphin.webp"
+      , "/img/choi.webp"]
+  },
+
+
   {
    id: "marvin",
-   nombre: "Reúne a los trillizos Murdock",
+   nombre: "Los trillizos Murdock",
    descripcion: "Escoge a Marvin, Tyler y Thomas Murdock en tu equipo.",
    jugadores: [
      "/img/tyler.webp", "/img/thomas.webp", "/img/marvin.webp"
@@ -1124,7 +1144,36 @@ function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
 // ...existing code...
 
 
-function Logros({ logrosCompletados }) {
+function Logros({ logrosCompletados, visible, onToggle }) {
+  if (!visible) {
+    // Botón flotante para mostrar el menú
+    return (
+      <button
+        onClick={onToggle}
+        style={{
+          position: "fixed",
+          top: "150px",
+          left: "10px",
+          zIndex: 20,
+          background: "#fff",
+          border: "2px solid #00bfff",
+          borderRadius: "50%",
+          width: "44px",
+          height: "44px",
+          boxShadow: "2px 0 10px #333",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontSize: "1.5em",
+          cursor: "pointer"
+        }}
+        title="Mostrar logros"
+      >
+        🏆
+      </button>
+    );
+  }
+
   return (
     <div style={{
       position: "fixed",
@@ -1137,9 +1186,30 @@ function Logros({ logrosCompletados }) {
       overflowY: "auto",
       width: "400px",
       boxShadow: "2px 0 10px #333",
-      zIndex: 5
+      zIndex: 20
     }}>
-      <h2></h2>
+      {/* Botón para ocultar */}
+      <button
+        onClick={onToggle}
+        style={{
+          position: "absolute",
+          top: "10px",
+          right: "10px",
+          background: "#00bfff",
+          color: "#fff",
+          border: "none",
+          borderRadius: "50%",
+          width: "32px",
+          height: "32px",
+          fontSize: "1.2em",
+          cursor: "pointer",
+          zIndex: 21
+        }}
+        title="Ocultar logros"
+      >
+        ✕
+      </button>
+      <h2 style={{ marginTop: 0, marginBottom: "15px" }}><b><i>🏆 LOGROS 🏆</i></b></h2>
       {LOGROS.map(logro => (
         <div key={logro.id} style={{ marginBottom: "15px", display: "flex", alignItems: "center" }}>
           <img src={ESCUDOS[logro.recompensa.valor]} alt="escudo" style={{ width: "35px", marginRight: "12px" }} />
@@ -1174,6 +1244,7 @@ const [showPerfil, setShowPerfil] = useState(false);
 const [showAlineacion, setShowAlineacion] = useState(false);
 const [datosCargados, setDatosCargados] = useState(false);
 const [showTutorial, setShowTutorial] = useState(false);
+const [logrosVisibles, setLogrosVisibles] = useState(true);
 
 useEffect(() => {
   if (typeof window !== "undefined") {
@@ -1406,7 +1477,13 @@ useEffect(() => {
       jugadoresDesbloqueados={cartasDesbloqueadas}
     />
     )}
-    {!showAlineacion && <Logros logrosCompletados={logrosCompletados} />}
+     {!showAlineacion && (
+    <Logros
+      logrosCompletados={logrosCompletados}
+      visible={logrosVisibles}
+      onToggle={() => setLogrosVisibles(v => !v)}
+    />
+  )}
 
     {/* ⬇️ Elimina el fondo duplicado y el segundo Logros */}
     {!showAlineacion && (
