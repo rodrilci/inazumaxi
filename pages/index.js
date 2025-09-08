@@ -899,14 +899,17 @@ function comprobarLogros(nuevaSeleccion, logrosCompletados, setLogrosCompletados
   });
 }
 
-// ...existing code...
+function PerfilModal({ perfil, setPerfil, onClose, onAlineacion, exportarProgreso, importarProgreso, logrosCompletados }) {
+  // Escudos en orden de LOGROS y sin duplicados
+  const escudosOrdenados = LOGROS
+    .map(l => l.recompensa && l.recompensa.tipo === "escudo" ? l.recompensa.valor : null)
+    .filter(e => e && perfil.escudosDisponibles.includes(e));
+  const escudosUnicos = [...new Set(escudosOrdenados)];
 
-function PerfilModal({ perfil, setPerfil, onClose, onAlineacion, exportarProgreso, importarProgreso }) {
-  // ...resto igual...
-  // Divide los escudos en filas de 20
+  // Divide en filas de 20
   const filasEscudos = [];
-  for (let i = 0; i < perfil.escudosDisponibles.length; i += 20) {
-    filasEscudos.push(perfil.escudosDisponibles.slice(i, i + 20));
+  for (let i = 0; i < escudosUnicos.length; i += 20) {
+    filasEscudos.push(escudosUnicos.slice(i, i + 20));
   }
 
   return (
@@ -932,7 +935,6 @@ function PerfilModal({ perfil, setPerfil, onClose, onAlineacion, exportarProgres
           {perfil.escudo && (
             <img src={ESCUDOS[perfil.escudo]} alt="escudo" style={{ width: "60px", marginRight: "16px" }} />
           )}
-          {/* Input para nombre */}
           <input
             type="text"
             value={perfil.nombre}
@@ -947,6 +949,7 @@ function PerfilModal({ perfil, setPerfil, onClose, onAlineacion, exportarProgres
             }}
           />
         </div>
+
         <div style={{ marginBottom: "20px" }}>
           <strong>Escudos desbloqueados:</strong>
           <div style={{ display: "flex", flexDirection: "column", gap: "6px", marginTop: "8px" }}>
@@ -970,69 +973,66 @@ function PerfilModal({ perfil, setPerfil, onClose, onAlineacion, exportarProgres
             ))}
           </div>
         </div>
-        <button
-          onClick={onClose}
-          style={{
-            marginTop: "10px",
-            padding: "8px 18px",
-            borderRadius: "6px",
-            cursor: "pointer",
-            background: "#00bfff",
-            color: "#fff",
-            fontWeight: "bold"
-          }}
-        >
-          Guardar
-        </button>
-<button
-  onClick={exportarProgreso}
-  style={{
-    marginTop: "10px",
-    padding: "8px 18px",
-    borderRadius: "6px",
-    cursor: "pointer",
-    background: "#ffb300",
-    color: "#222",
-    fontWeight: "bold",
-    marginRight: "8px"
-  }}
->
-  Exportar progreso
-</button>
-<button
-  onClick={importarProgreso}
-  style={{
-    marginTop: "10px",
-    padding: "8px 18px",
-    borderRadius: "6px",
-    cursor: "pointer",
-    background: "#00bfff",
-    color: "#fff",
-    fontWeight: "bold"
-  }}
->
-  Importar progreso
-</button>
-        <button
-          onClick={onAlineacion}
-          style={{
-            marginTop: "10px",
-            padding: "8px 18px",
-            borderRadius: "6px",
-            cursor: "pointer",
-            background: "#00bfff",
-            color: "#fff",
-            fontWeight: "bold"
-          }}
-        >
-          ALINEACION
-        </button>
+
+        {/* Botones alineados horizontalmente */}
+        <div style={{ display: "flex", gap: "10px", marginTop: "10px" }}>
+          <button
+            onClick={onClose}
+            style={{
+              padding: "8px 18px",
+              borderRadius: "6px",
+              cursor: "pointer",
+              background: "#00bfff",
+              color: "#fff",
+              fontWeight: "bold"
+            }}
+          >
+            Guardar
+          </button>
+          <button
+            onClick={exportarProgreso}
+            style={{
+              padding: "8px 18px",
+              borderRadius: "6px",
+              cursor: "pointer",
+              background: "#ffb300",
+              color: "#222",
+              fontWeight: "bold"
+            }}
+          >
+            Exportar progreso
+          </button>
+          <button
+            onClick={importarProgreso}
+            style={{
+              padding: "8px 18px",
+              borderRadius: "6px",
+              cursor: "pointer",
+              background: "#00bfff",
+              color: "#fff",
+              fontWeight: "bold"
+            }}
+          >
+            Importar progreso
+          </button>
+          <button
+            onClick={onAlineacion}
+            style={{
+              padding: "8px 18px",
+              borderRadius: "6px",
+              cursor: "pointer",
+              background: "#00bfff",
+              color: "#fff",
+              fontWeight: "bold"
+            }}
+          >
+            ALINEACION
+          </button>
+        </div>
       </div>
     </div>
   );
 }
-
-// ...existing code..
 
 function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
   const [alineacion, setAlineacion] = useState(() => {
@@ -1442,6 +1442,18 @@ useEffect(() => {
 
 
 useEffect(() => {
+  
+  if (typeof window !== "undefined") {
+    const savedPerfil = localStorage.getItem("perfil");
+  
+    if (savedPerfil) {
+      const perfilCargado = JSON.parse(savedPerfil);
+      // Elimina escudos duplicados
+      perfilCargado.escudosDisponibles = [...new Set(perfilCargado.escudosDisponibles)];
+      setPerfil(perfilCargado);
+    }
+  }
+  
   if (typeof window !== "undefined") {
     const savedSeleccionadas = localStorage.getItem("seleccionadas");
     if (savedSeleccionadas) setSeleccionadas(JSON.parse(savedSeleccionadas));
@@ -1464,9 +1476,15 @@ useEffect(() => {
     setDatosCargados(true);
   }
 }, []);
+
 useEffect(() => {
   if (!datosCargados) return;
-  localStorage.setItem("perfil", JSON.stringify(perfil));
+  // Elimina duplicados antes de guardar
+  const perfilSinDuplicados = {
+    ...perfil,
+    escudosDisponibles: [...new Set(perfil.escudosDisponibles)]
+  };
+  localStorage.setItem("perfil", JSON.stringify(perfilSinDuplicados));
 }, [perfil, datosCargados]);
 
   useEffect(() => {
@@ -1527,9 +1545,19 @@ useEffect(() => {
     inicializarCartas();
   }, []);
 
-  useEffect(() => {
-    comprobarLogros(seleccionadas, logrosCompletados, setLogrosCompletados, setPerfil,  bloqueadas, cartasDesbloqueadas, setCartasDesbloqueadas);
-  }, [seleccionadas, bloqueadas]);
+useEffect(() => {
+  if (datosCargados) {
+    comprobarLogros(
+      seleccionadas,
+      logrosCompletados,
+      setLogrosCompletados,
+      setPerfil,
+      bloqueadas,
+      cartasDesbloqueadas,
+      setCartasDesbloqueadas
+    );
+  }
+}, [logrosCompletados, cartasDesbloqueadas, perfil]);
 
   function inicializarCartas() {
     const usadas = [];
@@ -1791,14 +1819,15 @@ function canjearCodigo() {
 
 
 {showPerfil && !showAlineacion && (
-  <PerfilModal
-    perfil={perfil}
-    setPerfil={setPerfil}
-    onClose={() => setShowPerfil(false)}
-    onAlineacion={() => setShowAlineacion(true)}
-    exportarProgreso={exportarProgreso}
-    importarProgreso={importarProgreso}
-  />
+<PerfilModal
+  perfil={perfil}
+  setPerfil={setPerfil}
+  onClose={() => setShowPerfil(false)}
+  onAlineacion={() => setShowAlineacion(true)}
+  exportarProgreso={exportarProgreso}
+  importarProgreso={importarProgreso}
+  logrosCompletados={logrosCompletados}
+/>
 )}
     {showAlineacion && (
       <AlineacionModal
