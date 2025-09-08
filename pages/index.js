@@ -1558,7 +1558,7 @@ useEffect(() => {
       setCartasDesbloqueadas
     );
   }
-}, [seleccionadas, bloqueadas, logrosCompletados, cartasDesbloqueadas, perfil, datosCargados]);
+}, [seleccionadas, bloqueadas, datosCargados]);
 
   function inicializarCartas() {
     const usadas = [];
