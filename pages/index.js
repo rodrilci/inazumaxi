@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 const posiciones = {
   portero: ["/img/mark.webp", "/img/king.webp", "/img/darren.webp", "/img/mask.webp", "/img/feldt.webp", "/img/idol.webp", "/img/poseidon.webp", "/img/hillman.webp", "/img/ropes.webp", "/img/daisy.webp", "/img/galileo.webp", "/img/dvalin.webp", "/img/zell.webp", "/img/grent.webp",  "/img/nero.webp", "/img/blasi.webp",  "/img/dasilva.webp",  "/img/fox.webp",  "/img/helio.webp", "/img/iñigo.webp",  "/img/luceafar.webp",  "/img/astaroth.webp"],
   defensa1: ["/img/nathan.webp","/img/tod.webp", "/img/scotty.webp", "/img/aitor.webp", "/img/archer.webp", "/img/martin.webp", "/img/master.webp", "/img/monkey.webp", "/img/malcolm.webp", "/img/apollo.webp", "/img/hephestus.webp", "/img/sweet.webp", "/img/smith.webp", "/img/shawn.webp", "/img/hurley.webp", "/img/bomber.webp",  "/img/icer.webp",  "/img/arkew.webp",  "/img/gocker.webp",  "/img/zohen.webp",  "/img/hauser.webp",  "/img/lagarto.webp",  "/img/vitesse.webp",  "/img/ferrum.webp",  "/img/mangrove.webp", "/img/ischer.webp",  "/img/jenkins.webp",  "/img/lephiel.webp",  "/img/hebimos.webp"],
-  defensa2: ["/img/jack.webp", "/img/sor.webp", "/img/thiago.webp", "/img/gabi.webp", "/img/aitor.webp", "/img/bobby.webp", "/img/jim.webp", "/img/sam.webp", "/img/drent.webp", "/img/lion.webp", "/img/simmons.webp", "/img/hillvalley.webp", "/img/sherman.webp", "/img/ares.webp", "/img/dionysus.webp", "/img/island.webp", "/img/downtown.webp", "/img/shawn.webp", "/img/ganymede.webp", "/img/baller.webp", "/img/clear.webp",  "/img/gele.webp",  "/img/kiburn.webp",  "/img/thor.webp", "/img/kalil.webp",  "/img/minion.webp",  "/img/mountain.webp",  "/img/gaines.webp", "/img/garcia.webp",  "/img/bump.webp",  "/img/lump.webp",  "/img/rubu.webp", "/img/nenel.webp"],
-  defensa3: ["/img/jack.webp", "/img/sor.webp", "/img/thiago.webp", "/img/gabi.webp", "/img/aitor.webp", "/img/bobby.webp", "/img/jim.webp", "/img/sam.webp", "/img/drent.webp", "/img/lion.webp", "/img/simmons.webp", "/img/hillvalley.webp", "/img/sherman.webp", "/img/ares.webp", "/img/dionysus.webp", "/img/island.webp", "/img/downtown.webp", "/img/shawn.webp", "/img/ganymede.webp", "/img/baller.webp", "/img/clear.webp",  "/img/gele.webp",  "/img/kiburn.webp",  "/img/thor.webp", "/img/kalil.webp",  "/img/minion.webp",  "/img/mountain.webp",  "/img/gaines.webp", "/img/garcia.webp",  "/img/bump.webp",  "/img/lump.webp",  "/img/rubu.webp", "/img/nenel.webp"],
+  defensa2: ["/img/jack.webp", "/img/sor.webp", "/img/thiago.webp", "/img/bargie.webp", "/img/gabi.webp", "/img/aitor.webp", "/img/bobby.webp", "/img/jim.webp", "/img/sam.webp", "/img/drent.webp", "/img/lion.webp", "/img/simmons.webp", "/img/hillvalley.webp", "/img/sherman.webp", "/img/ares.webp", "/img/dionysus.webp", "/img/island.webp", "/img/downtown.webp", "/img/shawn.webp", "/img/ganymede.webp", "/img/baller.webp", "/img/clear.webp",  "/img/gele.webp",  "/img/kiburn.webp",  "/img/thor.webp", "/img/kalil.webp",  "/img/minion.webp",  "/img/mountain.webp",  "/img/gaines.webp", "/img/garcia.webp",  "/img/bump.webp",  "/img/lump.webp",  "/img/rubu.webp", "/img/nenel.webp"],
+  defensa3: ["/img/jack.webp", "/img/sor.webp", "/img/thiago.webp", "/img/bargie.webp", "/img/gabi.webp", "/img/aitor.webp", "/img/bobby.webp", "/img/jim.webp", "/img/sam.webp", "/img/drent.webp", "/img/lion.webp", "/img/simmons.webp", "/img/hillvalley.webp", "/img/sherman.webp", "/img/ares.webp", "/img/dionysus.webp", "/img/island.webp", "/img/downtown.webp", "/img/shawn.webp", "/img/ganymede.webp", "/img/baller.webp", "/img/clear.webp",  "/img/gele.webp",  "/img/kiburn.webp",  "/img/thor.webp", "/img/kalil.webp",  "/img/minion.webp",  "/img/mountain.webp",  "/img/gaines.webp", "/img/garcia.webp",  "/img/bump.webp",  "/img/lump.webp",  "/img/rubu.webp", "/img/nenel.webp"],
   defensa4: ["/img/nathan.webp", "/img/tod.webp", "/img/scotty.webp", "/img/aitor.webp", "/img/archer.webp", "/img/martin.webp", "/img/master.webp", "/img/monkey.webp", "/img/malcolm.webp", "/img/apollo.webp", "/img/hephestus.webp", "/img/sweet.webp", "/img/smith.webp", "/img/shawn.webp", "/img/hurley.webp", "/img/bomber.webp",  "/img/icer.webp",  "/img/arkew.webp",  "/img/gocker.webp",  "/img/zohen.webp",  "/img/hauser.webp",  "/img/lagarto.webp",  "/img/vitesse.webp",  "/img/ferrum.webp",  "/img/mangrove.webp", "/img/ischer.webp",  "/img/jenkins.webp",  "/img/lephiel.webp",  "/img/hebimos.webp"],
   medio1: ["/img/nathan.webp", "/img/arion.webp", "/img/jude.webp", "/img/tori.webp", "/img/caleb.webp", "/img/riccardo.webp", "/img/timmy.webp", "/img/max.webp", "/img/steve.webp", "/img/erik.webp", "/img/bloom.webp", "/img/chicken.webp", "/img/eagle.webp", "/img/master.webp", "/img/monkey.webp", "/img/swing.webp", "/img/artemis.webp", "/img/hermes.webp", "/img/hera.webp", "/img/athena.webp", "/img/byron.webp", "/img/agentem.webp", "/img/soundtown.webp", "/img/pandora.webp", "/img/jordan.webp", "/img/dvalin.webp", "/img/sparrow.webp", "/img/bomber.webp",  "/img/bellatrix.webp",  "/img/heat.webp",  "/img/lean.webp",  "/img/droll.webp",  "/img/rhine.webp",  "/img/kiwill.webp",  "/img/ark.webp",  "/img/dolphin.webp", "/img/choi.webp", "/img/acuto.webp", "/img/krueger.webp", "/img/gabrini.webp", "/img/nakata.webp", "/img/diavolo.webp", "/img/ryan.webp", "/img/haddad.webp", "/img/hampton.webp", "/img/maximino.webp", "/img/vitrum.webp", "/img/leung.webp", "/img/stark.webp",  "/img/triumvir.webp",  "/img/gunter.webp",  "/img/lephiel.webp",  "/img/wenel.webp"],
   medio2: ["/img/arion.webp", "/img/jude.webp", "/img/tori.webp", "/img/caleb.webp", "/img/riccardo.webp", "/img/timmy.webp", "/img/steve.webp", "/img/sam.webp", "/img/erik.webp", "/img/chicken.webp", "/img/eagle.webp", "/img/waldon.webp", "/img/hermes.webp", "/img/hera.webp", "/img/byron.webp", "/img/agentem.webp", "/img/soundtown.webp", "/img/jordan.webp", "/img/pandora.webp", "/img/dvalin.webp", "/img/metron.webp", "/img/sparrow.webp", "/img/bomber.webp",  "/img/heat.webp",  "/img/lean.webp",  "/img/neppten.webp",  "/img/kormer.webp",  "/img/bellatrix.webp",  "/img/thor.webp",  "/img/dolphin.webp", "/img/choi.webp", "/img/acuto.webp", "/img/krueger.webp", "/img/gabrini.webp", "/img/nakata.webp", "/img/diavolo.webp", "/img/ryan.webp", "/img/haddad.webp", "/img/hampton.webp", "/img/maximino.webp", "/img/vitrum.webp", "/img/leung.webp", "/img/stark.webp",  "/img/triumvir.webp",  "/img/gunter.webp",  "/img/lephiel.webp",  "/img/wenel.webp",  "/img/zanos.webp",  "/img/gaiel.webp"],
@@ -33,19 +33,32 @@ const ESCUDOS = {
   Fauxshore: "/img/fauxshore.webp",
   MaryTimes: "/img/marytimes.webp",
   TormentadeGéminis: "/img/tormentadegeminis.webp",
-  Épsilon: "/img/epsilon.webp",
+  Epsilon: "/img/epsilon.webp",
   Royalredux: "/img/royalredux.webp",
   Prominence: "/img/prominence.webp",
   Diamond: "/img/diamond.webp",
   Caos: "/img/caos.webp",
+  Génesis: "/img/genesis.webp",
   Emperadoresoscuros: "/img/emperadoresoscuros.webp",
   Alius: "/img/alius.webp",
+  NeoJapon: "/img/neojapon.webp",
+  BigWaves: "/img/bigwaves.webp",
+  Leonesdeldesierto: "/img/leonesdeldesierto.webp",
+  Dragonesdefuego: "/img/dragonesdefuego.webp",
+  KnightsofQueen: "/img/knightsofqueen.webp",
+  EquipoD: "/img/equipod.webp",
+  LosRojos: "/img/losrojos.webp",
+  Emperadores: "/img/emperadores.webp",
+  Unicorn: "/img/unicorn.webp",
+  Orfeo: "/img/orfeo.webp",
+  OsReis: "/img/osreis.webp",
+  ZoolanTeam: "/img/zoolanteam.webp",
+  LittleGiants: "/img/littlegiants.webp",
+  Ogro: "/img/ogro.webp",
+  ÁngelOscuro: "/img/angeloscuro.webp",
   Caseta: "/img/caseta.webp",
   Caravana: "/img/caravana.webp",
-  Génesis: "/img/genesis.webp",
-  Marvin: "/img/neogod.webp",
-  LittleGiants: "/img/littlegiants.webp",
-  Orfeo: "/img/orfeo.webp"
+  Marvin: "/img/neogod.webp"
   // Añade más escudos aquí
 };
 
@@ -255,7 +268,6 @@ const LOGROS = [
       "/img/darren.webp",
     ],
     recompensa: { tipo: "escudo", valor: "Fauxshore" },
-    drops: ["/img/darren.webp"]
   },
                   {
     id: "marytimes",
@@ -285,7 +297,7 @@ const LOGROS = [
     jugadores: [
       "/img/dvalin.webp", "/img/mercury.webp","/img/metron.webp", "/img/zell.webp",
     ],
-    recompensa: { tipo: "escudo", valor: "Épsilon" },
+    recompensa: { tipo: "escudo", valor: "Epsilon" },
     drops: ["/img/dvalin.webp", "/img/mercury.webp","/img/metron.webp", "/img/zell.webp"]
   },
                     {
@@ -296,7 +308,8 @@ const LOGROS = [
       "/img/king.webp", "/img/caleb.webp","/img/samford.webp",
     ],
     recompensa: { tipo: "escudo", valor: "Royalredux" },
-    drops: ["/img/king.webp", "/img/caleb.webp","/img/samford.webp", "/img/sparrow.webp",]
+    drops: ["/img/king.webp", "/img/caleb.webp","/img/samford.webp", "/img/sparrow.webp",
+      "/img/bargie.webp"]
   },
                       {
     id: "prominence",
@@ -381,7 +394,7 @@ const LOGROS = [
       "/img/sparrow.webp",  "/img/heat.webp",  "/img/lean.webp",  "/img/droll.webp",  
       "/img/rhine.webp",  "/img/kiwill.webp",  "/img/ark.webp", "/img/pandora.webp",  "/img/bellatrix.webp",
       "/img/sue.webp", "/img/diam.webp", "/img/rihm.webp",  "/img/neppten.webp",  "/img/torch.webp",  
-      "/img/gazelle.webp",  "/img/wittz.webp",  "/img/shadow.webp",  "/img/xavier.webp"
+      "/img/gazelle.webp",  "/img/wittz.webp",  "/img/shadow.webp",  "/img/xavier.webp", "/img/bargie.webp"
 
     ],
     recompensa: { tipo: "escudo", valor: "Génesis" },
@@ -389,6 +402,76 @@ const LOGROS = [
       "/img/gele.webp", "/img/kiburn.webp", "/img/kiwill.webp", "/img/nero.webp", "/img/wittz.webp", 
       "/img/kormer.webp"]
   },
+
+  {
+      id: "neojapon",
+    nombre: "Reúne a estrellas del Neo Japón",
+    descripcion: "Escoge a Joseph King, Zohen, Dave Quagmire y Wilbur Watkins entre tus 11 jugadores.",
+    jugadores: [
+      "/img/king.webp", "/img/zohen.webp","/img/dvalin.webp","/img/wittz.webp",
+    ],
+    recompensa: { tipo: "escudo", valor: "NeoJapon" },
+    drops: ["/img/king.webp", "/img/zohen.webp","/img/master.webp","/img/hatch.webp", 
+      "/img/turner.webp", "/img/cloak.webp","/img/tassman.webp","/img/wittz.webp", 
+      "/img/dvalin.webp","/img/zell.webp","/img/heat.webp","/img/hera.webp","/img/tyler.webp",
+      "/img/demeter.webp", "/img/hillvalley.webp", "/img/bargie.webp", ]
+  },
+
+      {
+      id: "bigwaves",
+    nombre: "Reúne a estrellas de la Fase Asiática del FFI",
+    descripcion: "Escoge a Dolph Hensen y Bilal Kalil entre tus 11 jugadores.",
+    jugadores: [
+      "/img/dolphin.webp", "/img/kalil.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "BigWaves" },
+    drops: ["/img/dolphin.webp" ]
+  },
+  
+      {
+      id: "leonesdeldesierto",
+    nombre: "Reúne a estrellas de la Fase Asiática del FFI",
+    descripcion: "Escoge a Dolph Hensen y Bilal Kalil entre tus 11 jugadores.",
+    jugadores: [
+      "/img/dolphin.webp", "/img/kalil.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "Leonesdeldesierto" },
+    drops: ["/img/kalil.webp" ]
+  },
+
+        {
+      id: "dragonesdefuego",
+    nombre: "Reúne a las estrellas de los Dragones de Fuego",
+    descripcion: "Escoge a Changsu Choi, Byron Love, Bryce Withingale y Claude Beacons entre tus 11 jugadores.",
+    jugadores: [
+      "/img/choi.webp", "/img/byron.webp", "/img/torch.webp", "/img/gazelle.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "Dragonesdefuego" },
+    drops: ["/img/choi.webp", "/img/byron.webp", "/img/torch.webp", "/img/gazelle.webp" ]
+  },
+
+          {
+      id: "knightsofqueen",
+    nombre: "Reúne a tres temibles delanteros del FFI",
+    descripcion: "Escoge a Edgar Partinus, Paolo Bianchi y Mac Robingo entre tus 11 jugadores.",
+    jugadores: [
+      "/img/partinus.webp", "/img/paolo.webp", "/img/robingo.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "KnightsofQueen" },
+    drops: ["/img/partinus.webp"]
+  },
+
+            {
+      id: "equipod",
+    nombre: "Acuto y su gemelo",
+    descripcion: "Escoge a Julio Acuto y Jude Sharp entre tus 11 jugadores.",
+    jugadores: [
+      "/img/acuto.webp", "/img/jude.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "EquipoD" },
+    drops: ["/img/acuto.webp"]
+  },
+
     {
       id: "inazumaeleven3",
     nombre: "Reúne un 11 de Inazuma Eleven 3",
@@ -460,13 +543,17 @@ function TutorialModal({ onClose }) {
         flexDirection: "column",
         alignItems: "center"
       }}>
-        <h2 style={{ marginBottom: "16px", fontWeight: "bold" }}>¿CÓMO JUGARr?</h2>
+        <h2 style={{ marginBottom: "16px", fontWeight: "bold" }}>¿CÓMO JUGAR?</h2>
         <ol style={{ textAlign: "left", marginBottom: "18px", fontSize: "1.1em" }}>
-          <li>Haz clic en las cartas para elegir jugadores en la alineación.</li>
-          <li>Cuando bloqueas los 11, ¡puedes conseguir logros y desbloquear escudos y cartas!</li>
-          <li>Haz clic en <b>PERFIL</b> arriba a la derecha para personalizar tu nombre y escudo.</li>
-          <li>Pulsa el botón <b>ALINEACIÓN</b> en tu perfil para crear tu propio 11 con las cartas conseguidas.</li>
-          <li>¡Dale al botón <b>REINICIAR</b> para empezar una nueva alineación y poder conseguir más logros!</li>
+          <li>➛ Haz clic en las cartas para elegir jugadores en la alineación.</li>
+          <li></li>
+          <li>➛ Cuando bloqueas los 11, ¡puedes conseguir logros y desbloquear escudos y cartas!</li>
+          <li></li>
+          <li>➛ Haz clic en <b>PERFIL</b> arriba a la derecha para personalizar tu nombre y escudo.</li>
+          <li></li>
+          <li>➛ Pulsa el botón <b>ALINEACIÓN</b> en tu perfil para crear tu propio 11 con las cartas conseguidas.</li>
+          <li></li>
+          <li>➛ ¡Dale al botón <b>REINICIAR</b> para empezar una nueva alineación y poder conseguir más logros!</li>
         </ol>
         <button
           onClick={onClose}
@@ -840,7 +927,7 @@ function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
                   fontWeight: 600,
                   fontSize: "1.1rem",
                   color: "#2a3a4a"
-                }}>{pos.toUpperCase()}:</span><br />
+                }}>DEFENSA:</span><br />
                 {alineacion[pos] ? (
                   <img
                     src={alineacion[pos]}
@@ -881,7 +968,7 @@ function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
                   fontWeight: 600,
                   fontSize: "1.1rem",
                   color: "#2a3a4a"
-                }}>{pos.toUpperCase()}:</span><br />
+                }}>MEDIO:</span><br />
                 {alineacion[pos] ? (
                   <img
                     src={alineacion[pos]}
@@ -922,7 +1009,7 @@ function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
                   fontWeight: 600,
                   fontSize: "1.1rem",
                   color: "#2a3a4a"
-                }}>{pos.toUpperCase()}:</span><br />
+                }}>DELANTERO:</span><br />
                 {alineacion[pos] ? (
                   <img
                     src={alineacion[pos]}
