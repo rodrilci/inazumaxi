@@ -1415,11 +1415,11 @@ const [logrosVisibles, setLogrosVisibles] = useState(true);
 const [showSecretBar, setShowSecretBar] = useState(false);
 const [secretCode, setSecretCode] = useState("");
 const [keySequence, setKeySequence] = useState([]);
-const [customBg, setCustomBg] = useState(() =>
+const [customBg, setCustomBg] = useState("");
   typeof window !== "undefined"
     ? localStorage.getItem("customBg") || ""
     : ""
-);
+
 
 
 useEffect(() => {
@@ -1487,6 +1487,11 @@ useEffect(() => {
   };
   localStorage.setItem("perfil", JSON.stringify(perfilSinDuplicados));
 }, [perfil, datosCargados]);
+
+useEffect(() => {
+  const fondo = localStorage.getItem("customBg") || "";
+  setCustomBg(fondo);
+}, []);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -1602,42 +1607,39 @@ function importarProgreso() {
 
 function canjearCodigo() {
   try {
-    // Recupera los códigos ya canjeados del localStorage
     const codigosUsados = JSON.parse(localStorage.getItem("codigosUsados") || "[]");
-
-    // Normaliza el código introducido
     const code = secretCode.trim().toLowerCase();
 
-    // Si ya se ha usado, no dejar canjear
-    if (codigosUsados.includes(code)) {
+    // Códigos de fondo especial: NO los bloquees nunca
+    const fondosEspeciales = {
+      kalise: "https://i.postimg.cc/TYVb8sQg/kalise.jpg",
+      abgo: "https://i.postimg.cc/cLpgBNMn/abgo.jpg",
+      ascero: "https://i.postimg.cc/RZBqWTM7/ascero.jpg",
+      markismo: "https://i.postimg.cc/xTHcjZSj/markismo.jpg",
+      ruper: "https://i.postimg.cc/Y93v7Lc6/ruper.jpg",
+      sadiq: "https://i.postimg.cc/CxBn8KD0/sadiq.jpg",
+      urko: "https://i.postimg.cc/D0w8wfFt/urko.jpg"
+    };
+
+    if (code in fondosEspeciales) {
+      setCustomBg(fondosEspeciales[code]);
+      localStorage.setItem("customBg", fondosEspeciales[code]);
+      alert(`¡Fondo especial ${code.charAt(0).toUpperCase() + code.slice(1)} activado!`);
+      // No añadas a codigosUsados
+    }
+    else if (code === "cancelarfondo") {
+      setCustomBg("");
+      localStorage.removeItem("customBg");
+      alert("¡Fondo especial desactivado! Has vuelto al fondo por defecto.");
+      // No añadas a codigosUsados
+    }
+    // Códigos de recompensa única: sí bloquea
+    else if (codigosUsados.includes(code)) {
       alert("¡Este código ya ha sido canjeado!");
       setSecretCode("");
       setShowSecretBar(false);
       return;
     }
-
-    // Código especial Alius
-    if (code === "alius") {
-      completarLogroManual(
-        "alius11",
-        logrosCompletados,
-        setLogrosCompletados,
-        setPerfil,
-        cartasDesbloqueadas,
-        setCartasDesbloqueadas
-      );
-      alert("¡Código Alius canjeado!");
-      codigosUsados.push(code);
-      localStorage.setItem("codigosUsados", JSON.stringify(codigosUsados));
-    }
-        else if (code === "kalise") {
-      setCustomBg("https://i.postimg.cc/TYVb8sQg/kalise.jpg");
-      localStorage.setItem("customBg", "https://i.postimg.cc/TYVb8sQg/kalise.jpg");
-      alert("¡Fondo especial Kalise activado!");
-      codigosUsados.push(code);
-      localStorage.setItem("codigosUsados", JSON.stringify(codigosUsados));
-    }
-    // Códigos tipo logro:xxxx
     else if (code.startsWith("logro:")) {
       const logroId = code.replace("logro:", "");
       completarLogroManual(
