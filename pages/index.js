@@ -1057,7 +1057,9 @@ function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
     }
   };
 
-  const [formacion, setFormacion] = useState("4-3-3");
+  const [formacion, setFormacion] = useState(() => {
+  return localStorage.getItem("formacion") || "4-3-3";
+});
   const [alineacion, setAlineacion] = useState(() => {
     const saved = localStorage.getItem("alineacion");
     return saved ? JSON.parse(saved) : {};
@@ -1089,55 +1091,67 @@ function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
     });
   };
 
-  const handleFormacionChange = (nuevaFormacion) => {
-  // 1. Calcula las posiciones nuevas y antiguas
+const handleFormacionChange = (nuevaFormacion) => {
+  // Calcula las nuevas posiciones
   const nuevaDef = Array.from({ length: FORMACIONES[nuevaFormacion].defensas }, (_, i) => `defensa${i + 1}`);
   const nuevaMed = Array.from({ length: FORMACIONES[nuevaFormacion].medios }, (_, i) => `medio${i + 1}`);
   const nuevaDel = Array.from({ length: FORMACIONES[nuevaFormacion].delanteros }, (_, i) => `delantero${i + 1}`);
 
-  // 2. Recoge las cartas antiguas por tipo
-  const defensas = Object.entries(alineacion)
-    .filter(([k]) => k.startsWith("defensa"))
-    .map(([, v]) => v)
-    .filter(Boolean);
-  const medios = Object.entries(alineacion)
-    .filter(([k]) => k.startsWith("medio"))
-    .map(([, v]) => v)
-    .filter(Boolean);
-  const delanteros = Object.entries(alineacion)
-    .filter(([k]) => k.startsWith("delantero"))
-    .map(([, v]) => v)
-    .filter(Boolean);
+  // Recoge las cartas antiguas por tipo, sin repetir
+  const defensas = [];
+  const usados = new Set();
+  ["defensa1","defensa2","defensa3","defensa4","defensa5"].forEach(pos => {
+    if (alineacion[pos] && !usados.has(alineacion[pos])) {
+      defensas.push(alineacion[pos]);
+      usados.add(alineacion[pos]);
+    }
+  });
+  const medios = [];
+  ["medio1","medio2","medio3","medio4"].forEach(pos => {
+    if (alineacion[pos] && !usados.has(alineacion[pos])) {
+      medios.push(alineacion[pos]);
+      usados.add(alineacion[pos]);
+    }
+  });
+  const delanteros = [];
+  ["delantero1","delantero2","delantero3"].forEach(pos => {
+    if (alineacion[pos] && !usados.has(alineacion[pos])) {
+      delanteros.push(alineacion[pos]);
+      usados.add(alineacion[pos]);
+    }
+  });
 
-  // 3. Recoloca las cartas en las nuevas posiciones (sin repetir)
+  // Recoloca solo en las nuevas posiciones, sin repetir
   const nuevoAlineacion = { portero: alineacion.portero };
   nuevaDef.forEach((pos, i) => { if (defensas[i]) nuevoAlineacion[pos] = defensas[i]; });
   nuevaMed.forEach((pos, i) => { if (medios[i]) nuevoAlineacion[pos] = medios[i]; });
   nuevaDel.forEach((pos, i) => { if (delanteros[i]) nuevoAlineacion[pos] = delanteros[i]; });
 
   setFormacion(nuevaFormacion);
+  localStorage.setItem("formacion", nuevaFormacion);
   setAlineacion(nuevoAlineacion);
 };
 
-  // Quitar carta con clic derecho
-  const handleRightClick = (e, pos) => {
-    e.preventDefault();
-    setAlineacion(a => {
-      const copia = { ...a };
-      delete copia[pos];
-      return copia;
-    });
-  };
-
-  const handleGuardar = () => {
-    localStorage.setItem("alineacion", JSON.stringify(alineacion));
-    onClose();
-  };
+const handleGuardar = () => {
+  localStorage.setItem("alineacion", JSON.stringify(alineacion));
+  localStorage.setItem("formacion", formacion);
+  onClose();
+};
 
   // Genera los nombres de las posiciones según la formación
   const posicionesDef = Array.from({ length: FORMACIONES[formacion].defensas }, (_, i) => `defensa${i + 1}`);
   const posicionesMed = Array.from({ length: FORMACIONES[formacion].medios }, (_, i) => `medio${i + 1}`);
   const posicionesDel = Array.from({ length: FORMACIONES[formacion].delanteros }, (_, i) => `delantero${i + 1}`);
+
+  // Dentro de AlineacionModal, antes del return:
+const handleRightClick = (e, pos) => {
+  e.preventDefault();
+  setAlineacion(a => {
+    const copia = { ...a };
+    delete copia[pos];
+    return copia;
+  });
+};
 
   return (
     <div style={{
@@ -1233,7 +1247,7 @@ function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
                 >
                   <option value="">Selecciona carta</option>
                   {cartasDisponibles
-                    .filter(carta => !cartasUsadas.includes(carta))
+                    .filter(carta => !cartasUsadas.includes(carta) || alineacion[pos] === carta)
                     .map(carta => (
                       <option key={carta} value={carta}>{carta.replace("/img/", "").replace(".webp", "")}</option>
                     ))}
@@ -1273,7 +1287,7 @@ function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
                   >
                     <option value="">Selecciona carta</option>
                     {cartasDisponibles
-                      .filter(carta => !cartasUsadas.includes(carta))
+                      .filter(carta => !cartasUsadas.includes(carta) || alineacion[pos] === carta)
                       .map(carta => (
                         <option key={carta} value={carta}>{carta.replace("/img/", "").replace(".webp", "")}</option>
                       ))}
@@ -1314,7 +1328,7 @@ function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
                   >
                     <option value="">Selecciona carta</option>
                     {cartasDisponibles
-                      .filter(carta => !cartasUsadas.includes(carta))
+                      .filter(carta => !cartasUsadas.includes(carta) || alineacion[pos] === carta)
                       .map(carta => (
                         <option key={carta} value={carta}>{carta.replace("/img/", "").replace(".webp", "")}</option>
                       ))}
@@ -1355,7 +1369,7 @@ function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
                   >
                     <option value="">Selecciona carta</option>
                     {cartasDisponibles
-                      .filter(carta => !cartasUsadas.includes(carta))
+                      .filter(carta => !cartasUsadas.includes(carta) || alineacion[pos] === carta)
                       .map(carta => (
                         <option key={carta} value={carta}>{carta.replace("/img/", "").replace(".webp", "")}</option>
                       ))}
