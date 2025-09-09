@@ -1034,6 +1034,30 @@ function PerfilModal({ perfil, setPerfil, onClose, onAlineacion, exportarProgres
 }
 
 function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
+  const FORMACIONES = {
+    "4-3-3": {
+      defensas: 4,
+      medios: 3,
+      delanteros: 3
+    },
+    "3-4-3": {
+      defensas: 3,
+      medios: 4,
+      delanteros: 3
+    },
+    "4-4-2": {
+      defensas: 4,
+      medios: 4,
+      delanteros: 2
+    },
+    "5-3-2": {
+      defensas: 5,
+      medios: 3,
+      delanteros: 2
+    }
+  };
+
+  const [formacion, setFormacion] = useState("4-3-3");
   const [alineacion, setAlineacion] = useState(() => {
     const saved = localStorage.getItem("alineacion");
     return saved ? JSON.parse(saved) : {};
@@ -1080,7 +1104,10 @@ function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
     onClose();
   };
 
-
+  // Genera los nombres de las posiciones según la formación
+  const posicionesDef = Array.from({ length: FORMACIONES[formacion].defensas }, (_, i) => `defensa${i + 1}`);
+  const posicionesMed = Array.from({ length: FORMACIONES[formacion].medios }, (_, i) => `medio${i + 1}`);
+  const posicionesDel = Array.from({ length: FORMACIONES[formacion].delanteros }, (_, i) => `delantero${i + 1}`);
 
   return (
     <div style={{
@@ -1125,6 +1152,25 @@ function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
           }}>
             <b>ALINEACIÓN</b>
           </h2>
+          {/* Selector de formación */}
+          <div style={{ marginBottom: "18px", textAlign: "center" }}>
+            <label style={{ fontWeight: 600, fontSize: "1.1rem", marginRight: "10px" }}>Formación:</label>
+            <select
+              value={formacion}
+              onChange={e => setFormacion(e.target.value)}
+              style={{
+                padding: "6px",
+                borderRadius: "6px",
+                fontFamily: "'Montserrat', Arial, sans-serif",
+                fontWeight: 600,
+                fontSize: "1rem"
+              }}
+            >
+              {Object.keys(FORMACIONES).map(f => (
+                <option key={f} value={f}>{f}</option>
+              ))}
+            </select>
+          </div>
           {/* Portero */}
           <div style={{ display: "flex", justifyContent: "center", marginBottom: "25px" }}>
             <div style={{ textAlign: "center" }}>
@@ -1167,7 +1213,7 @@ function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
           </div>
           {/* Defensas */}
           <div style={{ display: "flex", justifyContent: "center", gap: "20px", marginBottom: "25px" }}>
-            {["defensa1", "defensa2", "defensa3", "defensa4"].map(pos => (
+            {posicionesDef.map(pos => (
               <div key={pos} style={{ textAlign: "center" }}>
                 <span style={{
                   fontWeight: 600,
@@ -1208,7 +1254,7 @@ function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
           </div>
           {/* Medios */}
           <div style={{ display: "flex", justifyContent: "center", gap: "20px", marginBottom: "25px" }}>
-            {["medio1", "medio2", "medio3"].map(pos => (
+            {posicionesMed.map(pos => (
               <div key={pos} style={{ textAlign: "center" }}>
                 <span style={{
                   fontWeight: 600,
@@ -1249,7 +1295,7 @@ function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
           </div>
           {/* Delanteros */}
           <div style={{ display: "flex", justifyContent: "center", gap: "20px", marginBottom: "10px" }}>
-            {["delantero1", "delantero2", "delantero3"].map(pos => (
+            {posicionesDel.map(pos => (
               <div key={pos} style={{ textAlign: "center" }}>
                 <span style={{
                   fontWeight: 600,
