@@ -1618,7 +1618,8 @@ function canjearCodigo() {
       markismo: "https://i.postimg.cc/xTHcjZSj/markismo.jpg",
       ruper: "https://i.postimg.cc/Y93v7Lc6/ruper.jpg",
       sadiq: "https://i.postimg.cc/CxBn8KD0/sadiq.jpg",
-      urko: "https://i.postimg.cc/D0w8wfFt/urko.jpg"
+      urko: "https://i.postimg.cc/D0w8wfFt/urko.jpg",
+      beacon: "https://i.postimg.cc/Bn6kcrQ4/beacon.jpg"
     };
 
     if (code in fondosEspeciales) {
