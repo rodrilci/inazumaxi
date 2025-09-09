@@ -1246,11 +1246,12 @@ const handleRightClick = (e, pos) => {
                   }}
                 >
                   <option value="">Selecciona carta</option>
+
                   {cartasDisponibles
-                    .filter(carta => !cartasUsadas.includes(carta) || alineacion[pos] === carta)
-                    .map(carta => (
-                      <option key={carta} value={carta}>{carta.replace("/img/", "").replace(".webp", "")}</option>
-                    ))}
+                  .filter(carta => !cartasUsadas.includes(carta) || alineacion.portero === carta)
+                  .map(carta => (
+                    <option key={carta} value={carta}>{carta.replace("/img/", "").replace(".webp", "")}</option>
+                  ))}
                 </select>
               )}
             </div>
@@ -1521,6 +1522,8 @@ useEffect(() => {
     setKeySequence(seq => {
       const newSeq = [...seq, key].slice(-SECRET.length); // Solo guarda las últimas N teclas
       if (newSeq.join("") === SECRET) {
+        e.preventDefault();
+        e.stopPropagation();
         setShowSecretBar(true);
         return [];
       }
@@ -1529,7 +1532,7 @@ useEffect(() => {
   };
   window.addEventListener("keydown", handleKeyDown);
   return () => window.removeEventListener("keydown", handleKeyDown);
-});
+}, []);
 
 // Después de cargar perfil en useEffect:
 useEffect(() => {
