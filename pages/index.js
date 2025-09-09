@@ -1089,6 +1089,36 @@ function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
     });
   };
 
+  const handleFormacionChange = (nuevaFormacion) => {
+  // 1. Calcula las posiciones nuevas y antiguas
+  const nuevaDef = Array.from({ length: FORMACIONES[nuevaFormacion].defensas }, (_, i) => `defensa${i + 1}`);
+  const nuevaMed = Array.from({ length: FORMACIONES[nuevaFormacion].medios }, (_, i) => `medio${i + 1}`);
+  const nuevaDel = Array.from({ length: FORMACIONES[nuevaFormacion].delanteros }, (_, i) => `delantero${i + 1}`);
+
+  // 2. Recoge las cartas antiguas por tipo
+  const defensas = Object.entries(alineacion)
+    .filter(([k]) => k.startsWith("defensa"))
+    .map(([, v]) => v)
+    .filter(Boolean);
+  const medios = Object.entries(alineacion)
+    .filter(([k]) => k.startsWith("medio"))
+    .map(([, v]) => v)
+    .filter(Boolean);
+  const delanteros = Object.entries(alineacion)
+    .filter(([k]) => k.startsWith("delantero"))
+    .map(([, v]) => v)
+    .filter(Boolean);
+
+  // 3. Recoloca las cartas en las nuevas posiciones (sin repetir)
+  const nuevoAlineacion = { portero: alineacion.portero };
+  nuevaDef.forEach((pos, i) => { if (defensas[i]) nuevoAlineacion[pos] = defensas[i]; });
+  nuevaMed.forEach((pos, i) => { if (medios[i]) nuevoAlineacion[pos] = medios[i]; });
+  nuevaDel.forEach((pos, i) => { if (delanteros[i]) nuevoAlineacion[pos] = delanteros[i]; });
+
+  setFormacion(nuevaFormacion);
+  setAlineacion(nuevoAlineacion);
+};
+
   // Quitar carta con clic derecho
   const handleRightClick = (e, pos) => {
     e.preventDefault();
@@ -1157,7 +1187,7 @@ function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
             <label style={{ fontWeight: 600, fontSize: "1.1rem", marginRight: "10px" }}>Formación:</label>
             <select
               value={formacion}
-              onChange={e => setFormacion(e.target.value)}
+              onChange={e => handleFormacionChange(e.target.value)}
               style={{
                 padding: "6px",
                 borderRadius: "6px",
