@@ -1,6 +1,52 @@
 import { useState, useEffect } from "react";
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"></link>
 
+const CARTAS_POR_RISTRA = [
+  [ // Inazuma Eleven
+    "/img/mark.webp", "/img/king.webp", "/img/darren.webp", "/img/mask.webp", "/img/feldt.webp", "/img/idol.webp", 
+    "/img/poseidon.webp", "/img/hillman.webp", "/img/ropes.webp", "/img/daisy.webp", "/img/galileo.webp", "/img/dvalin.webp", 
+    "/img/zell.webp", "/img/grent.webp",  "/img/nero.webp", "/img/blasi.webp",  "/img/dasilva.webp",  "/img/fox.webp",  
+    "/img/helio.webp", "/img/iñigo.webp",  "/img/luceafar.webp",  "/img/astaroth.webp", "/img/nathan.webp","/img/tod.webp", 
+    "/img/scotty.webp", "/img/archer.webp", "/img/martin.webp", "/img/master.webp", "/img/monkey.webp", "/img/malcolm.webp", 
+    "/img/apollo.webp", "/img/hephestus.webp", "/img/sweet.webp", "/img/smith.webp", "/img/shawn.webp", "/img/hurley.webp", 
+    "/img/bomber.webp",  "/img/icer.webp",  "/img/arkew.webp",  "/img/gocker.webp",  "/img/zohen.webp",  "/img/hauser.webp",  
+    "/img/lagarto.webp",  "/img/vitesse.webp",  "/img/ferrum.webp",  "/img/mangrove.webp", "/img/ischer.webp",  "/img/jenkins.webp",  
+    "/img/lephiel.webp",  "/img/hebimos.webp", "/img/jack.webp", "/img/thiago.webp", "/img/bargie.webp", "/img/bobby.webp", 
+    "/img/jim.webp", "/img/sam.webp", "/img/drent.webp", "/img/lion.webp", "/img/simmons.webp", "/img/hillvalley.webp", 
+    "/img/sherman.webp", "/img/ares.webp", "/img/dionysus.webp", "/img/island.webp", "/img/downtown.webp", "/img/shawn.webp", 
+    "/img/ganymede.webp", "/img/baller.webp", "/img/clear.webp",  "/img/gele.webp",  "/img/kiburn.webp",  "/img/thor.webp", 
+    "/img/kalil.webp",  "/img/minion.webp",  "/img/mountain.webp",  "/img/gaines.webp", "/img/garcia.webp",  "/img/bump.webp",  
+    "/img/lump.webp",  "/img/rubu.webp", "/img/nenel.webp", "/img/tori.webp", "/img/caleb.webp","/img/timmy.webp", "/img/max.webp", 
+    "/img/steve.webp", "/img/erik.webp", "/img/bloom.webp", "/img/chicken.webp", "/img/eagle.webp", "/img/swing.webp", "/img/artemis.webp", 
+    "/img/hermes.webp", "/img/hera.webp", "/img/athena.webp", "/img/byron.webp", "/img/agentem.webp", 
+    "/img/soundtown.webp", "/img/pandora.webp", "/img/jordan.webp", "/img/sparrow.webp", "/img/bellatrix.webp",  "/img/heat.webp",  
+    "/img/lean.webp",  "/img/droll.webp",  "/img/rhine.webp",  "/img/kiwill.webp",  "/img/ark.webp", 
+    "/img/dolphin.webp", "/img/choi.webp", "/img/acuto.webp", "/img/krueger.webp", "/img/gabrini.webp", "/img/nakata.webp", "/img/diavolo.webp", 
+    "/img/ryan.webp", "/img/haddad.webp", "/img/hampton.webp", "/img/maximino.webp", "/img/vitrum.webp", "/img/leung.webp", "/img/stark.webp",  
+    "/img/triumvir.webp",  "/img/gunter.webp",  "/img/lephiel.webp",  "/img/wenel.webp", "/img/axel.webp", "/img/samford.webp",
+    "/img/kevin.webp", "/img/willy.webp", "/img/artist.webp", "/img/cheetah.webp", "/img/gamer.webp", "/img/gorilla.webp", "/img/hatch.webp", 
+    "/img/talisman.webp", "/img/turner.webp", "/img/cloak.webp", "/img/tyler.webp", "/img/marvin.webp", "/img/thomas.webp", 
+    "/img/demeter.webp", "/img/sue.webp", "/img/diam.webp", "/img/rihm.webp", "/img/metron.webp", 
+    "/img/mercury.webp",  "/img/torch.webp",  "/img/gazelle.webp",  "/img/wittz.webp",  "/img/shadow.webp",  "/img/austin.webp",  
+    "/img/xavier.webp", "/img/partinus.webp", "/img/balone.webp", "/img/keats.webp", "/img/generani.webp", "/img/paolo.webp", "/img/robingo.webp", 
+    "/img/coyote.webp", "/img/flare.webp", "/img/drago.webp", "/img/hedgeer.webp",  "/img/zanos.webp",  "/img/gaiel.webp"
+  ],
+  [ // Inazuma Eleven GO
+    "/img/jp.webp", "/img/aitor.webp", "/img/gabi.webp", "/img/arion.webp","/img/riccardo.webp","/img/bailong.webp",
+    "/img/fei.webp", "/img/sol.webp", "/img/zanark.webp", "/img/victor.webp",
+  ],
+  [ // Inazuma Eleven Ares
+    "/img/mark.webp", "/img/king.webp", "/img/ropes.webp", "/img/dvalin.webp", "/img/zell.webp", "/img/nathan.webp","/img/tod.webp", "/img/martin.webp", 
+    "/img/master.webp", "/img/malcolm.webp", "/img/apollo.webp", "/img/shawn.webp", "/img/bomber.webp", "/img/jack.webp",
+    "/img/bobby.webp", "/img/jim.webp", "/img/sam.webp", "/img/drent.webp", "/img/simmons.webp", "/img/ares.webp", "/img/dionysus.webp", "/img/downtown.webp",
+    "/img/shawn.webp", "/img/ganymede.webp", "/img/baller.webp", "/img/clear.webp",  "/img/caleb.webp","/img/timmy.webp", "/img/max.webp", 
+    "/img/steve.webp", "/img/erik.webp", "/img/bloom.webp", "/img/swing.webp", "/img/artemis.webp", "/img/hermes.webp", "/img/athena.webp", 
+    "/img/byron.webp",  "/img/jordan.webp", "/img/bellatrix.webp",  "/img/krueger.webp", "/img/axel.webp", "/img/samford.webp", "/img/kevin.webp", "/img/willy.webp",
+    , "/img/turner.webp", "/img/tyler.webp", "/img/marvin.webp", "/img/thomas.webp", "/img/hatch.webp", "/img/demeter.webp", "/img/metron.webp", "/img/torch.webp",  
+    "/img/gazelle.webp", "/img/xavier.webp", "/img/keats.webp",
+  ]
+];
+
 const posiciones = {
   portero: ["/img/mark.webp", "/img/king.webp", "/img/darren.webp", "/img/mask.webp", "/img/feldt.webp", "/img/idol.webp", "/img/poseidon.webp", "/img/hillman.webp", "/img/ropes.webp", "/img/daisy.webp", "/img/galileo.webp", "/img/dvalin.webp", "/img/zell.webp", "/img/grent.webp",  "/img/nero.webp", "/img/blasi.webp",  "/img/dasilva.webp",  "/img/fox.webp",  "/img/helio.webp", "/img/iñigo.webp",  "/img/luceafar.webp",  "/img/astaroth.webp",  "/img/jp.webp"],
   defensa1: ["/img/nathan.webp","/img/tod.webp", "/img/scotty.webp", "/img/aitor.webp", "/img/archer.webp", "/img/martin.webp", "/img/master.webp", "/img/monkey.webp", "/img/malcolm.webp", "/img/apollo.webp", "/img/hephestus.webp", "/img/sweet.webp", "/img/smith.webp", "/img/shawn.webp", "/img/hurley.webp", "/img/bomber.webp",  "/img/icer.webp",  "/img/arkew.webp",  "/img/gocker.webp",  "/img/zohen.webp",  "/img/hauser.webp",  "/img/lagarto.webp",  "/img/vitesse.webp",  "/img/ferrum.webp",  "/img/mangrove.webp", "/img/ischer.webp",  "/img/jenkins.webp",  "/img/lephiel.webp",  "/img/hebimos.webp",  "/img/jp.webp"],
@@ -693,14 +739,71 @@ const LOGROS = [
   },
                              {
       id: "Calapirata",
-    nombre: "La nueva Royal Academy",
-    descripcion: "Escoge a Preston Princeton, Dracon Yale y Rex Remington entre tus 11 jugadores.",
-    jugadores: ["/img/preston.webp", "/img/yale.webp", "/img/remington.webp"
+    nombre: "¡Al abordaje!",
+    descripcion: "Escoge a Octavus Kraken, Dakkar Nemo y Davy Jones entre tus 11 jugadores.",
+    jugadores: ["/img/kraken.webp", "/img/nemo.webp", "/img/davy.webp"
     ],
     recompensa: { tipo: "escudo", valor: "CalaPirata" },
-    drops: [ "/img/preston.webp", "/img/yale.webp", "/img/remington.webp" ]
+    drops: [ "/img/kraken.webp", "/img/nemo.webp", "/img/davy.webp" ]
+  },
+                               {
+      id: "Mardeluna",
+    nombre: "Listos para la guerra",
+    descripcion: "Escoge a Alessandro ilGrande y Doug McArthur entre tus 11 jugadores.",
+    jugadores: ["/img/ilgrande.webp", "/img/doug.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "MardeLuna" },
+    drops: [ "/img/ilgrande.webp", "/img/doug.webp"]
+  },
+                               {
+      id: "Alpinogo",
+    nombre: "Ice, frío, hielo",
+    descripcion: "Escoge a Wolfe Whyte, Iggie Loo y Njord Snio entre tus 11 jugadores.",
+    jugadores: ["/img/whyte.webp", "/img/loo.webp", "/img/njord.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "AlpinoGo" },
+    drops: [ "/img/whyte.webp", "/img/loo.webp", "/img/njord.webp"]
   },
 
+                                 {
+      id: "Kirkwoodgo",
+    nombre: "Los chicos de Byron",
+    descripcion: "Escoge a los hermanos Ash y Bay Laurel entre tus 11 jugadores.",
+    jugadores: ["/img/bradford.webp", "/img/langford.webp", "/img/laurel.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "KirkwoodGo" },
+    drops: [ "/img/bradford.webp", "/img/langford.webp", "/img/laurel.webp"]
+  },
+
+                                   {
+      id: "Espejismo",
+    nombre: "Estrellas del Camino Imperial: ¡Abracadabra!",
+    descripcion: "Escoge a los hermanos Ash y Bay Laurel entre tus 11 jugadores.",
+    jugadores: ["/img/bradford.webp", "/img/langford.webp", "/img/laurel.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "KirkwoodGo" },
+    drops: [ "/img/bradford.webp", "/img/langford.webp", "/img/laurel.webp"]
+  },
+
+                                     {
+      id: "Universal",
+    nombre: "Estrellas del Camino Imperial: Los astros del Universal",
+    descripcion: "Escoge a los hermanos Ash y Bay Laurel entre tus 11 jugadores.",
+    jugadores: ["/img/bradford.webp", "/img/langford.webp", "/img/laurel.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "KirkwoodGo" },
+    drops: [ "/img/bradford.webp", "/img/langford.webp", "/img/laurel.webp"]
+  },
+
+                                     {
+      id: "MonteOlimpo",
+    nombre: "Estrellas del Camino Imperial: Los nuevos Dioses del Olimpo",
+    descripcion: "Escoge a los hermanos Ash y Bay Laurel entre tus 11 jugadores.",
+    jugadores: ["/img/bradford.webp", "/img/langford.webp", "/img/laurel.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "KirkwoodGo" },
+    drops: [ "/img/bradford.webp", "/img/langford.webp", "/img/laurel.webp"]
+  },
 
 {
   id: "peabody",
@@ -723,6 +826,7 @@ const LOGROS = [
    recompensa: { tipo: "escudo", valor: "Marvin" }
 },
 ];
+
 
 function TutorialModal({ onClose }) {
   return (
@@ -1486,14 +1590,24 @@ function Logros({ logrosCompletados, visible, onToggle }) {
 }
 
 
-const getRandomCard = (available, used) => {
-  const choices = available.filter(img => !used.includes(img));
+const getRandomCard = (available, used, ristraActiva = 0) => {
+  // Solo cartas permitidas en la ristra activa
+  const permitidas = available.filter(img => CARTAS_POR_RISTRA[ristraActiva].includes(img));
+  const choices = permitidas.filter(img => !used.includes(img));
   return choices[Math.floor(Math.random() * choices.length)];
 };
 
+
+const IMAGENES_RISTRAS = [
+  "/img/ieog.webp",   // Imagen para la ristra 1
+  "/img/iego.webp",  // Imagen para la ristra 2
+  "/img/ieares.webp"      // Imagen para la ristra 3
+];
+
 export default function Home() {
-const [seleccionadas, setSeleccionadas] = useState({});
-const [bloqueadas, setBloqueadas] = useState([]);
+const [seleccionadas, setSeleccionadas] = useState([{}, {}, {}]);
+const [bloqueadas, setBloqueadas] = useState([[], [], []]);
+const [ristraActiva, setRistraActiva] = useState(0);
 const [perfil, setPerfil] = useState({ nombre: "", escudo: "", escudosDisponibles: [] });
 const [logrosCompletados, setLogrosCompletados] = useState([]);
 const [cartasDesbloqueadas, setCartasDesbloqueadas] = useState([]);
@@ -1640,9 +1754,9 @@ useEffect(() => {
 }, [datosCargados]);
 
 
-  useEffect(() => {
-    inicializarCartas();
-  }, []);
+useEffect(() => {
+  inicializarTodasLasRistras();
+}, []);
 
 useEffect(() => {
   if (datosCargados) {
@@ -1658,17 +1772,38 @@ useEffect(() => {
   }
 }, [seleccionadas, bloqueadas, datosCargados]);
 
-  function inicializarCartas() {
+function inicializarTodasLasRistras() {
+  const nuevasSeleccionadas = [];
+  const nuevasBloqueadas = [];
+  for (let i = 0; i < 3; i++) {
     const usadas = [];
     const nuevas = {};
     Object.keys(posiciones).forEach(pos => {
-      nuevas[pos] = getRandomCard(posiciones[pos], usadas);
+      nuevas[pos] = getRandomCard(posiciones[pos], usadas, i); // <--- usa "i" aquí
       usadas.push(nuevas[pos]);
     });
-    setSeleccionadas(nuevas);
-    setBloqueadas([]);
-  };
+    nuevasSeleccionadas.push(nuevas);
+    nuevasBloqueadas.push([]);
+  }
+  setSeleccionadas(nuevasSeleccionadas);
+  setBloqueadas(nuevasBloqueadas);
+}
 
+function inicializarCartas() {
+  const usadas = [];
+  const nuevas = {};
+  Object.keys(posiciones).forEach(pos => {
+    nuevas[pos] = getRandomCard(posiciones[pos], usadas, ristraActiva);
+    usadas.push(nuevas[pos]);
+  });
+  const nuevasSeleccionadas = [...seleccionadas];
+  nuevasSeleccionadas[ristraActiva] = nuevas;
+  setSeleccionadas(nuevasSeleccionadas);
+
+  const nuevasBloqueadas = [...bloqueadas];
+  nuevasBloqueadas[ristraActiva] = [];
+  setBloqueadas(nuevasBloqueadas);
+}
 
 function exportarProgreso() {
   const data = {
@@ -1766,27 +1901,31 @@ function canjearCodigo() {
   }, []);
 
 
-  function handleClick(pos) {
-    if (bloqueadas.includes(pos)) return;
+function handleClick(pos) {
+  if (bloqueadas[ristraActiva].includes(pos)) return;
 
-    setBloqueadas([...bloqueadas, pos]);
+  const nuevasBloqueadas = [...bloqueadas];
+  nuevasBloqueadas[ristraActiva] = [...nuevasBloqueadas[ristraActiva], pos];
+  setBloqueadas(nuevasBloqueadas);
 
-    const usadas = Object.keys(seleccionadas)
-      .filter(k => k === pos || bloqueadas.includes(k))
-      .map(k => seleccionadas[k]);
+  const usadas = Object.keys(seleccionadas[ristraActiva])
+    .filter(k => k === pos || nuevasBloqueadas[ristraActiva].includes(k))
+    .map(k => seleccionadas[ristraActiva][k]);
 
-    const nuevas = {};
-    Object.keys(posiciones).forEach(p => {
-      if (p === pos || bloqueadas.includes(p)) {
-        nuevas[p] = seleccionadas[p];
-      } else {
-        nuevas[p] = getRandomCard(posiciones[p], usadas);
-        usadas.push(nuevas[p]);
-      }
-    });
-    setSeleccionadas(nuevas);
-  }
-// ...existing code...
+  const nuevas = {};
+  Object.keys(posiciones).forEach(p => {
+    if (p === pos || nuevasBloqueadas[ristraActiva].includes(p)) {
+      nuevas[p] = seleccionadas[ristraActiva][p];
+    } else {
+      nuevas[p] = getRandomCard(posiciones[p], usadas);
+      usadas.push(nuevas[p]);
+    }
+  });
+
+  const nuevasSeleccionadas = [...seleccionadas];
+  nuevasSeleccionadas[ristraActiva] = nuevas;
+  setSeleccionadas(nuevasSeleccionadas);
+}
 
   // Estilo de imagen manteniendo proporción 1080x1280
   const imageStyle = (pos) => ({
@@ -1863,37 +2002,87 @@ return (
 
       {/* Barra superior */}
       {showTutorial && <TutorialModal onClose={cerrarTutorial} />}
-      <div style={{
-        position: "absolute",
-        top: 0, left: 0, right: 0,
-        height: "60px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "flex-end",
-        padding: "10px 30px",
-        zIndex: 10
-      }}>
-        {perfil.nombre && perfil.escudo && (
-          <div style={{ display: "flex", alignItems: "center", marginRight: "20px" }}>
-            <img src={ESCUDOS[perfil.escudo]} alt="escudo" style={{ width: "50px", marginRight: "10px" }} />
-            <span style={{ color: "#ffffffff", fontWeight: "bold", fontSize: "25px", textShadow: "0 0 6px #000000ff" }}>{perfil.nombre}</span>
-          </div>
-        )}
-        <button
-          onClick={() => setShowPerfil(true)}
+
+<div style={{
+  position: "absolute",
+  top: 0, left: 0, right: 0,
+  height: "60px",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  padding: "10px 30px",
+  zIndex: 10
+}}>
+  {/* Botones de ristras centrados */}
+  <div style={{
+    display: "flex",
+    gap: "20px",
+    alignItems: "center",
+    justifyContent: "center",
+    flex: 1
+  }}>
+    {[0, 1, 2].map(i => (
+      <button
+        key={i}
+        onClick={() => setRistraActiva(i)}
+        style={{
+          padding: 0,
+          borderRadius: "8px",
+          background: ristraActiva === i ? "#00bfff" : "#eee",
+          border: ristraActiva === i ? "2px solid #0077aa" : "1px solid #ccc",
+          cursor: "pointer",
+          width: "110px",
+          height: "54px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          boxShadow: ristraActiva === i ? "0 0 10px #00bfff88" : "none"
+        }}
+      >
+        <img
+          src={IMAGENES_RISTRAS[i]}
+          alt={`Ristra ${i + 1}`}
           style={{
-            padding: "8px 20px",
-            fontSize: "18px",
-            borderRadius: "8px",
-            background: "#d0ff00ff",
-            cursor: "pointer",
-            fontWeight: "bold",
-            boxShadow: "0 0 8px #000000ff"
+            width: "90px",
+            height: "40px",
+            borderRadius: "5px",
+            border: ristraActiva === i ? "2px solid #fff" : "2px solid transparent",
+            boxShadow: ristraActiva === i ? "0 0 8px #00bfff" : "none",
+            objectFit: "cover"
           }}
-        >
-          PERFIL
-        </button>
+        />
+      </button>
+    ))}
+  </div>
+  {/* Perfil a la derecha */}
+  <div style={{
+    display: "flex",
+    alignItems: "center",
+    marginLeft: "auto"
+  }}>
+    {perfil.nombre && perfil.escudo && (
+      <div style={{ display: "flex", alignItems: "center", marginRight: "20px" }}>
+        <img src={ESCUDOS[perfil.escudo]} alt="escudo" style={{ width: "50px", marginRight: "10px" }} />
+        <span style={{ color: "#ffffffff", fontWeight: "bold", fontSize: "25px", textShadow: "0 0 6px #000000ff" }}>{perfil.nombre}</span>
       </div>
+    )}
+    <button
+      onClick={() => setShowPerfil(true)}
+      style={{
+        padding: "8px 20px",
+        fontSize: "18px",
+        borderRadius: "8px",
+        background: "#d0ff00ff",
+        cursor: "pointer",
+        fontWeight: "bold",
+        boxShadow: "0 0 8px #000000ff"
+      }}
+    >
+      PERFIL
+    </button>
+  </div>
+</div>
+
 {/* Logro manual: Caravana */}
 <div style={{ marginTop: "45px", textAlign: "right" }}>
   <a
@@ -1973,24 +2162,24 @@ return (
             {/* Portero */}
             <div style={{ margin: "10px 0" }}>
               <img
-                src={seleccionadas.portero}
-                alt="portero"
-                onClick={() => handleClick("portero")}
-                style={imageStyle("portero")}
+              src={seleccionadas[ristraActiva].portero}
+              alt="portero"
+              onClick={() => handleClick("portero")}
+              style={imageStyle("portero")}
               />
             </div>
 
             {/* Defensas */}
             <div style={{ display: "flex", justifyContent: "center", gap: "20px", marginBottom: "20px" }}>
-              {["defensa1","defensa2","defensa3","defensa4"].map(pos => (
-                <img
-                  key={pos}
-                  src={seleccionadas[pos]}
-                  alt={pos}
-                  onClick={() => handleClick(pos)}
-                  style={imageStyle(pos)}
-                />
-              ))}
+            {["defensa1","defensa2","defensa3","defensa4"].map(pos => (
+              <img
+                key={pos}
+                src={seleccionadas[ristraActiva][pos]}
+                alt={pos}
+                onClick={() => handleClick(pos)}
+                style={imageStyle(pos)}
+              />
+            ))}
             </div>
             
             {/* Medios */}
@@ -1998,7 +2187,7 @@ return (
               {["medio1","medio2","medio3"].map(pos => (
                 <img
                   key={pos}
-                  src={seleccionadas[pos]}
+                  src={seleccionadas[ristraActiva][pos]}
                   alt={pos}
                   onClick={() => handleClick(pos)}
                   style={imageStyle(pos)}
@@ -2011,7 +2200,7 @@ return (
               {["delantero1","delantero2","delantero3"].map(pos => (
                 <img
                   key={pos}
-                  src={seleccionadas[pos]}
+                  src={seleccionadas[ristraActiva][pos]}
                   alt={pos}
                   onClick={() => handleClick(pos)}
                   style={imageStyle(pos)}
