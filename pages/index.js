@@ -44,13 +44,21 @@ const CARTAS_POR_RISTRA = [
     "/img/skinny.webp", "/img/smarty.webp", "/img/chunky.webp", "/img/tiny.webp", "/img/hairy.webp", "/img/spikey.webp", "/img/fei.webp", 
     "/img/feitirano.webp", "/img/creepy.webp","/img/ariontezcat.webp", "/img/vladimir.webp", "/img/vladimirvictor.webp", "/img/hotel.webp", 
     "/img/oscar.webp", "/img/golf.webp", "/img/lima.webp","/img/india.webp", "/img/julieta.webp", "/img/mike.webp", "/img/alfa.webp", 
-    "/img/kilo.webp", "/img/foxtrot.webp", "/img/noviembre.webp", "/img/beta.webp","/img/romeo.webp", "/img/papa.webp", "/img/quebec.webp",
-    "/img/sierra.webp", "/img/gamma.webp",  "/img/eka.webp", "/img/dva.webp", "/img/catvari.webp","/img/tyrah.webp", "/img/panca.webp", 
-    "/img/sas.webp","/img/sapta.webp", "/img/asta.webp", "/img/navan.webp", "/img/dasan.webp", "/img/zanark.webp",
+    "/img/kilo.webp", "/img/foxtrot.webp", "/img/noviembre.webp", "/img/beta.webp", "/img/inaba.webp","/img/romeo.webp", "/img/papa.webp", 
+    "/img/quebec.webp","/img/sierra.webp", "/img/gamma.webp",  "/img/eka.webp", "/img/dva.webp", "/img/catvari.webp","/img/tyrah.webp","/img/panca.webp", 
+    "/img/sas.webp","/img/sapta.webp", "/img/asta.webp", "/img/navan.webp", "/img/dasan.webp", "/img/zanark.webp", "/img/zanarkmm.webp",
+    "/img/goldie.webp","/img/sor.webp","/img/ayt.webp","/img/arecks.webp","/img/cee.webp", "/img/djibz.webp","/img/garreau.webp","/img/mohrir.webp",
+    "/img/mehr.webp","/img/ghiris.webp","/img/zetoh.webp","/img/chitoh.webp","/img/yurkeh.webp","/img/dekih.webp","/img/yuh.webp","/img/kohlt.webp",
+    "/img/hamstah.webp","/img/felis.webp","/img/simeon.webp","/img/saru.webp","/img/jpmm.webp","/img/goldiemm.webp","/img/sormm.webp","/img/gabimm.webp",
+    "/img/arionmm.webp","/img/riccardomm.webp","/img/romamm.webp","/img/solmm.webp","/img/feimm.webp","/img/victormm.webp","/img/zanarkultra.webp",
+    "/img/markadulto.webp","/img/nathanadulto.webp","/img/jackadulto.webp","/img/hurleyadulto.webp","/img/samfordadulto.webp","/img/judeadulto.webp",
+    "/img/calebadulto.webp","/img/xavieradulto.webp","/img/shawnadulto.webp","/img/kevinadulto.webp","/img/axeladulto.webp","/img/lotus.webp","/img/tulip.webp",
+    "/img/sterne.webp","/img/aster.webp","/img/flora.webp","/img/floramm.webp","/img/vulpeen.webp","/img/drakul.webp","/img/ogar.webp", "/img/karan.webp",
+    "/img/rondula.webp", "/img/plink.webp","/img/aoba.webp","/img/bala.webp", "/img/banda.webp", "/img/ruger.webp", "/img/gandares.webp","/img/phobos.webp",
+    "/img/meteo.webp","/img/ozrock.webp","/img/terry.webp", "/img/foreman.webp", "/img/keenan.webp", "/img/trina.webp","/img/zippy.webp","/img/buddy.webp", 
+    "/img/cerise.webp",  "/img/zack.webp", "/img/falco.webp", "/img/circulus.webp", "/img/arculus.webp",
 
-
-
-    
+  
   ],
   [ // Inazuma Eleven Ares
     "/img/mark.webp", "/img/king.webp", "/img/ropes.webp", "/img/dvalin.webp", "/img/zell.webp", "/img/nathan.webp","/img/tod.webp", "/img/martin.webp", 
@@ -65,21 +73,21 @@ const CARTAS_POR_RISTRA = [
 ];
 
 const posiciones = {
-  portero:    [ "/img/eka.webp","/img/romeo.webp","/img/hotel.webp", "/img/biggsy.webp", "/img/mark.webp", "/img/king.webp", "/img/samguk.webp", "/img/darren.webp", "/img/mask.webp", "/img/feldt.webp", "/img/idol.webp", "/img/poseidon.webp", "/img/hillman.webp", "/img/ropes.webp", "/img/daisy.webp", "/img/galileo.webp", "/img/dvalin.webp", "/img/zell.webp", "/img/grent.webp",  "/img/nero.webp", "/img/blasi.webp",  "/img/dasilva.webp",  "/img/fox.webp",  "/img/helio.webp", "/img/iñigo.webp",  "/img/luceafar.webp",  "/img/astaroth.webp",  "/img/jp.webp", "/img/nirvana.webp", "/img/princeton.webp", "/img/ilgrande.webp", "/img/whyte.webp", "/img/cinquedea.webp", "/img/lumina.webp", "/img/saturn.webp"],
-  defensa1:   ["/img/smarty.webp", "/img/chunky.webp","/img/nathan.webp","/img/tod.webp", "/img/scotty.webp", "/img/aitor.webp", "/img/archer.webp", "/img/martin.webp", "/img/master.webp", "/img/monkey.webp", "/img/malcolm.webp", "/img/apollo.webp", "/img/hephestus.webp", "/img/sweet.webp", "/img/smith.webp", "/img/shawn.webp", "/img/hurley.webp", "/img/bomber.webp",  "/img/icer.webp",  "/img/arkew.webp",  "/img/gocker.webp",  "/img/zohen.webp",  "/img/hauser.webp",  "/img/lagarto.webp",  "/img/vitesse.webp",  "/img/ferrum.webp",  "/img/mangrove.webp", "/img/ischer.webp",  "/img/jenkins.webp",  "/img/lephiel.webp",  "/img/hebimos.webp",  "/img/jp.webp", "/img/beamer.webp", "/img/obscura.webp", "/img/subaru.webp"],
-  defensa2:   ["/img/dva.webp", "/img/catvari.webp", "/img/tyrah.webp","/img/papa.webp","/img/kilo.webp","/img/oscar.webp", "/img/golf.webp", "/img/skinny.webp","/img/smiley.webp","/img/jack.webp","/img/peabody.webp", "/img/sor.webp", "/img/thiago.webp", "/img/bargie.webp", "/img/gabi.webp", "/img/aitor.webp", "/img/bobby.webp", "/img/jim.webp", "/img/sam.webp", "/img/drent.webp", "/img/lion.webp", "/img/simmons.webp", "/img/hillvalley.webp", "/img/sherman.webp", "/img/ares.webp", "/img/dionysus.webp", "/img/island.webp", "/img/downtown.webp", "/img/shawn.webp", "/img/ganymede.webp", "/img/baller.webp", "/img/clear.webp",  "/img/gele.webp",  "/img/kiburn.webp",  "/img/thor.webp", "/img/kalil.webp",  "/img/minion.webp",  "/img/mountain.webp",  "/img/gaines.webp", "/img/garcia.webp",  "/img/bump.webp",  "/img/lump.webp",  "/img/rubu.webp", "/img/nenel.webp", "/img/kraken.webp", "/img/loo.webp", "/img/quintet.webp", "/img/whittaker.webp", "/img/wanchang.webp"],
-  defensa3:   ["/img/dva.webp", "/img/catvari.webp", "/img/tyrah.webp","/img/papa.webp","/img/kilo.webp","/img/oscar.webp", "/img/golf.webp", "/img/skinny.webp","/img/smiley.webp","/img/jack.webp","/img/peabody.webp", "/img/sor.webp", "/img/thiago.webp", "/img/bargie.webp", "/img/gabi.webp", "/img/aitor.webp", "/img/bobby.webp", "/img/jim.webp", "/img/sam.webp", "/img/drent.webp", "/img/lion.webp", "/img/simmons.webp", "/img/hillvalley.webp", "/img/sherman.webp", "/img/ares.webp", "/img/dionysus.webp", "/img/island.webp", "/img/downtown.webp", "/img/shawn.webp", "/img/ganymede.webp", "/img/baller.webp", "/img/clear.webp",  "/img/gele.webp",  "/img/kiburn.webp",  "/img/thor.webp", "/img/kalil.webp",  "/img/minion.webp",  "/img/mountain.webp",  "/img/gaines.webp", "/img/garcia.webp",  "/img/bump.webp",  "/img/lump.webp",  "/img/rubu.webp", "/img/nenel.webp", "/img/kraken.webp", "/img/loo.webp", "/img/quintet.webp", "/img/whittaker.webp", "/img/wanchang.webp"],
-  defensa4:   ["/img/smarty.webp", "/img/chunky.webp","/img/nathan.webp", "/img/tod.webp", "/img/scotty.webp", "/img/aitor.webp", "/img/archer.webp", "/img/martin.webp", "/img/master.webp", "/img/monkey.webp", "/img/malcolm.webp", "/img/apollo.webp", "/img/hephestus.webp", "/img/sweet.webp", "/img/smith.webp", "/img/shawn.webp", "/img/hurley.webp", "/img/bomber.webp",  "/img/icer.webp",  "/img/arkew.webp",  "/img/gocker.webp",  "/img/zohen.webp",  "/img/hauser.webp",  "/img/lagarto.webp",  "/img/vitesse.webp",  "/img/ferrum.webp",  "/img/mangrove.webp", "/img/ischer.webp",  "/img/jenkins.webp",  "/img/lephiel.webp",  "/img/hebimos.webp",  "/img/jp.webp", "/img/beamer.webp", "/img/obscura.webp", "/img/subaru.webp"],
-  medio1:     ["/img/sapta.webp", "/img/asta.webp","/img/panca.webp", "/img/sas.webp","/img/sierra.webp","/img/quebec.webp","/img/foxtrot.webp","/img/india.webp", "/img/lima.webp","/img/tiny.webp", "/img/hairy.webp", "/img/spikey.webp","/img/nathan.webp", "/img/arion.webp", "/img/jude.webp", "/img/tori.webp", "/img/caleb.webp", "/img/riccardo.webp", "/img/timmy.webp", "/img/max.webp", "/img/steve.webp", "/img/erik.webp", "/img/bloom.webp", "/img/chicken.webp", "/img/eagle.webp", "/img/master.webp", "/img/monkey.webp", "/img/swing.webp", "/img/artemis.webp", "/img/hermes.webp", "/img/hera.webp", "/img/athena.webp", "/img/byron.webp", "/img/agentem.webp", "/img/soundtown.webp", "/img/pandora.webp", "/img/jordan.webp", "/img/dvalin.webp", "/img/sparrow.webp", "/img/bomber.webp",  "/img/bellatrix.webp",  "/img/heat.webp",  "/img/lean.webp",  "/img/droll.webp",  "/img/rhine.webp",  "/img/kiwill.webp",  "/img/ark.webp",  "/img/dolphin.webp", "/img/choi.webp", "/img/acuto.webp", "/img/krueger.webp", "/img/gabrini.webp", "/img/nakata.webp", "/img/diavolo.webp", "/img/ryan.webp", "/img/haddad.webp", "/img/hampton.webp", "/img/maximino.webp", "/img/vitrum.webp", "/img/leung.webp", "/img/stark.webp",  "/img/triumvir.webp",  "/img/gunter.webp",  "/img/lephiel.webp",  "/img/wenel.webp", "/img/maxim.webp", "/img/shun.webp", "/img/hugh.webp", "/img/inchy.webp", "/img/zaphod.webp", "/img/nemo.webp", "/img/laurel.webp", "/img/houdini.webp", "/img/spectrum.webp", "/img/crowe.webp", "/img/yang.webp", "/img/eugene.webp", "/img/ade.webp", "/img/roma.webp", "/img/mars.webp"],
-  medio2:     ["/img/sapta.webp", "/img/asta.webp","/img/panca.webp", "/img/sas.webp","/img/sierra.webp","/img/quebec.webp","/img/foxtrot.webp","/img/india.webp", "/img/lima.webp","/img/tiny.webp", "/img/hairy.webp", "/img/spikey.webp","/img/arion.webp", "/img/jude.webp", "/img/tori.webp", "/img/caleb.webp", "/img/riccardo.webp", "/img/timmy.webp", "/img/steve.webp", "/img/sam.webp", "/img/erik.webp", "/img/chicken.webp", "/img/eagle.webp", "/img/waldon.webp", "/img/hermes.webp", "/img/hera.webp", "/img/byron.webp", "/img/agentem.webp", "/img/soundtown.webp", "/img/jordan.webp", "/img/pandora.webp", "/img/dvalin.webp", "/img/metron.webp", "/img/sparrow.webp", "/img/bomber.webp",  "/img/heat.webp",  "/img/lean.webp",  "/img/neppten.webp",  "/img/kormer.webp",  "/img/bellatrix.webp",  "/img/thor.webp",  "/img/dolphin.webp", "/img/choi.webp", "/img/acuto.webp", "/img/krueger.webp", "/img/gabrini.webp", "/img/nakata.webp", "/img/diavolo.webp", "/img/ryan.webp", "/img/haddad.webp", "/img/hampton.webp", "/img/maximino.webp", "/img/vitrum.webp", "/img/leung.webp", "/img/stark.webp",  "/img/triumvir.webp",  "/img/gunter.webp",  "/img/lephiel.webp",  "/img/wenel.webp",  "/img/zanos.webp",  "/img/gaiel.webp", "/img/shun.webp", "/img/hugh.webp", "/img/inchy.webp", "/img/zaphod.webp", "/img/nemo.webp", "/img/laurel.webp", "/img/houdini.webp", "/img/spectrum.webp", "/img/crowe.webp", "/img/yang.webp", "/img/eugene.webp", "/img/ade.webp", "/img/roma.webp", "/img/mars.webp"],
-  medio3:     ["/img/sapta.webp", "/img/asta.webp","/img/panca.webp", "/img/sas.webp","/img/sierra.webp","/img/quebec.webp","/img/foxtrot.webp","/img/india.webp", "/img/lima.webp","/img/tiny.webp", "/img/hairy.webp", "/img/spikey.webp","/img/nathan.webp", "/img/arion.webp", "/img/jude.webp", "/img/tori.webp", "/img/caleb.webp", "/img/riccardo.webp", "/img/timmy.webp", "/img/max.webp", "/img/steve.webp", "/img/erik.webp", "/img/bloom.webp", "/img/chicken.webp", "/img/eagle.webp", "/img/master.webp", "/img/monkey.webp", "/img/swing.webp", "/img/artemis.webp", "/img/hermes.webp", "/img/hera.webp", "/img/athena.webp", "/img/byron.webp", "/img/agentem.webp", "/img/soundtown.webp", "/img/pandora.webp", "/img/jordan.webp", "/img/dvalin.webp", "/img/sparrow.webp", "/img/bomber.webp",  "/img/bellatrix.webp", "/img/heat.webp",  "/img/lean.webp",  "/img/droll.webp",  "/img/rhine.webp",  "/img/kiwill.webp",  "/img/ark.webp",  "/img/dolphin.webp", "/img/choi.webp", "/img/acuto.webp", "/img/krueger.webp", "/img/gabrini.webp", "/img/nakata.webp", "/img/diavolo.webp", "/img/ryan.webp", "/img/haddad.webp", "/img/hampton.webp", "/img/maximino.webp", "/img/vitrum.webp", "/img/leung.webp", "/img/stark.webp",  "/img/triumvir.webp",  "/img/gunter.webp",  "/img/lephiel.webp",  "/img/wenel.webp", "/img/maxim.webp", "/img/shun.webp", "/img/hugh.webp", "/img/inchy.webp", "/img/zaphod.webp", "/img/nemo.webp", "/img/laurel.webp", "/img/houdini.webp", "/img/spectrum.webp", "/img/crowe.webp", "/img/yang.webp", "/img/eugene.webp", "/img/ade.webp", "/img/roma.webp", "/img/mars.webp"],
-  delantero1: ["/img/navan.webp", "/img/dasan.webp","/img/gamma.webp","/img/noviembre.webp", "/img/beta.webp","/img/julieta.webp", "/img/mike.webp", "/img/alfa.webp","/img/creepy.webp","/img/axel.webp", "/img/samford.webp", "/img/bailong.webp", "/img/fei.webp", "/img/sol.webp", "/img/zanark.webp", "/img/victor.webp", "/img/max.webp", "/img/kevin.webp", "/img/artist.webp", "/img/cheetah.webp", "/img/gamer.webp", "/img/gorilla.webp", "/img/hatch.webp", "/img/swing.webp", "/img/talisman.webp", "/img/turner.webp", "/img/cloak.webp", "/img/tyler.webp", "/img/marvin.webp", "/img/thomas.webp", "/img/byron.webp", "/img/shawn.webp", "/img/sue.webp", "/img/diam.webp", "/img/rihm.webp",  "/img/neppten.webp",  "/img/torch.webp",  "/img/gazelle.webp", "/img/mercury.webp",  "/img/wittz.webp",  "/img/shadow.webp",  "/img/austin.webp",  "/img/xavier.webp", "/img/partinus.webp", "/img/balone.webp", "/img/keats.webp", "/img/generani.webp", "/img/paolo.webp", "/img/robingo.webp", "/img/coyote.webp", "/img/flare.webp", "/img/drago.webp", "/img/hedgeer.webp",  "/img/callous.webp",  "/img/malice.webp",  "/img/lancer.webp",  "/img/sael.webp",  "/img/destra.webp", "/img/maxim.webp", "/img/michael.webp", "/img/lucian.webp", "/img/kyrk.webp", "/img/infinity.webp", "/img/remington.webp", "/img/davy.webp", "/img/doug.webp", "/img/njord.webp", "/img/langford.webp", "/img/bradford.webp", "/img/pentona.webp", "/img/tezcat.webp", "/img/cronus.webp"],
-  delantero2: ["/img/navan.webp", "/img/dasan.webp","/img/gamma.webp","/img/noviembre.webp", "/img/beta.webp","/img/julieta.webp", "/img/mike.webp", "/img/alfa.webp","/img/creepy.webp","/img/axel.webp", "/img/samford.webp", "/img/bailong.webp", "/img/fei.webp", "/img/sol.webp", "/img/zanark.webp", "/img/victor.webp", "/img/kevin.webp", "/img/willy.webp", "/img/artist.webp", "/img/cheetah.webp", "/img/gamer.webp", "/img/gorilla.webp", "/img/hatch.webp", "/img/talisman.webp", "/img/turner.webp", "/img/cloak.webp", "/img/tyler.webp", "/img/marvin.webp", "/img/thomas.webp", "/img/byron.webp", "/img/demeter.webp", "/img/shawn.webp", "/img/sue.webp", "/img/diam.webp", "/img/rihm.webp", "/img/dvalin.webp", "/img/metron.webp", "/img/zell.webp", "/img/mercury.webp",  "/img/torch.webp",  "/img/gazelle.webp",  "/img/wittz.webp",  "/img/shadow.webp",  "/img/austin.webp",  "/img/xavier.webp", "/img/partinus.webp", "/img/balone.webp", "/img/keats.webp", "/img/generani.webp", "/img/paolo.webp", "/img/robingo.webp", "/img/coyote.webp", "/img/flare.webp", "/img/drago.webp", "/img/hedgeer.webp",  "/img/zanos.webp",  "/img/gaiel.webp", "/img/michael.webp", "/img/lucian.webp", "/img/kyrk.webp", "/img/infinity.webp", "/img/remington.webp", "/img/davy.webp", "/img/doug.webp", "/img/njord.webp", "/img/langford.webp", "/img/bradford.webp", "/img/pentona.webp", "/img/tezcat.webp", "/img/cronus.webp"],
-  delantero3: ["/img/navan.webp", "/img/dasan.webp","/img/gamma.webp","/img/noviembre.webp", "/img/beta.webp","/img/julieta.webp", "/img/mike.webp", "/img/alfa.webp","/img/creepy.webp","/img/axel.webp", "/img/samford.webp", "/img/bailong.webp", "/img/fei.webp", "/img/sol.webp", "/img/zanark.webp", "/img/victor.webp", "/img/max.webp", "/img/kevin.webp", "/img/artist.webp", "/img/cheetah.webp", "/img/gamer.webp", "/img/gorilla.webp", "/img/hatch.webp", "/img/swing.webp", "/img/talisman.webp", "/img/turner.webp", "/img/cloak.webp", "/img/tyler.webp", "/img/marvin.webp", "/img/thomas.webp", "/img/byron.webp", "/img/shawn.webp", "/img/sue.webp", "/img/diam.webp", "/img/rihm.webp",  "/img/neppten.webp",  "/img/torch.webp",  "/img/gazelle.webp","/img/mercury.webp",  "/img/wittz.webp",  "/img/shadow.webp",  "/img/austin.webp",  "/img/xavier.webp", "/img/partinus.webp", "/img/balone.webp", "/img/keats.webp", "/img/generani.webp", "/img/paolo.webp", "/img/robingo.webp", "/img/coyote.webp", "/img/flare.webp", "/img/drago.webp", "/img/hedgeer.webp",  "/img/callous.webp",  "/img/malice.webp",  "/img/lancer.webp",  "/img/sael.webp",  "/img/destra.webp", "/img/maxim.webp", "/img/michael.webp", "/img/lucian.webp", "/img/kyrk.webp", "/img/infinity.webp", "/img/remington.webp", "/img/davy.webp", "/img/doug.webp", "/img/njord.webp", "/img/langford.webp", "/img/bradford.webp", "/img/pentona.webp", "/img/tezcat.webp", "/img/cronus.webp"]
+  portero:    ["/img/terry.webp","/img/phobos.webp","/img/aoba.webp","/img/lotus.webp","/img/kohlt.webp","/img/chitoh.webp", "/img/eka.webp","/img/romeo.webp","/img/hotel.webp", "/img/biggsy.webp", "/img/mark.webp", "/img/king.webp", "/img/samguk.webp", "/img/darren.webp", "/img/mask.webp", "/img/feldt.webp", "/img/idol.webp", "/img/poseidon.webp", "/img/hillman.webp", "/img/ropes.webp", "/img/daisy.webp", "/img/galileo.webp", "/img/dvalin.webp", "/img/zell.webp", "/img/grent.webp",  "/img/nero.webp", "/img/blasi.webp",  "/img/dasilva.webp",  "/img/fox.webp",  "/img/helio.webp", "/img/iñigo.webp",  "/img/luceafar.webp",  "/img/astaroth.webp",  "/img/jp.webp", "/img/nirvana.webp", "/img/princeton.webp", "/img/ilgrande.webp", "/img/whyte.webp", "/img/cinquedea.webp", "/img/lumina.webp", "/img/saturn.webp"],
+  defensa1:   ["/img/trina.webp", "/img/foreman.webp","/img/smarty.webp", "/img/chunky.webp","/img/nathan.webp","/img/tod.webp", "/img/scotty.webp", "/img/aitor.webp", "/img/archer.webp", "/img/martin.webp", "/img/master.webp", "/img/monkey.webp", "/img/malcolm.webp", "/img/apollo.webp", "/img/hephestus.webp", "/img/sweet.webp", "/img/smith.webp", "/img/shawn.webp", "/img/hurley.webp", "/img/bomber.webp",  "/img/icer.webp",  "/img/arkew.webp",  "/img/gocker.webp",  "/img/zohen.webp",  "/img/hauser.webp",  "/img/lagarto.webp",  "/img/vitesse.webp",  "/img/ferrum.webp",  "/img/mangrove.webp", "/img/ischer.webp",  "/img/jenkins.webp",  "/img/lephiel.webp",  "/img/hebimos.webp",  "/img/jp.webp", "/img/beamer.webp", "/img/obscura.webp", "/img/subaru.webp"],
+  defensa2:   [ "/img/zippy.webp","/img/keenan.webp","/img/meteo.webp","/img/ogar.webp","/img/tulip.webp","/img/hamstah.webp","/img/mohrir.webp","/img/goldie.webp","/img/sor.webp","/img/ayt.webp","/img/dva.webp", "/img/catvari.webp", "/img/tyrah.webp","/img/papa.webp","/img/kilo.webp","/img/oscar.webp", "/img/golf.webp", "/img/skinny.webp","/img/smiley.webp","/img/jack.webp","/img/peabody.webp", "/img/sor.webp", "/img/thiago.webp", "/img/bargie.webp", "/img/gabi.webp", "/img/aitor.webp", "/img/bobby.webp", "/img/jim.webp", "/img/sam.webp", "/img/drent.webp", "/img/lion.webp", "/img/simmons.webp", "/img/hillvalley.webp", "/img/sherman.webp", "/img/ares.webp", "/img/dionysus.webp", "/img/island.webp", "/img/downtown.webp", "/img/shawn.webp", "/img/ganymede.webp", "/img/baller.webp", "/img/clear.webp",  "/img/gele.webp",  "/img/kiburn.webp",  "/img/thor.webp", "/img/kalil.webp",  "/img/minion.webp",  "/img/mountain.webp",  "/img/gaines.webp", "/img/garcia.webp",  "/img/bump.webp",  "/img/lump.webp",  "/img/rubu.webp", "/img/nenel.webp", "/img/kraken.webp", "/img/loo.webp", "/img/quintet.webp", "/img/whittaker.webp", "/img/wanchang.webp"],
+  defensa3:   [ "/img/zippy.webp", "/img/keenan.webp","/img/meteo.webp","/img/ogar.webp","/img/tulip.webp","/img/hamstah.webp","/img/mohrir.webp","/img/goldie.webp","/img/sor.webp","/img/ayt.webp","/img/dva.webp", "/img/catvari.webp", "/img/tyrah.webp","/img/papa.webp","/img/kilo.webp","/img/oscar.webp", "/img/golf.webp", "/img/skinny.webp","/img/smiley.webp","/img/jack.webp","/img/peabody.webp", "/img/sor.webp", "/img/thiago.webp", "/img/bargie.webp", "/img/gabi.webp", "/img/aitor.webp", "/img/bobby.webp", "/img/jim.webp", "/img/sam.webp", "/img/drent.webp", "/img/lion.webp", "/img/simmons.webp", "/img/hillvalley.webp", "/img/sherman.webp", "/img/ares.webp", "/img/dionysus.webp", "/img/island.webp", "/img/downtown.webp", "/img/shawn.webp", "/img/ganymede.webp", "/img/baller.webp", "/img/clear.webp",  "/img/gele.webp",  "/img/kiburn.webp",  "/img/thor.webp", "/img/kalil.webp",  "/img/minion.webp",  "/img/mountain.webp",  "/img/gaines.webp", "/img/garcia.webp",  "/img/bump.webp",  "/img/lump.webp",  "/img/rubu.webp", "/img/nenel.webp", "/img/kraken.webp", "/img/loo.webp", "/img/quintet.webp", "/img/whittaker.webp", "/img/wanchang.webp"],
+  defensa4:   ["/img/trina.webp", "/img/foreman.webp","/img/smarty.webp", "/img/chunky.webp","/img/nathan.webp", "/img/tod.webp", "/img/scotty.webp", "/img/aitor.webp", "/img/archer.webp", "/img/martin.webp", "/img/master.webp", "/img/monkey.webp", "/img/malcolm.webp", "/img/apollo.webp", "/img/hephestus.webp", "/img/sweet.webp", "/img/smith.webp", "/img/shawn.webp", "/img/hurley.webp", "/img/bomber.webp",  "/img/icer.webp",  "/img/arkew.webp",  "/img/gocker.webp",  "/img/zohen.webp",  "/img/hauser.webp",  "/img/lagarto.webp",  "/img/vitesse.webp",  "/img/ferrum.webp",  "/img/mangrove.webp", "/img/ischer.webp",  "/img/jenkins.webp",  "/img/lephiel.webp",  "/img/hebimos.webp",  "/img/jp.webp", "/img/beamer.webp", "/img/obscura.webp", "/img/subaru.webp"],
+  medio1:     ["/img/cerise.webp", "/img/buddy.webp","/img/plink.webp","/img/rondula.webp","/img/karan.webp","/img/felis.webp","/img/yurkeh.webp","/img/mehr.webp","/img/ghiris.webp","/img/djibz.webp","/img/garreau.webp","/img/arecks.webp","/img/sapta.webp", "/img/asta.webp","/img/panca.webp", "/img/sas.webp","/img/sierra.webp","/img/quebec.webp","/img/foxtrot.webp","/img/india.webp", "/img/lima.webp","/img/tiny.webp", "/img/hairy.webp", "/img/spikey.webp","/img/nathan.webp", "/img/arion.webp", "/img/jude.webp", "/img/tori.webp", "/img/caleb.webp", "/img/riccardo.webp", "/img/timmy.webp", "/img/max.webp", "/img/steve.webp", "/img/erik.webp", "/img/bloom.webp", "/img/chicken.webp", "/img/eagle.webp", "/img/master.webp", "/img/monkey.webp", "/img/swing.webp", "/img/artemis.webp", "/img/hermes.webp", "/img/hera.webp", "/img/athena.webp", "/img/byron.webp", "/img/agentem.webp", "/img/soundtown.webp", "/img/pandora.webp", "/img/jordan.webp", "/img/dvalin.webp", "/img/sparrow.webp", "/img/bomber.webp",  "/img/bellatrix.webp",  "/img/heat.webp",  "/img/lean.webp",  "/img/droll.webp",  "/img/rhine.webp",  "/img/kiwill.webp",  "/img/ark.webp",  "/img/dolphin.webp", "/img/choi.webp", "/img/acuto.webp", "/img/krueger.webp", "/img/gabrini.webp", "/img/nakata.webp", "/img/diavolo.webp", "/img/ryan.webp", "/img/haddad.webp", "/img/hampton.webp", "/img/maximino.webp", "/img/vitrum.webp", "/img/leung.webp", "/img/stark.webp",  "/img/triumvir.webp",  "/img/gunter.webp",  "/img/lephiel.webp",  "/img/wenel.webp", "/img/maxim.webp", "/img/shun.webp", "/img/hugh.webp", "/img/inchy.webp", "/img/zaphod.webp", "/img/nemo.webp", "/img/laurel.webp", "/img/houdini.webp", "/img/spectrum.webp", "/img/crowe.webp", "/img/yang.webp", "/img/eugene.webp", "/img/ade.webp", "/img/roma.webp", "/img/mars.webp"],
+  medio2:     ["/img/cerise.webp", "/img/buddy.webp","/img/plink.webp","/img/rondula.webp","/img/karan.webp","/img/felis.webp","/img/yurkeh.webp","/img/mehr.webp","/img/ghiris.webp","/img/arecks.webp","/img/djibz.webp","/img/garreau.webp","/img/sapta.webp", "/img/asta.webp","/img/panca.webp", "/img/sas.webp","/img/sierra.webp","/img/quebec.webp","/img/foxtrot.webp","/img/india.webp", "/img/lima.webp","/img/tiny.webp", "/img/hairy.webp", "/img/spikey.webp","/img/arion.webp", "/img/jude.webp", "/img/tori.webp", "/img/caleb.webp", "/img/riccardo.webp", "/img/timmy.webp", "/img/steve.webp", "/img/sam.webp", "/img/erik.webp", "/img/chicken.webp", "/img/eagle.webp", "/img/waldon.webp", "/img/hermes.webp", "/img/hera.webp", "/img/byron.webp", "/img/agentem.webp", "/img/soundtown.webp", "/img/jordan.webp", "/img/pandora.webp", "/img/dvalin.webp", "/img/metron.webp", "/img/sparrow.webp", "/img/bomber.webp",  "/img/heat.webp",  "/img/lean.webp",  "/img/neppten.webp",  "/img/kormer.webp",  "/img/bellatrix.webp",  "/img/thor.webp",  "/img/dolphin.webp", "/img/choi.webp", "/img/acuto.webp", "/img/krueger.webp", "/img/gabrini.webp", "/img/nakata.webp", "/img/diavolo.webp", "/img/ryan.webp", "/img/haddad.webp", "/img/hampton.webp", "/img/maximino.webp", "/img/vitrum.webp", "/img/leung.webp", "/img/stark.webp",  "/img/triumvir.webp",  "/img/gunter.webp",  "/img/lephiel.webp",  "/img/wenel.webp",  "/img/zanos.webp",  "/img/gaiel.webp", "/img/shun.webp", "/img/hugh.webp", "/img/inchy.webp", "/img/zaphod.webp", "/img/nemo.webp", "/img/laurel.webp", "/img/houdini.webp", "/img/spectrum.webp", "/img/crowe.webp", "/img/yang.webp", "/img/eugene.webp", "/img/ade.webp", "/img/roma.webp", "/img/mars.webp"],
+  medio3:     ["/img/cerise.webp", "/img/buddy.webp","/img/plink.webp","/img/rondula.webp","/img/karan.webp","/img/felis.webp","/img/yurkeh.webp","/img/mehr.webp","/img/ghiris.webp","/img/arecks.webp","/img/djibz.webp","/img/garreau.webp","/img/sapta.webp", "/img/asta.webp","/img/panca.webp", "/img/sas.webp","/img/sierra.webp","/img/quebec.webp","/img/foxtrot.webp","/img/india.webp", "/img/lima.webp","/img/tiny.webp", "/img/hairy.webp", "/img/spikey.webp","/img/nathan.webp", "/img/arion.webp", "/img/jude.webp", "/img/tori.webp", "/img/caleb.webp", "/img/riccardo.webp", "/img/timmy.webp", "/img/max.webp", "/img/steve.webp", "/img/erik.webp", "/img/bloom.webp", "/img/chicken.webp", "/img/eagle.webp", "/img/master.webp", "/img/monkey.webp", "/img/swing.webp", "/img/artemis.webp", "/img/hermes.webp", "/img/hera.webp", "/img/athena.webp", "/img/byron.webp", "/img/agentem.webp", "/img/soundtown.webp", "/img/pandora.webp", "/img/jordan.webp", "/img/dvalin.webp", "/img/sparrow.webp", "/img/bomber.webp",  "/img/bellatrix.webp", "/img/heat.webp",  "/img/lean.webp",  "/img/droll.webp",  "/img/rhine.webp",  "/img/kiwill.webp",  "/img/ark.webp",  "/img/dolphin.webp", "/img/choi.webp", "/img/acuto.webp", "/img/krueger.webp", "/img/gabrini.webp", "/img/nakata.webp", "/img/diavolo.webp", "/img/ryan.webp", "/img/haddad.webp", "/img/hampton.webp", "/img/maximino.webp", "/img/vitrum.webp", "/img/leung.webp", "/img/stark.webp",  "/img/triumvir.webp",  "/img/gunter.webp",  "/img/lephiel.webp",  "/img/wenel.webp", "/img/maxim.webp", "/img/shun.webp", "/img/hugh.webp", "/img/inchy.webp", "/img/zaphod.webp", "/img/nemo.webp", "/img/laurel.webp", "/img/houdini.webp", "/img/spectrum.webp", "/img/crowe.webp", "/img/yang.webp", "/img/eugene.webp", "/img/ade.webp", "/img/roma.webp", "/img/mars.webp"],
+  delantero1: ["/img/falco.webp", "/img/zack.webp","/img/ozrock.webp","/img/ruger.webp", "/img/gandares.webp","/img/bala.webp","/img/aster.webp", "/img/inaba.webp","/img/flora.webp","/img/simeon.webp","/img/dekih.webp","/img/yuh.webp","/img/zetoh.webp","/img/cee.webp","/img/navan.webp", "/img/dasan.webp","/img/gamma.webp","/img/noviembre.webp", "/img/beta.webp","/img/julieta.webp", "/img/mike.webp", "/img/alfa.webp","/img/creepy.webp","/img/axel.webp", "/img/samford.webp", "/img/bailong.webp", "/img/fei.webp", "/img/sol.webp", "/img/zanark.webp", "/img/victor.webp", "/img/max.webp", "/img/kevin.webp", "/img/artist.webp", "/img/cheetah.webp", "/img/gamer.webp", "/img/gorilla.webp", "/img/hatch.webp", "/img/swing.webp", "/img/talisman.webp", "/img/turner.webp", "/img/cloak.webp", "/img/tyler.webp", "/img/marvin.webp", "/img/thomas.webp", "/img/byron.webp", "/img/shawn.webp", "/img/sue.webp", "/img/diam.webp", "/img/rihm.webp",  "/img/neppten.webp",  "/img/torch.webp",  "/img/gazelle.webp", "/img/mercury.webp",  "/img/wittz.webp",  "/img/shadow.webp",  "/img/austin.webp",  "/img/xavier.webp", "/img/partinus.webp", "/img/balone.webp", "/img/keats.webp", "/img/generani.webp", "/img/paolo.webp", "/img/robingo.webp", "/img/coyote.webp", "/img/flare.webp", "/img/drago.webp", "/img/hedgeer.webp",  "/img/callous.webp",  "/img/malice.webp",  "/img/lancer.webp",  "/img/sael.webp",  "/img/destra.webp", "/img/maxim.webp", "/img/michael.webp", "/img/lucian.webp", "/img/kyrk.webp", "/img/infinity.webp", "/img/remington.webp", "/img/davy.webp", "/img/doug.webp", "/img/njord.webp", "/img/langford.webp", "/img/bradford.webp", "/img/pentona.webp", "/img/tezcat.webp", "/img/cronus.webp"],
+  delantero2: [ "/img/zack.webp","/img/falco.webp","/img/ozrock.webp","/img/ruger.webp", "/img/gandares.webp","/img/bala.webp","/img/aster.webp", "/img/inaba.webp","/img/flora.webp","/img/simeon.webp","/img/dekih.webp","/img/yuh.webp","/img/zetoh.webp","/img/cee.webp","/img/navan.webp", "/img/dasan.webp","/img/gamma.webp","/img/noviembre.webp", "/img/beta.webp","/img/julieta.webp", "/img/mike.webp", "/img/alfa.webp","/img/creepy.webp","/img/axel.webp", "/img/samford.webp", "/img/bailong.webp", "/img/fei.webp", "/img/sol.webp", "/img/zanark.webp", "/img/victor.webp", "/img/kevin.webp", "/img/willy.webp", "/img/artist.webp", "/img/cheetah.webp", "/img/gamer.webp", "/img/gorilla.webp", "/img/hatch.webp", "/img/talisman.webp", "/img/turner.webp", "/img/cloak.webp", "/img/tyler.webp", "/img/marvin.webp", "/img/thomas.webp", "/img/byron.webp", "/img/demeter.webp", "/img/shawn.webp", "/img/sue.webp", "/img/diam.webp", "/img/rihm.webp", "/img/dvalin.webp", "/img/metron.webp", "/img/zell.webp", "/img/mercury.webp",  "/img/torch.webp",  "/img/gazelle.webp",  "/img/wittz.webp",  "/img/shadow.webp",  "/img/austin.webp",  "/img/xavier.webp", "/img/partinus.webp", "/img/balone.webp", "/img/keats.webp", "/img/generani.webp", "/img/paolo.webp", "/img/robingo.webp", "/img/coyote.webp", "/img/flare.webp", "/img/drago.webp", "/img/hedgeer.webp",  "/img/zanos.webp",  "/img/gaiel.webp", "/img/michael.webp", "/img/lucian.webp", "/img/kyrk.webp", "/img/infinity.webp", "/img/remington.webp", "/img/davy.webp", "/img/doug.webp", "/img/njord.webp", "/img/langford.webp", "/img/bradford.webp", "/img/pentona.webp", "/img/tezcat.webp", "/img/cronus.webp"],
+  delantero3: ["/img/falco.webp", "/img/zack.webp","/img/ozrock.webp","/img/ruger.webp", "/img/gandares.webp","/img/bala.webp","/img/aster.webp", "/img/inaba.webp","/img/flora.webp","/img/simeon.webp","/img/dekih.webp","/img/yuh.webp","/img/zetoh.webp","/img/cee.webp","/img/navan.webp", "/img/dasan.webp","/img/gamma.webp","/img/noviembre.webp", "/img/beta.webp","/img/julieta.webp", "/img/mike.webp", "/img/alfa.webp","/img/creepy.webp","/img/axel.webp", "/img/samford.webp", "/img/bailong.webp", "/img/fei.webp", "/img/sol.webp", "/img/zanark.webp", "/img/victor.webp", "/img/max.webp", "/img/kevin.webp", "/img/artist.webp", "/img/cheetah.webp", "/img/gamer.webp", "/img/gorilla.webp", "/img/hatch.webp", "/img/swing.webp", "/img/talisman.webp", "/img/turner.webp", "/img/cloak.webp", "/img/tyler.webp", "/img/marvin.webp", "/img/thomas.webp", "/img/byron.webp", "/img/shawn.webp", "/img/sue.webp", "/img/diam.webp", "/img/rihm.webp",  "/img/neppten.webp",  "/img/torch.webp",  "/img/gazelle.webp","/img/mercury.webp",  "/img/wittz.webp",  "/img/shadow.webp",  "/img/austin.webp",  "/img/xavier.webp", "/img/partinus.webp", "/img/balone.webp", "/img/keats.webp", "/img/generani.webp", "/img/paolo.webp", "/img/robingo.webp", "/img/coyote.webp", "/img/flare.webp", "/img/drago.webp", "/img/hedgeer.webp",  "/img/callous.webp",  "/img/malice.webp",  "/img/lancer.webp",  "/img/sael.webp",  "/img/destra.webp", "/img/maxim.webp", "/img/michael.webp", "/img/lucian.webp", "/img/kyrk.webp", "/img/infinity.webp", "/img/remington.webp", "/img/davy.webp", "/img/doug.webp", "/img/njord.webp", "/img/langford.webp", "/img/bradford.webp", "/img/pentona.webp", "/img/tezcat.webp", "/img/cronus.webp"]
 };
 
 const CARTAS_SECRETAS = [
-  "/img/ariontezcat.webp", "/img/vladimir.webp", "/img/vladimirvictor.webp", "/img/feitirano.webp"
+  "/img/ariontezcat.webp", "/img/vladimir.webp", "/img/vladimirvictor.webp"
 ]
 
 const ESCUDOS = {
@@ -157,9 +165,9 @@ const ESCUDOS = {
   Ragnah: "/img/ragnah.webp",
   ChronoStorm: "/img/chronostorm.webp",
   InazumaJaponLegendario: "/img/inazumajaponlegendario.webp",
+  NuevoInazumaJapon: "/img/nuevoinazumajapon.webp",
   Desesperdidos: "/img/desesperdidos.webp",
-  AullidoLunar: "/img/aullidolunar.webp",
-  Nosfanaticos: "/img/nosfanaticos.webp",
+  Criaturasdelanoche: "/img/criaturasdelanoche.webp",
   Silice: "/img/silice.webp",
   Naiadi: "/img/naiadi.webp",
   Magmavis: "/img/magmavis.webp",
@@ -845,7 +853,7 @@ const LOGROS = [
     recompensa: { tipo: "escudo", valor: "KirkwoodGo" },
     drops: [ "/img/bradford.webp", "/img/langford.webp", "/img/laurel.webp"]
   },
-                                   {
+    {
       id: "Espejismo",
     nombre: "Estrellas del Camino Imperial: ¡Abracadabra!",
     descripcion: "Escoge a Harrold Houdini y Cronus Fourseasons entre tus 11 jugadores.",
@@ -854,7 +862,7 @@ const LOGROS = [
     recompensa: { tipo: "escudo", valor: "Espejismo" },
     drops: [ "/img/houdini.webp"]
   },
-                                     {
+    {
       id: "Universal",
     nombre: "Estrellas del Camino Imperial: El astro del Universal",
     descripcion: "Escoge a Ringo Saturn, Sol Daystar y Deimos Mars entre tus 11 jugadores.",
@@ -863,7 +871,7 @@ const LOGROS = [
     recompensa: { tipo: "escudo", valor: "Universal" },
     drops: [ "/img/sol.webp", , "/img/mars.webp", "/img/saturn.webp"]
   },
-                                     {
+    {
       id: "MonteOlimpo",
     nombre: "Estrellas del Camino Imperial: Los nuevos Dioses del Olimpo",
     descripcion: "Escoge a Harrold Houdini y Cronus Fourseasons entre tus 11 jugadores.",
@@ -872,7 +880,7 @@ const LOGROS = [
     recompensa: { tipo: "escudo", valor: "MonteOlimpo" },
     drops: [ "/img/cronus.webp"]
   },
-                                       {
+    {
       id: "DragonLink",
     nombre: "El 11 del dragón",
     descripcion: "Escoge a Quentin Cinquedea, Aimé Quintet y Erik Pentona entre tus 11 jugadores.",
@@ -881,20 +889,20 @@ const LOGROS = [
     recompensa: { tipo: "escudo", valor: "DragonLink" },
     drops: [ "/img/cinquedea.webp", "/img/quintet.webp", "/img/pentona.webp"]
   },
-                                      {
+    {
       id: "RaimonGo",
     nombre: "¡Entrena, juega, sal a ganar!",
     descripcion: "Escoge a 11 jugadores del Raimon campeón del Camino Imperial entre tus 11 jugadores.",
     jugadores: ["/img/samguk.webp", "/img/jp.webp", "/img/subaru.webp", "/img/aitor.webp", "/img/wanchang.webp", 
       "/img/gabi.webp", "/img/riccardo.webp", "/img/ade.webp", "/img/eugene.webp", "/img/arion.webp", "/img/lucian.webp", 
-      "/img/michael.webp", "/img/victor.webp", "/img/roma.webp", "/img/shun.webp", "/img/hugh.webp"
+      "/img/michael.webp", "/img/victor.webp", "/img/roma.webp", "/img/shun.webp", "/img/hugh.webp", "/img/doug.webp",
     ],
     recompensa: { tipo: "escudo", valor: "RaimonGo" },
     drops: ["/img/samguk.webp", "/img/jp.webp", "/img/subaru.webp", "/img/aitor.webp", "/img/wanchang.webp", 
       "/img/gabi.webp", "/img/riccardo.webp", "/img/ade.webp", "/img/eugene.webp", "/img/arion.webp", "/img/lucian.webp", 
       "/img/michael.webp", "/img/victor.webp", "/img/roma.webp"]
   },
-                                             {
+    {
       id: "LuzEterna",
     nombre: "Ciclón Blanco",
     descripcion: "Escoge a Albion Lumina, Dwight Whittaker, Beamer Daye y Bai Long entre tus 11 jugadores.",
@@ -904,7 +912,7 @@ const LOGROS = [
     drops: ["/img/lumina.webp", "/img/whittaker.webp", "/img/bailong.webp", "/img/beamer.webp"
     ]
   },
-                                               {
+    {
       id: "OscuridadAncestral",
     nombre: "Ceniza Negra",
     descripcion: "Escoge a Blake Obscura, Tynan Crowe, Yang y Tezcat entre tus 11 jugadores.",
@@ -914,7 +922,7 @@ const LOGROS = [
     drops: ["/img/obscura.webp", "/img/crowe.webp", "/img/yang.webp", "/img/tezcat.webp"
     ]
   },
-                                           {
+    {
       id: "Zero",
     nombre: "Zero Magnum",
     descripcion: "Escoge a Albion Lumina, Dwight Whittaker, Blake Obscura, Bai Long y Tezcat entre tus 11 jugadores.",
@@ -925,17 +933,16 @@ const LOGROS = [
       "/img/beamer.webp", "/img/crowe.webp", "/img/yang.webp"
     ]
   },
-                                             {
+   {
       id: "Arions",
     nombre: "Los duplicados de Fei",
     descripcion: "Escoge a Fei Rune y Arion Sherwind entre tus 11 jugadores.",
     jugadores: ["/img/fei.webp", "/img/arion.webp"    ],
     recompensa: { tipo: "escudo", valor: "Arions" },
     drops: ["/img/biggsy.webp", "/img/smiley.webp", "/img/skinny.webp", "/img/smarty.webp", "/img/chunky.webp",
-      "/img/tiny.webp", "/img/hairy.webp", "/img/spikey.webp", "/img/creepy.webp"
-    ]
+      "/img/tiny.webp", "/img/hairy.webp", "/img/spikey.webp", "/img/creepy.webp","/img/feitirano.webp"    ]
   },
-                                               {
+   {
       id: "ProtocoloOmega",
     nombre: "La primera amenaza del Dorado",
     descripcion: "Escoge a Julieta, Mike y Alfa entre tus 11 jugadores.",
@@ -944,7 +951,7 @@ const LOGROS = [
     drops: ["/img/hotel.webp", "/img/oscar.webp", "/img/golf.webp", "/img/lima.webp","/img/india.webp", 
       "/img/julieta.webp", "/img/mike.webp", "/img/alfa.webp"   ]
   },
-                                                 {
+  {
       id: "ProtocoloOmega2",
     nombre: "La segunda amenaza del Dorado",
     descripcion: "Escoge a Kilo, Foxtrot, Noviembre y Beta entre tus 11 jugadores.",
@@ -953,7 +960,7 @@ const LOGROS = [
     drops: ["/img/hotel.webp", "/img/oscar.webp", "/img/golf.webp", "/img/lima.webp", "/img/julieta.webp",
       "/img/mike.webp", "/img/beta.webp", "/img/india.webp", "/img/kilo.webp", "/img/foxtrot.webp","/img/noviembre.webp" ]
   },
-                                                   {
+  {
       id: "ProtocoloOmega3",
     nombre: "La tercera amenaza del Dorado",
     descripcion: "Escoge a Romeo, Papa, Quebec, Sierra y Gamma entre tus 11 jugadores.",
@@ -962,15 +969,204 @@ const LOGROS = [
     drops: ["/img/romeo.webp", "/img/oscar.webp", "/img/kilo.webp", "/img/lima.webp", "/img/papa.webp",
       "/img/mike.webp", "/img/gamma.webp", "/img/quebec.webp", "/img/kilo.webp", "/img/sierra.webp"]
   },
-                                                     {
+    {
+      id: "CiervoBlanco",
+    nombre: "La banda del Ciervo Blanco",
+    descripcion: "Escoge a Taian Inaba entre tus 11 jugadores.",
+    jugadores: ["/img/inaba.webp"],
+    recompensa: { tipo: "escudo", valor: "CiervoBlanco" },
+    drops: ["/img/inaba.webp"]
+  },
+  {
       id: "ZanarkDomain",
     nombre: "A sus órdenes, señor Zanark",
     descripcion: "Escoge a Eka, Dva, Sapta, Dasan y Zanark entre tus 11 jugadores.",
     jugadores: ["/img/eka.webp", "/img/dva.webp","/img/sapta.webp", "/img/dasan.webp", "/img/zanark.webp"],
     recompensa: { tipo: "escudo", valor: "ZanarkDomain" },
     drops: ["/img/eka.webp", "/img/dva.webp", "/img/catvari.webp", "/img/panca.webp", "/img/sas.webp",
-      "/img/sapta.webp", "/img/asta.webp", "/img/navan.webp", "/img/dasan.webp", "/img/zanark.webp","/img/tyrah.webp" ]
+      "/img/sapta.webp", "/img/asta.webp", "/img/navan.webp", "/img/dasan.webp", "/img/zanark.webp","/img/tyrah.webp","/img/zanarkmm.webp" ]
   },
+  {
+      id: "CascadaPerfecta",
+    nombre: "Analizando al rival",
+    descripcion: "Escoge a Ayt, Cee y Ar Ecks entre tus 11 jugadores.",
+    jugadores: ["/img/ayt.webp", "/img/cee.webp","/img/arecks.webp"],
+    recompensa: { tipo: "escudo", valor: "CascadaPerfecta" },
+    drops: ["/img/ayt.webp", "/img/cee.webp","/img/arecks.webp" ]
+  },
+    {
+      id: "Zan",
+    nombre: "Empieza el Ragnarok",
+    descripcion: "Escoge a Djibz, Garreau y Zanark entre tus 11 jugadores.",
+    jugadores: ["/img/djibz.webp", "/img/garreau.webp","/img/zanark.webp"],
+    recompensa: { tipo: "escudo", valor: "Zan" },
+    drops: ["/img/djibz.webp", "/img/garreau.webp"]
+  },
+    {
+      id: "Gir",
+    nombre: "Los Enamorados",
+    descripcion: "Escoge a Mohrir, Mehr, Ghiris y Zetoh entre tus 11 jugadores.",
+    jugadores: ["/img/mohrir.webp", "/img/ghiris.webp","/img/mehr.webp","/img/zetoh.webp"],
+    recompensa: { tipo: "escudo", valor: "Gir" },
+    drops: ["/img/mohrir.webp", "/img/ghiris.webp","/img/mehr.webp","/img/zetoh.webp" ]
+  },
+    {
+      id: "Gar",
+    nombre: "La traición de Fei",
+    descripcion: "Escoge a Chitoh, Yurkeh, Dekih, Yuh y Fei entre tus 11 jugadores.",
+    jugadores: ["/img/chitoh.webp", "/img/yurkeh.webp","/img/dekih.webp", "/img/yuh.webp","/img/fei.webp"],
+    recompensa: { tipo: "escudo", valor: "Gar" },
+    drops: ["/img/chitoh.webp", "/img/yurkeh.webp","/img/dekih.webp", "/img/yuh.webp", "/img/fei.webp" ]
+  },
+      {
+      id: "Ragnah",
+    nombre: "La batalla final del Ragnarok",
+    descripcion: "Escoge a Kohlt, Hamstah, Felis, Mehr, Ghiris y Simeon entre tus 11 jugadores.",
+    jugadores: ["/img/kohlt.webp", "/img/hamstah.webp","/img/felis.webp", "/img/mehr.webp", "/img/ghiris.webp","/img/simeon.webp"],
+    recompensa: { tipo: "escudo", valor: "Ragnah" },
+    drops: ["/img/kohlt.webp", "/img/hamstah.webp","/img/felis.webp", "/img/mehr.webp", "/img/ghiris.webp","/img/simeon.webp", "/img/saru.webp" ]
+  },
+        {
+      id: "ChronoStorm",
+    nombre: "El equipo definitivo",
+    descripcion: "Escoge a los 11 elegidos del maestro ",
+    jugadores: ["/img/jp.webp", "/img/sor.webp","/img/goldie.webp", "/img/gabi.webp", "/img/riccardo.webp","/img/sol.webp",
+      "/img/fei.webp", "/img/victor.webp", "/img/zanark.webp", "/img/arion.webp", "/img/roma.webp"],
+    recompensa: { tipo: "escudo", valor: "ChronoStorm" },
+    drops: ["/img/jpmm.webp", "/img/sormm.webp","/img/goldiemm.webp", "/img/gabimm.webp", "/img/riccardomm.webp","/img/solmm.webp",
+      "/img/feimm.webp", "/img/victormm.webp", "/img/zanarkultra.webp", "/img/arionmm.webp", "/img/romamm.webp"
+     ]
+  },
+{
+  id: "InazumaJaponLegendario",
+  recompensa: { tipo: "escudo", valor: "InazumaJaponLegendario" },
+  jugadores: [],
+  tipo: "secreto"
+},
+
+  {
+  id: "NuevoInazumaJapon",
+  nombre: "El nuevo Inazuma Japón",
+  descripcion: "Escoge a los 11 integrantes del Nuevo Inazuma Japón.",
+  jugadores: ["/img/jp.webp", "/img/aitor.webp","/img/goldie.webp", "/img/gabi.webp", "/img/riccardo.webp","/img/sol.webp","/img/bailong.webp",
+      "/img/fei.webp", "/img/victor.webp", "/img/njord.webp", "/img/arion.webp", "/img/roma.webp"],
+  recompensa: { tipo: "escudo", valor: "NuevoInazumaJapon" }
+},
+        {
+      id: "Desesperdidos",
+    nombre: "El equipo de Flora",
+    descripcion: "Escoge a Lotus, Tulip, Aster y Flora entre tus 11 jugadores.",
+    jugadores: ["/img/aster.webp", "/img/tulip.webp","/img/lotus.webp", "/img/flora.webp"],
+    recompensa: { tipo: "escudo", valor: "Desesperdidos" },
+    drops: ["/img/aster.webp", "/img/tulip.webp","/img/lotus.webp", "/img/flora.webp", "/img/sterne.webp", ]
+  },
+          {
+      id: "Criaturasdelanoche",
+    nombre: "Lobos y Vampiros",
+    descripcion: "Escoge a chicos de la Segunda Fase entre tus 11 jugadores.",
+    jugadores: ["/img/kohlt.webp", "/img/hamstah.webp","/img/felis.webp", "/img/mehr.webp", "/img/ghiris.webp","/img/simeon.webp",
+      "/img/chitoh.webp", "/img/yurkeh.webp","/img/dekih.webp", "/img/yuh.webp","/img/fei.webp", "/img/mohrir.webp", "/img/zetoh.webp",
+      "/img/djibz.webp", "/img/garreau.webp","/img/zanark.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "Criaturasdelanoche" },
+    drops: ["/img/vulpeen.webp", "/img/drakul.webp"]
+  },
+            {
+      id: "silice",
+    nombre: "El planeta rocoso",
+    descripcion: "Escoge a K'aran y Ogar entre tus 11 jugadores.",
+    jugadores: ["/img/ogar.webp", "/img/karan.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "Silice" },
+    drops: ["/img/karan.webp"]
+  },
+              {
+      id: "Naiadi",
+    nombre: "El planeta de agua",
+    descripcion: "Escoge a Rondula y Plink entre tus 11 jugadores.",
+    jugadores: ["/img/rondula.webp", "/img/plink.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "Naiadi" },
+    drops: ["/img/plink.webp"]
+  },
+               {
+      id: "Magmavis",
+    nombre: "El planeta de las aves de fuego",
+    descripcion: "Escoge a Aoba y Bala entre tus 11 jugadores.",
+    jugadores: ["/img/aoba.webp", "/img/bala.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "Magmavis" },
+    drops: ["/img/aoba.webp"]
+  },
+                 {
+      id: "Fertilia",
+    nombre: "El planeta de los insectos",
+    descripcion: "Escoge a Banda, Ruger y Gandares entre tus 11 jugadores.",
+    jugadores: ["/img/banda.webp", "/img/ruger.webp", "/img/gandares.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "Fertilia" },
+    drops: ["/img/banda.webp"]
+  },
+                   {
+      id: "falammedius",
+    nombre: "Los Reyes Celestiales",
+    descripcion: "Escoge a Ogar, Rondula, Bala, Ruger y Gandares entre tus 11 jugadores.",
+    jugadores: ["/img/ogar.webp", "/img/ruger.webp", "/img/gandares.webp", "/img/bala.webp", "/img/rondula.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "FalamMedius" },
+    drops: ["/img/ogar.webp", "/img/ruger.webp", "/img/gandares.webp", "/img/bala.webp", "/img/rondula.webp"]
+  },
+                     {
+      id: "flotaixar",
+    nombre: "La amenaza de la Galaxia",
+    descripcion: "Escoge a Phobos, Meteo y Ozrock entre tus 11 jugadores.",
+    jugadores: ["/img/phobos.webp", "/img/meteo.webp", "/img/ozrock.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "FlotaIxar" },
+    drops: ["/img/phobos.webp", "/img/meteo.webp", "/img/ozrock.webp"]
+  },
+                       {
+      id: "eartheleven",
+    nombre: "Los salvadores de la Tierra",
+    descripcion: "Escoge a 11 miembros del Earth Eleven.",
+    jugadores: ["/img/jp.webp", "/img/terry.webp", "/img/foreman.webp", "/img/keenan.webp", "/img/trina.webp", "/img/zippy.webp",
+      "/img/riccardo.webp", "/img/buddy.webp", "/img/arion.webp", "/img/cerise.webp", "/img/victor.webp", "/img/zack.webp", "/img/falco.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "EarthEleven" },
+    drops: ["/img/jp.webp", "/img/terry.webp", "/img/foreman.webp", "/img/keenan.webp", "/img/trina.webp", "/img/zippy.webp",
+      "/img/riccardo.webp", "/img/buddy.webp", "/img/arion.webp", "/img/cerise.webp", "/img/victor.webp", "/img/zack.webp", "/img/falco.webp"]
+  },
+  {
+  id: "galaxyeleven",
+  recompensa: { tipo: "escudo", valor: "GalaxyEleven" },
+  jugadores: [],
+  tipo: "secreto"
+},
+                       {
+      id: "bigbang",
+    nombre: "Big Bang",
+    descripcion: "Forma un 11 con jugadores que hayan jugado un partido final como titulares en un equipo protagonista en Inazuma Eleven GO (ver partidos en el siguiente logro).",
+    jugadores: ["/img/samguk.webp", "/img/subaru.webp", "/img/wanchang.webp", "/img/gabi.webp", "/img/aitor.webp", "/img/ade.webp",
+      "/img/arion.webp", "/img/eugene.webp", "/img/roma.webp", "/img/michael.webp", "/img/victor.webp", "/img/jp.webp", "/img/riccardo.webp",
+      "/img/lucian.webp", "/img/sor.webp", "/img/goldie.webp", "/img/sol.webp", "/img/fei.webp", "/img/zanark.webp", "/img/bailong.webp",
+      "/img/terry.webp", "/img/trina.webp", "/img/keenan.webp", "/img/zippy.webp", "/img/foreman.webp", "/img/cerise.webp", "/img/buddy.webp","/img/falco.webp",
+    ],
+    recompensa: { tipo: "escudo", valor: "BigBang" },
+    drops: ["/img/circulus.webp",]
+  },
+                         {
+      id: "supernova",
+    nombre: "Supernova",
+    descripcion: "Forma un 11 con jugadores titulares de los equipos antagonistas finales de Inazuma Eleven GO (Dragon Link, Zero, Ragnah, Desesperdidos y Flota Ixar).",
+    jugadores: ["/img/quentin.webp", "/img/quintet.webp", "/img/pentona.webp", "/img/tezcat.webp", "/img/bailong.webp", "/img/lumina.webp",
+      "/img/obscura.webp", "/img/yang.webp", "/img/beamer.webp", "/img/whittaker.webp", "/img/crowe.webp", "/img/spectrum.webp", "/img/kohlt.webp",
+      "/img/hamstah.webp", "/img/felis.webp", "/img/mehr.webp", "/img/ghiris.webp", "/img/simeon.webp", "/img/lotus.webp", "/img/tulip.webp",
+      "/img/aster.webp", "/img/phobos.webp", "/img/meteo.webp", "/img/ozrock.webp"
+    ],
+    recompensa: { tipo: "escudo", valor: "Supernova" },
+    drops: ["/img/arculus.webp"]
+  },
+  
 
   {
    id: "marvin",
@@ -1003,7 +1199,7 @@ function comprobarCartasSecretas(logrosCompletados, cartasDesbloqueadas, setCart
     alert("¡Has desbloqueado una carta secreta!");
   }
   else if (
-    cartasDesbloqueadas.includes("/img/victor.webp") &&
+    logrosCompletados.includes("RaimonGo") &&
     logrosCompletados.includes("Arions") &&
     !cartasDesbloqueadas.includes("/img/vladimir.webp")
   ) {
@@ -1018,16 +1214,158 @@ function comprobarCartasSecretas(logrosCompletados, cartasDesbloqueadas, setCart
     setCartasDesbloqueadas(prev => [...prev, "/img/vladimirvictor.webp"]);
     alert("¡Has desbloqueado una carta secreta!");
   }
-  else if (
+    else if (
     cartasDesbloqueadas.includes("/img/fei.webp") &&
-    logrosCompletados.includes("ProtocoloOmega") &&
-    !cartasDesbloqueadas.includes("/img/feitirano.webp")
+    logrosCompletados.includes("Raimon") &&
+    !cartasDesbloqueadas.includes("/img/goldie.webp")
   ) {
-    setCartasDesbloqueadas(prev => [...prev, "/img/feitirano.webp"]);
+    setCartasDesbloqueadas(prev => [...prev, "/img/goldie.webp"]);
+    alert("¡Has desbloqueado una carta secreta!");
+  }
+    else if (
+    logrosCompletados.includes("CascadaPerfecta") &&
+    logrosCompletados.includes("Raimon") &&
+    !cartasDesbloqueadas.includes("/img/sor.webp")
+  ) {
+    setCartasDesbloqueadas(prev => [...prev, "/img/sor.webp"]);
+    alert("¡Has desbloqueado una carta secreta!");
+  }
+      else if (
+    logrosCompletados.includes("CiervoBlanco") &&
+    logrosCompletados.includes("Raimon") &&
+    !cartasDesbloqueadas.includes("/img/tasuke.webp")
+  ) {
+    setCartasDesbloqueadas(prev => [...prev, "/img/tasuke.webp"]);
+    alert("¡Has desbloqueado una carta secreta!");
+  }
+      else if (
+    cartasDesbloqueadas.includes("/img/mark.webp") &&
+    logrosCompletados.includes("InazumaJaponLegendario") &&
+    !cartasDesbloqueadas.includes("/img/markadulto.webp")
+  ) {
+    setCartasDesbloqueadas(prev => [...prev, "/img/markadulto.webp"]);
+    alert("¡Has desbloqueado una carta secreta!");
+  }
+      else if (
+    cartasDesbloqueadas.includes("/img/nathan.webp") &&
+    logrosCompletados.includes("InazumaJaponLegendario") &&
+    !cartasDesbloqueadas.includes("/img/nathanadulto.webp")
+  ) {
+    setCartasDesbloqueadas(prev => [...prev, "/img/nathanadulto.webp"]);
+    alert("¡Has desbloqueado una carta secreta!");
+  }
+      else if (
+    cartasDesbloqueadas.includes("/img/jack.webp") &&
+    logrosCompletados.includes("InazumaJaponLegendario") &&
+    !cartasDesbloqueadas.includes("/img/jackadulto.webp")
+  ) {
+    setCartasDesbloqueadas(prev => [...prev, "/img/jackadulto.webp"]);
+    alert("¡Has desbloqueado una carta secreta!");
+  }
+      else if (
+    cartasDesbloqueadas.includes("/img/hurley.webp") &&
+    logrosCompletados.includes("InazumaJaponLegendario") &&
+    !cartasDesbloqueadas.includes("/img/hurleyadulto.webp")
+  ) {
+    setCartasDesbloqueadas(prev => [...prev, "/img/hurleyadulto.webp"]);
+    alert("¡Has desbloqueado una carta secreta!");
+  }  
+      else if (
+    cartasDesbloqueadas.includes("/img/samford.webp") &&
+    logrosCompletados.includes("InazumaJaponLegendario") &&
+    !cartasDesbloqueadas.includes("/img/samfordadulto.webp")
+  ) {
+    setCartasDesbloqueadas(prev => [...prev, "/img/samfordadulto.webp"]);
+    alert("¡Has desbloqueado una carta secreta!");
+  }  
+      else if (
+    cartasDesbloqueadas.includes("/img/shawn.webp") &&
+    logrosCompletados.includes("InazumaJaponLegendario") &&
+    !cartasDesbloqueadas.includes("/img/shawnadulto.webp")
+  ) {
+    setCartasDesbloqueadas(prev => [...prev, "/img/shawnadulto.webp"]);
+    alert("¡Has desbloqueado una carta secreta!");
+  }  
+      else if (
+    cartasDesbloqueadas.includes("/img/kevin.webp") &&
+    logrosCompletados.includes("InazumaJaponLegendario") &&
+    !cartasDesbloqueadas.includes("/img/kevinadulto.webp")
+  ) {
+    setCartasDesbloqueadas(prev => [...prev, "/img/kevinadulto.webp"]);
+    alert("¡Has desbloqueado una carta secreta!");
+  }  
+      else if (
+    cartasDesbloqueadas.includes("/img/axel.webp") &&
+    logrosCompletados.includes("InazumaJaponLegendario") &&
+    !cartasDesbloqueadas.includes("/img/axeladulto.webp")
+  ) {
+    setCartasDesbloqueadas(prev => [...prev, "/img/axeladulto.webp"]);
+    alert("¡Has desbloqueado una carta secreta!");
+  }  
+      else if (
+    cartasDesbloqueadas.includes("/img/xavier.webp") &&
+    logrosCompletados.includes("InazumaJaponLegendario") &&
+    !cartasDesbloqueadas.includes("/img/xavieradulto.webp")
+  ) {
+    setCartasDesbloqueadas(prev => [...prev, "/img/xavieradulto.webp"]);
+    alert("¡Has desbloqueado una carta secreta!");
+  }  
+      else if (
+    cartasDesbloqueadas.includes("/img/jude.webp") &&
+    logrosCompletados.includes("InazumaJaponLegendario") &&
+    !cartasDesbloqueadas.includes("/img/judeadulto.webp")
+  ) {
+    setCartasDesbloqueadas(prev => [...prev, "/img/judeadulto.webp"]);
+    alert("¡Has desbloqueado una carta secreta!");
+  }  
+      else if (
+    cartasDesbloqueadas.includes("/img/caleb.webp") &&
+    logrosCompletados.includes("InazumaJaponLegendario") &&
+    !cartasDesbloqueadas.includes("/img/calebadulto.webp")
+  ) {
+    setCartasDesbloqueadas(prev => [...prev, "/img/calebadulto.webp"]);
+    alert("¡Has desbloqueado una carta secreta!");
+  }
+        else if (
+    cartasDesbloqueadas.includes("/img/flora.webp") &&
+    logrosCompletados.includes("Desesperdidos") &&
+    !cartasDesbloqueadas.includes("/img/floramm.webp")
+  ) {
+    setCartasDesbloqueadas(prev => [...prev, "/img/floramm.webp"]);
     alert("¡Has desbloqueado una carta secreta!");
   }
 
+
+
   // Añade más condiciones para otras cartas secretas
+}
+
+function comprobarLogrosSecretos(logrosCompletados, cartasDesbloqueadas, setLogrosCompletados) {
+      if (
+    logrosCompletados.includes("NuevoInazumaJapon") &&
+    logrosCompletados.includes("inazumajapon") &&
+    !logrosCompletados.includes("InazumaJaponLegendario")
+  ) {
+    setLogrosCompletados(prev => [...prev, "InazumaJaponLegendario"]);
+    alert("¡Has desbloqueado un logro secreto!");
+  }
+  else if (
+    cartasDesbloqueadas.includes("/img/aoba.webp") &&
+    cartasDesbloqueadas.includes("/img/bala.webp") &&
+    cartasDesbloqueadas.includes("/img/karan.webp") &&
+    cartasDesbloqueadas.includes("/img/ogar.webp") &&
+    cartasDesbloqueadas.includes("/img/ruger.webp") &&
+    cartasDesbloqueadas.includes("/img/gandares.webp") &&
+    cartasDesbloqueadas.includes("/img/rondula.webp") &&
+    cartasDesbloqueadas.includes("/img/plink.webp") &&
+    cartasDesbloqueadas.includes("/img/zack.webp") &&
+    cartasDesbloqueadas.includes("/img/banda.webp") &&
+    cartasDesbloqueadas.includes("/img/jp.webp") &&
+    !logrosCompletados.includes("galaxyeleven")
+  ) {
+    setLogrosCompletados(prev => [...prev, "galaxyeleven"]);
+    alert("¡Has desbloqueado un logro secreto!");
+  }
 }
 
 function TutorialModal({ onClose }) {
@@ -1095,25 +1433,23 @@ function comprobarLogrosAutomaticos(logrosCompletados, setLogrosCompletados, set
   LOGROS.forEach(logro => {
     if (
       logro.jugadores.length === 0 &&
-      (!logro.tipo || logro.tipo !== "manual") &&
+      (!logro.tipo || (logro.tipo !== "manual" && logro.tipo !== "secreto")) && // <--- añade esto
       !logrosCompletados.includes(logro.id)
     ) {
       setLogrosCompletados(prev => {
         if (prev.includes(logro.id)) return prev;
         return [...prev, logro.id];
       });
-// ...existing code...
-if (
-  logro.recompensa.tipo === "escudo" &&
-  !logro.recompensa.soloVisual // <-- solo añade si NO es soloVisual
-) {
-  setPerfil(p => ({
-    ...p,
-    escudosDisponibles: [...p.escudosDisponibles, logro.recompensa.valor]
-  }));
-  alert(`¡Logro completado: ${logro.nombre}! Has conseguido el escudo de ${logro.recompensa.valor}`);
-}
-// ...existing code...
+      if (
+        logro.recompensa.tipo === "escudo" &&
+        !logro.recompensa.soloVisual
+      ) {
+        setPerfil(p => ({
+          ...p,
+          escudosDisponibles: [...p.escudosDisponibles, logro.recompensa.valor]
+        }));
+        alert(`¡Logro completado: ${logro.nombre}! Has conseguido el escudo de ${logro.recompensa.valor}`);
+      }
     }
   });
 }
@@ -1127,7 +1463,7 @@ function completarLogroManual(logroId, logrosCompletados, setLogrosCompletados, 
   if (!logro) return;
 
   if (!logrosCompletados.includes(logro.id)) {
-    setLogrosCompletados([...logrosCompletados, logro.id]);
+    setLogrosCompletados(prev => [...prev, logro.id]);
     if (
       logro.recompensa.tipo === "escudo" &&
       !logro.recompensa.soloVisual
@@ -1175,7 +1511,7 @@ function comprobarLogros(nuevaSeleccion, logrosCompletados, setLogrosCompletados
     if (completado) {
       // Si no se ha completado nunca, añade escudo y drop
       if (!logrosCompletados.includes(logro.id)) {
-        setLogrosCompletados([...logrosCompletados, logro.id]);
+        setLogrosCompletados(prev => [...prev, logro.id]);
         if (
           logro.recompensa.tipo === "escudo" &&
           !logro.recompensa.soloVisual // <-- solo añade si NO es soloVisual
@@ -1776,7 +2112,9 @@ function Logros({ logrosCompletados, visible, onToggle }) {
         ✕
       </button>
       <h2 style={{ marginTop: 0, marginBottom: "15px" }}><b><i>🏆 LOGROS 🏆</i></b></h2>
-      {LOGROS.map(logro => (
+      {LOGROS
+        .filter(logro => logro.tipo !== "secreto") // <-- OCULTA los secretos
+        .map(logro => (
         <div key={logro.id} style={{ marginBottom: "15px", display: "flex", alignItems: "center" }}>
           <img src={ESCUDOS[logro.recompensa.valor]} alt="escudo" style={{ width: "35px", marginRight: "12px" }} />
           <div>
@@ -1902,6 +2240,11 @@ useEffect(() => {
 useEffect(() => {
   if (!datosCargados) return;
   comprobarCartasSecretas(logrosCompletados, cartasDesbloqueadas, setCartasDesbloqueadas);
+}, [logrosCompletados, cartasDesbloqueadas, datosCargados]);
+
+useEffect(() => {
+  if (!datosCargados) return;
+  comprobarLogrosSecretos(logrosCompletados, cartasDesbloqueadas, setLogrosCompletados);
 }, [logrosCompletados, cartasDesbloqueadas, datosCargados]);
 
 useEffect(() => {
@@ -2061,7 +2404,17 @@ function canjearCodigo() {
       beacon: "https://i.postimg.cc/Bn6kcrQ4/beacon.jpg"
     };
 
-    if (code in fondosEspeciales) {
+    if (code === "borrartodo") {
+      if (window.confirm("¿Seguro que quieres borrar TODO tu progreso? Esta acción no se puede deshacer.")) {
+        localStorage.clear();
+        window.location.reload();
+      }
+      setSecretCode("");
+      setShowSecretBar(false);
+      return;
+    }
+
+    else if (code in fondosEspeciales) {
       setCustomBg(fondosEspeciales[code]);
       localStorage.setItem("customBg", fondosEspeciales[code]);
       alert(`¡Fondo especial ${code.charAt(0).toUpperCase() + code.slice(1)} activado!`);
@@ -2530,4 +2883,5 @@ return (
       </div>
       );
     }
+  
 
