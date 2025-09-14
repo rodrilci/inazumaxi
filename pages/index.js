@@ -35,17 +35,18 @@ const CARTAS_POR_RISTRA = [
   [ // Inazuma Eleven GO
     "/img/samguk.webp", "/img/jp.webp", "/img/aitor.webp", "/img/gabi.webp",  "/img/subaru.webp", "/img/wanchang.webp", "/img/arion.webp",
     "/img/riccardo.webp", "/img/eugene.webp", "/img/ade.webp", "/img/roma.webp", "/img/michael.webp", "/img/lucian.webp", "/img/victor.webp",
-    "/img/shun.webp", "/img/hugh.webp",  "/img/inchy.webp", "/img/zaphod.webp", "/img/kyrk.webp", "/img/nirvana.webp", "/img/maxim.webp", "/img/infinity.webp",
-    "/img/princeton.webp", "/img/yale.webp", "/img/remington.webp", "/img/kraken.webp", "/img/nemo.webp", "/img/davy.webp", "/img/ilgrande.webp",
-    "/img/doug.webp", "/img/whyte.webp", "/img/loo.webp", "/img/njord.webp", "/img/laurel.webp", "/img/langford.webp", "/img/bradford.webp",
-    "/img/houdini.webp", "/img/saturn.webp", "/img/mars.webp", "/img/sol.webp", "/img/cronus.webp", "/img/cinquedea.webp", "/img/quintet.webp",
-    "/img/pentona.webp", "/img/lumina.webp",  "/img/beamer.webp", "/img/whittaker.webp", "/img/bailong.webp",
+    "/img/shun.webp", "/img/hugh.webp",  "/img/inchy.webp", "/img/zaphod.webp", "/img/kyrk.webp", "/img/nirvana.webp", "/img/maxim.webp", 
+    "/img/infinity.webp", "/img/princeton.webp", "/img/yale.webp", "/img/remington.webp", "/img/kraken.webp", "/img/nemo.webp", "/img/davy.webp", 
+    "/img/ilgrande.webp","/img/doug.webp", "/img/whyte.webp", "/img/loo.webp", "/img/njord.webp", "/img/laurel.webp", "/img/langford.webp", 
+    "/img/bradford.webp","/img/houdini.webp", "/img/saturn.webp", "/img/mars.webp", "/img/sol.webp", "/img/cronus.webp", "/img/cinquedea.webp", 
+    "/img/quintet.webp","/img/pentona.webp", "/img/lumina.webp",  "/img/beamer.webp", "/img/whittaker.webp", "/img/bailong.webp",
     "/img/obscura.webp", "/img/spectrum.webp", "/img/crowe.webp", "/img/yang.webp", "/img/tezcat.webp", "/img/biggsy.webp", "/img/smiley.webp", 
-    "/img/skinny.webp", "/img/smarty.webp", "/img/chunky.webp", "/img/tiny.webp", "/img/hairy.webp", "/img/spikey.webp", "/img/fei.webp", "/img/creepy.webp",
-    "/img/ariontezcat.webp", "/img/hotel.webp", "/img/oscar.webp", "/img/golf.webp", "/img/lima.webp","/img/india.webp", "/img/julieta.webp", "/img/mike.webp", 
-    "/img/alfa.webp", "/img/kilo.webp", "/img/foxtrot.webp", "/img/noviembre.webp", "/img/beta.webp", "/img/romeo.webp", "/img/papa.webp", "/img/quebec.webp", 
-    "/img/sierra.webp", "/img/gamma.webp",  "/img/eka.webp", "/img/dva.webp", "/img/catvari.webp", "/img/tyrah.webp", "/img/panca.webp", "/img/sas.webp", 
-    "/img/sapta.webp", "/img/asta.webp", "/img/navan.webp", "/img/dasan.webp", "/img/zanark.webp",
+    "/img/skinny.webp", "/img/smarty.webp", "/img/chunky.webp", "/img/tiny.webp", "/img/hairy.webp", "/img/spikey.webp", "/img/fei.webp", 
+    "/img/feitirano.webp", "/img/creepy.webp","/img/ariontezcat.webp", "/img/vladimir.webp", "/img/vladimirvictor.webp", "/img/hotel.webp", 
+    "/img/oscar.webp", "/img/golf.webp", "/img/lima.webp","/img/india.webp", "/img/julieta.webp", "/img/mike.webp", "/img/alfa.webp", 
+    "/img/kilo.webp", "/img/foxtrot.webp", "/img/noviembre.webp", "/img/beta.webp","/img/romeo.webp", "/img/papa.webp", "/img/quebec.webp",
+    "/img/sierra.webp", "/img/gamma.webp",  "/img/eka.webp", "/img/dva.webp", "/img/catvari.webp","/img/tyrah.webp", "/img/panca.webp", 
+    "/img/sas.webp","/img/sapta.webp", "/img/asta.webp", "/img/navan.webp", "/img/dasan.webp", "/img/zanark.webp",
 
 
 
@@ -78,7 +79,7 @@ const posiciones = {
 };
 
 const CARTAS_SECRETAS = [
-  "/img/ariontezcat.webp"
+  "/img/ariontezcat.webp", "/img/vladimir.webp", "/img/vladimirvictor.webp", "/img/feitirano.webp"
 ]
 
 const ESCUDOS = {
@@ -890,7 +891,7 @@ const LOGROS = [
                                       {
       id: "RaimonGo",
     nombre: "¡Entrena, juega, sal a ganar!",
-    descripcion: "Escoge a 11 jugadores del Raimon de Arion entre tus 11 jugadores.",
+    descripcion: "Escoge a 11 jugadores del Raimon campeón del Camino Imperial entre tus 11 jugadores.",
     jugadores: ["/img/samguk.webp", "/img/jp.webp", "/img/subaru.webp", "/img/aitor.webp", "/img/wanchang.webp", 
       "/img/gabi.webp", "/img/riccardo.webp", "/img/ade.webp", "/img/eugene.webp", "/img/arion.webp", "/img/lucian.webp", 
       "/img/michael.webp", "/img/victor.webp", "/img/roma.webp", "/img/shun.webp", "/img/hugh.webp"
@@ -1008,6 +1009,30 @@ function comprobarCartasSecretas(logrosCompletados, cartasDesbloqueadas, setCart
     setCartasDesbloqueadas(prev => [...prev, "/img/ariontezcat.webp"]);
     alert("¡Has desbloqueado una carta secreta!");
   }
+  else if (
+    cartasDesbloqueadas.includes("/img/victor.webp") &&
+    logrosCompletados.includes("Arions") &&
+    !cartasDesbloqueadas.includes("/img/vladimir.webp")
+  ) {
+    setCartasDesbloqueadas(prev => [...prev, "/img/vladimir.webp"]);
+    alert("¡Has desbloqueado una carta secreta!");
+  }
+  else if (
+    cartasDesbloqueadas.includes("/img/victor.webp") &&
+    cartasDesbloqueadas.includes("/img/vladimir.webp") &&
+    !cartasDesbloqueadas.includes("/img/vladimirvictor.webp")
+  ) {
+    setCartasDesbloqueadas(prev => [...prev, "/img/vladimirvictor.webp"]);
+    alert("¡Has desbloqueado una carta secreta!");
+  }
+  else if (
+    cartasDesbloqueadas.includes("/img/fei.webp") &&
+    logrosCompletados.includes("ProtocoloOmega") &&
+    !cartasDesbloqueadas.includes("/img/feitirano.webp")
+  ) {
+    setCartasDesbloqueadas(prev => [...prev, "/img/feitirano.webp"]);
+    alert("¡Has desbloqueado una carta secreta!");
+  }
 
   // Añade más condiciones para otras cartas secretas
 }
@@ -1104,14 +1129,15 @@ if (
 // ...existing code...
 
 function completarLogroManual(logroId, logrosCompletados, setLogrosCompletados, setPerfil, cartasDesbloqueadas, setCartasDesbloqueadas) {
-  const logro = LOGROS.find(l => l.id === logroId);
+  // Busca el logro ignorando mayúsculas/minúsculas
+  const logro = LOGROS.find(l => l.id.toLowerCase() === logroId.toLowerCase());
   if (!logro) return;
 
   if (!logrosCompletados.includes(logro.id)) {
     setLogrosCompletados([...logrosCompletados, logro.id]);
     if (
       logro.recompensa.tipo === "escudo" &&
-      !logro.recompensa.soloVisual // <-- solo añade si NO es soloVisual
+      !logro.recompensa.soloVisual
     ) {
       setPerfil(p => ({
         ...p,
@@ -2072,8 +2098,6 @@ function canjearCodigo() {
         setCartasDesbloqueadas
       );
       alert("¡Logro canjeado!");
-      codigosUsados.push(code);
-      localStorage.setItem("codigosUsados", JSON.stringify(codigosUsados));
     } else {
       alert("Código no válido.");
     }
