@@ -1628,14 +1628,14 @@ function completarLogroManual(logroId, logrosCompletados, setLogrosCompletados, 
     }
     const carta = darDrop(logro, cartasDesbloqueadas, setCartasDesbloqueadas);
     if (carta) {
-      alert(`¡Has conseguido la carta: ${carta.replace("/img/", "").replace(".webp", "")}!`);
+      alert(`¡Has conseguido la carta: ${carta.replace("/img/", "").replace(".webp", "").toUpperCase()}!`);;
     }
   } else if (logro.drops) {
     const posibles = logro.drops.filter(c => !cartasDesbloqueadas.includes(c));
     if (posibles.length > 0) {
       const carta = darDrop(logro, cartasDesbloqueadas, setCartasDesbloqueadas);
       if (carta) {
-        alert(`¡Has conseguido la carta: ${carta.replace("/img/", "").replace(".webp", "")}!`);
+        alert(`¡Has conseguido la carta: ${carta.replace("/img/", "").replace(".webp", "").toUpperCase()}!`);;
       }
     }
   }
@@ -1677,7 +1677,7 @@ function comprobarLogros(nuevaSeleccion, logrosCompletados, setLogrosCompletados
         // Da drop si hay
         const carta = darDrop(logro, cartasDesbloqueadas, setCartasDesbloqueadas);
         if (carta) {
-          alert(`¡Has conseguido la carta: ${carta.replace("/img/", "").replace(".webp", "")}!`);
+          alert(`¡Has conseguido la carta: ${carta.replace("/img/", "").replace(".webp", "").toUpperCase()}!`);;
         }
       } else if (logro.drops) {
         // Si ya tienes el escudo pero quedan drops, sigue dando carta
@@ -1685,7 +1685,7 @@ function comprobarLogros(nuevaSeleccion, logrosCompletados, setLogrosCompletados
         if (posibles.length > 0) {
           const carta = darDrop(logro, cartasDesbloqueadas, setCartasDesbloqueadas);
           if (carta) {
-            alert(`¡Has conseguido la carta: ${carta.replace("/img/", "").replace(".webp", "")}!`);
+            alert(`¡Has conseguido la carta: ${carta.replace("/img/", "").replace(".webp", "").toUpperCase()}!`);;
           }
         }
       }
@@ -2744,15 +2744,30 @@ return (
       flexDirection: "column",
       alignItems: "center"
     }}>
-      <h2 style={{ marginBottom: "18px", fontWeight: "bold" }}>COLECCIÓN DE CARTAS</h2>
+      
       <div style={{
+        display: "flex",
+        alignItems: "center",
+        width: "100%",
+        justifyContent: "space-between",
+      }}>
+        <h2 style={{ marginBottom: "18px", fontWeight: "bold" }}>------------------------------------------------- COLECCIÓN DE CARTAS -------------------------------------------
+        <span style={{ fontWeight: "bold", fontSize: "1.1em", color: "#00bfff", marginLeft: "10px" }}>
+          {cartasDesbloqueadas.length}/{Array.from(new Set([].concat(...CARTAS_POR_RISTRA))).filter(Boolean).length}
+        </span>
+        </h2>
+      </div>
+
+            <div style={{
         display: "flex",
         flexWrap: "wrap",
         gap: "18px",
         justifyContent: "center",
+        marginTop: "10px",
         maxHeight: "70vh",
         overflowY: "auto"
       }}>
+
 {Array.from(new Set([].concat(...CARTAS_POR_RISTRA)))
   .filter(Boolean) // <-- filtra undefined, null y ""
   .map(carta => (
@@ -2787,6 +2802,21 @@ return (
       >
         CERRAR
       </button>
+    </div>
+        <div style={{
+      position: "fixed",
+      bottom: 0,
+      left: 0,
+      width: "100vw",
+      background: "rgba(0,0,0,0.65)",
+      color: "#fff",
+      textAlign: "center",
+      padding: "8px 0",
+      fontSize: "1.05em",
+      letterSpacing: "0.5px",
+      zIndex: 100
+    }}>
+      Agradecimientos a: <b>Ascero, Kalise, Mancha, Crvis, Markismo, Sergio Ortiz, Sadiq, Foster, Ruper, Abgo, Urko, Picsas, ZonX, Beacon, CanArio, SergioPlay y Neicho</b>.
     </div>
   </div>
 )}
