@@ -186,7 +186,7 @@ const ESCUDOS = {
   RaimonInakuni: "/img/RaimonInakuni.webp",
   Bastion: "/img/Bastion.webp",
   Polaris: "/img/Polaris.webp",
-  ZeusAres: "/img/zeusares.webp",
+  ZeusAres: "/img/ZeusAres.webp",
   AlpinoAres: "/img/AlpinoAres.webp",
   Alia: "/img/Alia.webp",
   Ribera: "/img/Ribera.webp",
