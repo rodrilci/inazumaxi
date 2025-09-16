@@ -2744,18 +2744,33 @@ return (
       flexDirection: "column",
       alignItems: "center"
     }}>
-      
       <div style={{
         display: "flex",
         alignItems: "center",
         width: "100%",
-        justifyContent: "space-between",
+        justifyContent: "center",
+        position: "relative",
+        marginBottom: "18px"
       }}>
-        <h2 style={{ marginBottom: "18px", fontWeight: "bold" }}>------------------------------------------------- COLECCIÓN DE CARTAS -------------------------------------------
-        <span style={{ fontWeight: "bold", fontSize: "1.1em", color: "#00bfff", marginLeft: "10px" }}>
+        <h2 style={{
+          fontWeight: "bold",
+          flex: 1,
+          textAlign: "center",
+          margin: 0
+        }}>
+          COLECCIÓN DE CARTAS
+        </h2>
+        <span style={{
+          fontWeight: "bold",
+          fontSize: "1.1em",
+          color: "#00bfff",
+          position: "absolute",
+          right: 0,
+          top: "50%",
+          transform: "translateY(-50%)"
+        }}>
           {cartasDesbloqueadas.length}/{Array.from(new Set([].concat(...CARTAS_POR_RISTRA))).filter(Boolean).length}
         </span>
-        </h2>
       </div>
 
             <div style={{
