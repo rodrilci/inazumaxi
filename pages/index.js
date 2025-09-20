@@ -1260,7 +1260,7 @@ const LOGROS = [
       id: "invencibles",
     nombre: "Los Gigantes Invencibles",
     descripcion: "Escoge a Alonso Fibiano, Reinaldo Baraja, Emerico Lorca, Clario Orvan y Bergamo Regult entre tus 11 jugadores.",
-    jugadores: ["/img/alonso.webp", "/img/bergamo.webp", "/img/clario.webp"
+    jugadores: ["/img/alonso.webp", "/img/bergamo.webp", "/img/clario.webp", "/img/baraja.webp", "/img/emerico.webp"
     ],
     recompensa: { tipo: "escudo", valor: "LosInvencibles" },
     drops: ["/img/alonso.webp", "/img/bergamo.webp", "/img/clario.webp","/img/baraja.webp", "/img/emerico.webp" ]
