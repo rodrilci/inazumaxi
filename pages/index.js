@@ -2518,8 +2518,8 @@ function exportarProgreso() {
     cartasDesbloqueadas,
     contadorCartas,
   };
-  // Codifica seguro para cualquier dispositivo
-  const code = btoa(encodeURIComponent(JSON.stringify(data)));
+  // Solo encodeURIComponent, sin btoa
+  const code = encodeURIComponent(JSON.stringify(data));
   prompt("Copia este código y guárdalo para importar tu progreso en otro dispositivo:", code);
 }
 
@@ -2527,8 +2527,8 @@ function importarProgreso() {
   const code = prompt("Pega aquí tu código de progreso:");
   if (!code) return;
   try {
-    // Decodifica seguro para cualquier dispositivo
-    const data = JSON.parse(decodeURIComponent(atob(code)));
+    // Solo decodeURIComponent, sin atob
+    const data = JSON.parse(decodeURIComponent(code));
     if (data.perfil) setPerfil(data.perfil);
     if (data.logrosCompletados) setLogrosCompletados(data.logrosCompletados);
     if (data.cartasDesbloqueadas) setCartasDesbloqueadas(data.cartasDesbloqueadas);
