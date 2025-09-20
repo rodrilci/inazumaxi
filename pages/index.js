@@ -2518,20 +2518,23 @@ function exportarProgreso() {
     cartasDesbloqueadas,
     contadorCartas,
   };
-  const code = btoa(unescape(encodeURIComponent(JSON.stringify(data))));
+  // Codifica seguro para cualquier dispositivo
+  const code = btoa(encodeURIComponent(JSON.stringify(data)));
   prompt("Copia este código y guárdalo para importar tu progreso en otro dispositivo:", code);
 }
+
 function importarProgreso() {
   const code = prompt("Pega aquí tu código de progreso:");
   if (!code) return;
   try {
-    const data = JSON.parse(decodeURIComponent(escape(atob(code))));
+    // Decodifica seguro para cualquier dispositivo
+    const data = JSON.parse(decodeURIComponent(atob(code)));
     if (data.perfil) setPerfil(data.perfil);
     if (data.logrosCompletados) setLogrosCompletados(data.logrosCompletados);
     if (data.cartasDesbloqueadas) setCartasDesbloqueadas(data.cartasDesbloqueadas);
     if (data.contadorCartas) setContadorCartas(data.contadorCartas);
     setTimeout(() => {
-      sincronizarLogrosYEscudos();
+      sincronizarLogrosYEscudos && sincronizarLogrosYEscudos();
     }, 100);
     alert("¡Progreso importado correctamente!");
   } catch (e) {
