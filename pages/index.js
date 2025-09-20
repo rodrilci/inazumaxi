@@ -2311,6 +2311,10 @@ const [datosCargados, setDatosCargados] = useState(false);
 const [showTutorial, setShowTutorial] = useState(false);
 const [logrosVisibles, setLogrosVisibles] = useState(true);
 const [showSecretBar, setShowSecretBar] = useState(false);
+const [showExport, setShowExport] = useState(false);
+const [exportCode, setExportCode] = useState("");
+const [showImport, setShowImport] = useState(false);
+const [importCode, setImportCode] = useState("");
 const [secretCode, setSecretCode] = useState("");
 const [keySequence, setKeySequence] = useState([]);
 const [showColeccion, setShowColeccion] = useState(false);
@@ -2518,17 +2522,18 @@ function exportarProgreso() {
     cartasDesbloqueadas,
     contadorCartas,
   };
-  // Solo encodeURIComponent, sin btoa
   const code = encodeURIComponent(JSON.stringify(data));
-  prompt("Copia este código y guárdalo para importar tu progreso en otro dispositivo:", code);
+  setExportCode(code);
+  setShowExport(true);
 }
 
 function importarProgreso() {
-  const code = prompt("Pega aquí tu código de progreso:");
-  if (!code) return;
+  setShowImport(true);
+}
+
+function confirmarImportacion() {
   try {
-    // Solo decodeURIComponent, sin atob
-    const data = JSON.parse(decodeURIComponent(code));
+    const data = JSON.parse(decodeURIComponent(importCode));
     if (data.perfil) setPerfil(data.perfil);
     if (data.logrosCompletados) setLogrosCompletados(data.logrosCompletados);
     if (data.cartasDesbloqueadas) setCartasDesbloqueadas(data.cartasDesbloqueadas);
@@ -2537,6 +2542,8 @@ function importarProgreso() {
       sincronizarLogrosYEscudos && sincronizarLogrosYEscudos();
     }, 100);
     alert("¡Progreso importado correctamente!");
+    setShowImport(false);
+    setImportCode("");
   } catch (e) {
     alert("Código no válido.");
   }
@@ -3062,6 +3069,53 @@ return (
                 />
               ))}
             </div>
+
+    {showExport && (
+  <div style={{
+    position: "fixed", top: 0, left: 0, right: 0, bottom: 0,
+    background: "rgba(0,0,0,0.7)", zIndex: 4000,
+    display: "flex", alignItems: "center", justifyContent: "center"
+  }}>
+    <div style={{
+      background: "#fff", padding: 30, borderRadius: 16, maxWidth: 600, width: "90vw"
+    }}>
+      <h3>Exporta tu progreso</h3>
+      <textarea
+        value={exportCode}
+        readOnly
+        style={{ width: "100%", height: 120, fontSize: 14, fontFamily: "monospace" }}
+        onFocus={e => e.target.select()}
+      />
+      <div style={{ marginTop: 16, textAlign: "right" }}>
+        <button onClick={() => setShowExport(false)} style={{ padding: "8px 18px", borderRadius: 8, background: "#00bfff", color: "#fff", fontWeight: "bold" }}>Cerrar</button>
+      </div>
+    </div>
+  </div>
+)}
+
+{showImport && (
+  <div style={{
+    position: "fixed", top: 0, left: 0, right: 0, bottom: 0,
+    background: "rgba(0,0,0,0.7)", zIndex: 4000,
+    display: "flex", alignItems: "center", justifyContent: "center"
+  }}>
+    <div style={{
+      background: "#fff", padding: 30, borderRadius: 16, maxWidth: 600, width: "90vw"
+    }}>
+      <h3>Importa tu progreso</h3>
+      <textarea
+        value={importCode}
+        onChange={e => setImportCode(e.target.value)}
+        style={{ width: "100%", height: 120, fontSize: 14, fontFamily: "monospace" }}
+        placeholder="Pega aquí tu código de progreso"
+      />
+      <div style={{ marginTop: 16, textAlign: "right" }}>
+        <button onClick={confirmarImportacion} style={{ padding: "8px 18px", borderRadius: 8, background: "#00bfff", color: "#fff", fontWeight: "bold", marginRight: 10 }}>Importar</button>
+        <button onClick={() => setShowImport(false)} style={{ padding: "8px 18px", borderRadius: 8, background: "#ccc", color: "#222", fontWeight: "bold" }}>Cancelar</button>
+      </div>
+    </div>
+  </div>
+)}
 
             <button
               onClick={inicializarCartas}
