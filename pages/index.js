@@ -814,10 +814,10 @@ const LOGROS = [
       id: "Royalgo",
     nombre: "La nueva Royal Academy",
     descripcion: "Escoge a Preston Princeton, Dracon Yale y Rex Remington entre tus 11 jugadores.",
-    jugadores: ["/img/preston.webp", "/img/yale.webp", "/img/remington.webp"
+    jugadores: ["/img/princeton.webp", "/img/yale.webp", "/img/remington.webp"
     ],
     recompensa: { tipo: "escudo", valor: "RoyalGo" },
-    drops: [ "/img/preston.webp", "/img/yale.webp", "/img/remington.webp" ]
+    drops: [ "/img/princeton.webp", "/img/yale.webp", "/img/remington.webp" ]
   },
                              {
       id: "Calapirata",
