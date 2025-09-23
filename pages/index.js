@@ -1857,7 +1857,11 @@ function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
     const saved = localStorage.getItem("alineacion");
     return saved ? JSON.parse(saved) : {};
   });
-  const cartasDisponibles = jugadoresDesbloqueados;
+  const cartasDisponibles = Array.from(
+  new Set(
+    ristrasSeleccionadas.flatMap(idx => CARTAS_POR_RISTRA[idx])
+  )
+);
 
   const imageStyle = {
     width: "110px",
@@ -2281,13 +2285,15 @@ function Logros({ logrosCompletados, visible, onToggle }) {
 }
 
 
-const getRandomCard = (available, used, ristraActiva = 0) => {
-  // Solo cartas permitidas en la ristra activa
-  const permitidas = available.filter(img => CARTAS_POR_RISTRA[ristraActiva].includes(img));
+const getRandomCard = (available, used, ristras = [0]) => {
+  // Asegura que ristras siempre es un array
+  const ristrasArray = Array.isArray(ristras) ? ristras : [ristras];
+  const permitidas = available.filter(img =>
+    ristrasArray.some(idx => CARTAS_POR_RISTRA[idx].includes(img))
+  );
   const choices = permitidas.filter(img => !used.includes(img));
   return choices[Math.floor(Math.random() * choices.length)];
 };
-
 
 const IMAGENES_RISTRAS = [
   "/img/ieog.webp",   // Imagen para la ristra 1
@@ -2317,6 +2323,7 @@ const [secretCode, setSecretCode] = useState("");
 const [keySequence, setKeySequence] = useState([]);
 const [showColeccion, setShowColeccion] = useState(false);
 const [customBg, setCustomBg] = useState("");
+const [ristrasSeleccionadas, setRistrasSeleccionadas] = useState([0]);
   typeof window !== "undefined"
     ? localStorage.getItem("customBg") || ""
     : ""
@@ -2501,7 +2508,7 @@ function inicializarCartas() {
   const usadas = [];
   const nuevas = {};
   Object.keys(posiciones).forEach(pos => {
-    nuevas[pos] = getRandomCard(posiciones[pos], usadas, ristraActiva);
+    nuevas[pos] = getRandomCard(posiciones[pos], usadas, ristrasSeleccionadas);
     usadas.push(nuevas[pos]);
   });
   const nuevasSeleccionadas = [...seleccionadas];
@@ -2625,6 +2632,40 @@ function canjearCodigo() {
     }
   }, []);
 
+  function handleRistraClick(i, e) {
+  if (e.shiftKey) {
+    setRistrasSeleccionadas(prev => {
+      if (prev.includes(i)) {
+        // Si ya está, quítala
+        return prev.length > 1 ? prev.filter(x => x !== i) : prev;
+      } else {
+        // Añade la ristra
+        return [...prev, i];
+      }
+    });
+  } else {
+    setRistrasSeleccionadas([i]);
+  }
+}
+
+useEffect(() => {
+  // Cuando cambian las ristras seleccionadas, reinicia la alineación de la ristra activa
+  if (!datosCargados) return;
+  const usadas = [];
+  const nuevas = {};
+  Object.keys(posiciones).forEach(pos => {
+    nuevas[pos] = getRandomCard(posiciones[pos], usadas, ristrasSeleccionadas);
+    usadas.push(nuevas[pos]);
+  });
+  const nuevasSeleccionadas = [...seleccionadas];
+  nuevasSeleccionadas[ristraActiva] = nuevas;
+  setSeleccionadas(nuevasSeleccionadas);
+
+  const nuevasBloqueadas = [...bloqueadas];
+  nuevasBloqueadas[ristraActiva] = [];
+  setBloqueadas(nuevasBloqueadas);
+  // eslint-disable-next-line
+}, [ristrasSeleccionadas]);
 
 function handleClick(pos) {
   if (bloqueadas[ristraActiva].includes(pos)) return;
@@ -2651,6 +2692,12 @@ function handleClick(pos) {
   nuevasSeleccionadas[ristraActiva] = nuevas;
   setSeleccionadas(nuevasSeleccionadas);
 }
+
+const cartasCombinadas = Array.from(
+  new Set(
+    ristrasSeleccionadas.flatMap(idx => CARTAS_POR_RISTRA[idx])
+  )
+);
 
   // Estilo de imagen manteniendo proporción 1080x1280
 const imageStyle = (pos) => ({
@@ -2855,46 +2902,46 @@ return (
   zIndex: 10
 }}>
   {/* Botones de ristras centrados */}
-  <div style={{
-    display: "flex",
-    gap: "20px",
-    alignItems: "center",
-    justifyContent: "center",
-    flex: 1
-  }}>
-    {[0, 1, 2].map(i => (
-      <button
-        key={i}
-        onClick={() => setRistraActiva(i)}
+<div style={{
+  display: "flex",
+  gap: "20px",
+  alignItems: "center",
+  justifyContent: "center",
+  flex: 1
+}}>
+  {[0, 1, 2].map(i => (
+    <button
+      key={i}
+      onClick={e => handleRistraClick(i, e)}
+      style={{
+        padding: 0,
+        borderRadius: "8px",
+        background: ristrasSeleccionadas.includes(i) ? "#00bfff" : "#eee",
+        border: ristrasSeleccionadas.includes(i) ? "2px solid #0077aa" : "1px solid #ccc",
+        cursor: "pointer",
+        width: "110px",
+        height: "54px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        boxShadow: ristrasSeleccionadas.includes(i) ? "0 0 10px #00bfff88" : "none"
+      }}
+    >
+      <img
+        src={IMAGENES_RISTRAS[i]}
+        alt={`Ristra ${i + 1}`}
         style={{
-          padding: 0,
-          borderRadius: "8px",
-          background: ristraActiva === i ? "#00bfff" : "#eee",
-          border: ristraActiva === i ? "2px solid #0077aa" : "1px solid #ccc",
-          cursor: "pointer",
-          width: "110px",
-          height: "54px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          boxShadow: ristraActiva === i ? "0 0 10px #00bfff88" : "none"
+          width: "90px",
+          height: "40px",
+          borderRadius: "5px",
+          border: ristrasSeleccionadas.includes(i) ? "2px solid #fff" : "2px solid transparent",
+          boxShadow: ristrasSeleccionadas.includes(i) ? "0 0 8px #00bfff" : "none",
+          objectFit: "cover"
         }}
-      >
-        <img
-          src={IMAGENES_RISTRAS[i]}
-          alt={`Ristra ${i + 1}`}
-          style={{
-            width: "90px",
-            height: "40px",
-            borderRadius: "5px",
-            border: ristraActiva === i ? "2px solid #fff" : "2px solid transparent",
-            boxShadow: ristraActiva === i ? "0 0 8px #00bfff" : "none",
-            objectFit: "cover"
-          }}
-        />
-      </button>
-    ))}
-  </div>
+      />
+    </button>
+  ))}
+</div>
   {/* Perfil a la derecha */}
   <div style={{
     display: "flex",
