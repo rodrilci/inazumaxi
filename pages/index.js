@@ -2628,25 +2628,38 @@ function canjearCodigo() {
     }
   }, []);
 
-  function handleRistraClick(i, e) {
+function handleRistraClick(i, e) {
   if (e.shiftKey) {
     setRistrasSeleccionadas(prev => {
       if (prev.includes(i)) {
-        // Si ya está, quítala
         return prev.length > 1 ? prev.filter(x => x !== i) : prev;
       } else {
-        // Añade la ristra
         return [...prev, i];
       }
     });
   } else {
     setRistrasSeleccionadas([i]);
+    setRistraActiva(i); // <-- Añade esto para cambiar la ristra activa
+    // Regenera la alineación SOLO con esa ristra
+    const usadas = [];
+    const nuevas = {};
+    Object.keys(posiciones).forEach(pos => {
+      nuevas[pos] = getRandomCard(posiciones[pos], usadas, i);
+      usadas.push(nuevas[pos]);
+    });
+    const nuevasSeleccionadas = [...seleccionadas];
+    nuevasSeleccionadas[i] = nuevas;
+    setSeleccionadas(nuevasSeleccionadas);
+
+    const nuevasBloqueadas = [...bloqueadas];
+    nuevasBloqueadas[i] = [];
+    setBloqueadas(nuevasBloqueadas);
   }
 }
 
 useEffect(() => {
-  // Cuando cambian las ristras seleccionadas, reinicia la alineación de la ristra activa
   if (!datosCargados) return;
+  if (ristrasSeleccionadas.length === 1) return; // Solo combina si hay varias
   const usadas = [];
   const nuevas = {};
   Object.keys(posiciones).forEach(pos => {
