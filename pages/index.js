@@ -1857,11 +1857,7 @@ function AlineacionModal({ perfil, onClose, jugadoresDesbloqueados }) {
     const saved = localStorage.getItem("alineacion");
     return saved ? JSON.parse(saved) : {};
   });
-  const cartasDisponibles = Array.from(
-  new Set(
-    ristrasSeleccionadas.flatMap(idx => CARTAS_POR_RISTRA[idx])
-  )
-);
+const cartasDisponibles = jugadoresDesbloqueados;
 
   const imageStyle = {
     width: "110px",
