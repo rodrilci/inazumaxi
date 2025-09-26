@@ -1946,6 +1946,25 @@ const handleRightClick = (e, pos) => {
   });
 };
 
+const todasDefensas = Array.from(new Set([
+  ...(posiciones.defensa1 || []),
+  ...(posiciones.defensa2 || []),
+  ...(posiciones.defensa3 || []),
+  ...(posiciones.defensa4 || []),
+  ...(posiciones.defensa5 || [])
+]));
+const todasMedios = Array.from(new Set([
+  ...(posiciones.medio1 || []),
+  ...(posiciones.medio2 || []),
+  ...(posiciones.medio3 || []),
+  ...(posiciones.medio4 || [])
+]));
+const todasDelanteros = Array.from(new Set([
+  ...(posiciones.delantero1 || []),
+  ...(posiciones.delantero2 || []),
+  ...(posiciones.delantero3 || [])
+]));
+
   return (
     <div style={{
       position: "fixed",
@@ -2094,7 +2113,7 @@ const handleRightClick = (e, pos) => {
   <option value="">Selecciona carta</option>
   <optgroup label="DEFENSAS">
     {cartasDisponibles
-      .filter(carta => posiciones.defensa1.includes(carta) && (!cartasUsadas.includes(carta) || alineacion[pos] === carta))
+      .filter(carta => todasDefensas.includes(carta) && (!cartasUsadas.includes(carta) || alineacion[pos] === carta))
       .map(carta => (
         <option key={carta} value={carta}>
           {carta.replace("/img/", "").replace(".webp", "").toUpperCase()}
@@ -2103,7 +2122,7 @@ const handleRightClick = (e, pos) => {
   </optgroup>
   <optgroup label="OTROS">
     {cartasDisponibles
-      .filter(carta => !posiciones.defensa1.includes(carta) && (!cartasUsadas.includes(carta) || alineacion[pos] === carta))
+      .filter(carta => !todasDefensas.includes(carta) && (!cartasUsadas.includes(carta) || alineacion[pos] === carta))
       .map(carta => (
         <option key={carta} value={carta}>
           {carta.replace("/img/", "").replace(".webp", "").toUpperCase()}
@@ -2148,7 +2167,7 @@ const handleRightClick = (e, pos) => {
   <option value="">Selecciona carta</option>
   <optgroup label="MEDIOS">
     {cartasDisponibles
-      .filter(carta => posiciones.medio1.includes(carta) && (!cartasUsadas.includes(carta) || alineacion[pos] === carta))
+      .filter(carta => todasMedios.includes(carta) && (!cartasUsadas.includes(carta) || alineacion[pos] === carta))
       .map(carta => (
         <option key={carta} value={carta}>
           {carta.replace("/img/", "").replace(".webp", "").toUpperCase()}
@@ -2157,7 +2176,7 @@ const handleRightClick = (e, pos) => {
   </optgroup>
   <optgroup label="OTROS">
     {cartasDisponibles
-      .filter(carta => !posiciones.medio1.includes(carta) && (!cartasUsadas.includes(carta) || alineacion[pos] === carta))
+      .filter(carta => !todasMedios.includes(carta) && (!cartasUsadas.includes(carta) || alineacion[pos] === carta))
       .map(carta => (
         <option key={carta} value={carta}>
           {carta.replace("/img/", "").replace(".webp", "").toUpperCase()}
@@ -2203,7 +2222,7 @@ const handleRightClick = (e, pos) => {
   <option value="">Selecciona carta</option>
   <optgroup label="DELANTEROS">
     {cartasDisponibles
-      .filter(carta => posiciones.delantero1.includes(carta) && (!cartasUsadas.includes(carta) || alineacion[pos] === carta))
+      .filter(carta => todasDelanteros.includes(carta) && (!cartasUsadas.includes(carta) || alineacion[pos] === carta))
       .map(carta => (
         <option key={carta} value={carta}>
           {carta.replace("/img/", "").replace(".webp", "").toUpperCase()}
@@ -2212,7 +2231,7 @@ const handleRightClick = (e, pos) => {
   </optgroup>
   <optgroup label="OTROS">
     {cartasDisponibles
-      .filter(carta => !posiciones.delantero1.includes(carta) && (!cartasUsadas.includes(carta) || alineacion[pos] === carta))
+      .filter(carta => !todasDelanteros.includes(carta) && (!cartasUsadas.includes(carta) || alineacion[pos] === carta))
       .map(carta => (
         <option key={carta} value={carta}>
           {carta.replace("/img/", "").replace(".webp", "").toUpperCase()}
