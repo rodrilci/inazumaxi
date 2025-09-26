@@ -18,7 +18,7 @@ const CARTAS_POR_RISTRA = [
     "/img/sue.webp", "/img/dvalin.webp", "/img/metron.webp", "/img/mercury.webp", "/img/zell.webp", "/img/darren.webp",  "/img/hurley.webp", 
     "/img/soundtown.webp", "/img/grent.webp", "/img/bomber.webp", "/img/baller.webp", "/img/heat.webp", "/img/lean.webp", "/img/torch.webp", 
     "/img/icer.webp",  "/img/arkew.webp",  "/img/gocker.webp", "/img/clear.webp", "/img/droll.webp",  "/img/rhine.webp",  "/img/gazelle.webp", 
-    "/img/nero.webp", "/img/zohen.webp",  "/img/hauser.webp", "/img/gele.webp",  "/img/kiburn.webp", "/img/bellatrix.webp", "/img/kiwill.webp", 
+    "/img/nero.webp", "/img/zohen.webp",  "/img/hauser.webp", "/img/gele.webp",  "/img/kiburn.webp", "/img/kormer.webp", "/img/bellatrix.webp", "/img/kiwill.webp", 
     "/img/ark.webp", "/img/wittz.webp", "img/xene.webp", "/img/jimoscuro.webp", "/img/samoscuro.webp", "/img/todoscuro.webp", "/img/steveoscuro.webp", 
     "/img/maxoscuro.webp", "/img/timoscuro.webp","/img/nathanoscuro.webp","/img/kevinoscuro.webp", "/img/shadow.webp", "/img/archer.webp", "/img/thor.webp", 
     "/img/jordan.webp", "/img/xavier.webp", "/img/austin.webp", "/img/dolphin.webp", "/img/kalil.webp", "/img/choi.webp", "/img/partinus.webp", 
@@ -79,10 +79,10 @@ const CARTAS_POR_RISTRA = [
 
 const posiciones = {
   portero:    ["/img/bigman.webp", "/img/alonso.webp","/img/duske.webp","/img/way.webp","/img/sandra.webp","/img/terry.webp","/img/phobos.webp","/img/aoba.webp","/img/lotus.webp","/img/kohlt.webp","/img/chitoh.webp", "/img/eka.webp","/img/romeo.webp","/img/hotel.webp", "/img/biggsy.webp", "/img/mark.webp", "/img/king.webp", "/img/samguk.webp", "/img/darren.webp", "/img/mask.webp", "/img/feldt.webp", "/img/idol.webp", "/img/poseidon.webp", "/img/hillman.webp", "/img/ropes.webp", "/img/daisy.webp", "/img/galileo.webp", "/img/dvalin.webp", "/img/zell.webp", "/img/grent.webp",  "/img/nero.webp", "/img/blasi.webp",  "/img/dasilva.webp",  "/img/fox.webp",  "/img/helio.webp", "/img/iñigo.webp",  "/img/luceafar.webp",  "/img/astaroth.webp",  "/img/jp.webp", "/img/nirvana.webp", "/img/princeton.webp", "/img/ilgrande.webp", "/img/whyte.webp", "/img/cinquedea.webp", "/img/lumina.webp", "/img/saturn.webp"],
-  defensa1:   ["/img/malik.webp", "/img/lus.webp","/img/baraja.webp","/img/kiko.webp","/img/trina.webp", "/img/foreman.webp","/img/smarty.webp", "/img/chunky.webp","/img/nathan.webp","/img/tod.webp","/img/tulip.webp", "/img/scotty.webp","/img/mohrir.webp", "/img/aitor.webp", "/img/archer.webp", "/img/martin.webp", "/img/sor.webp", "/img/master.webp", "/img/monkey.webp", "/img/malcolm.webp",,"/img/oscar.webp", "/img/apollo.webp","/img/hamstah.webp", "/img/hephestus.webp", "/img/sweet.webp", "/img/smith.webp", "/img/shawn.webp", "/img/hurley.webp", "/img/bomber.webp",  "/img/icer.webp",  "/img/arkew.webp",  "/img/gocker.webp",  "/img/zohen.webp",  "/img/hauser.webp",  "/img/lagarto.webp",  "/img/vitesse.webp",  "/img/ferrum.webp",  "/img/mangrove.webp", "/img/ischer.webp",  "/img/jenkins.webp",  "/img/lephiel.webp",  "/img/hebimos.webp",  "/img/jp.webp", "/img/beamer.webp", "/img/obscura.webp", "/img/subaru.webp"],
-  defensa2:   ["/img/petronio.webp","/img/yale.webp","/img/cobra.webp","/img/billy.webp","/img/acker.webp","/img/trevor.webp", "/img/golem.webp", "/img/zippy.webp","/img/keenan.webp","/img/meteo.webp","/img/ogar.webp","/img/tulip.webp","/img/hamstah.webp","/img/mohrir.webp","/img/goldie.webp","/img/sor.webp","/img/ayt.webp","/img/dva.webp", "/img/catvari.webp", "/img/tyrah.webp","/img/papa.webp","/img/kilo.webp","/img/oscar.webp", "/img/golf.webp", "/img/skinny.webp","/img/smiley.webp","/img/jack.webp","/img/peabody.webp", "/img/sor.webp", "/img/thiago.webp", "/img/bargie.webp", "/img/gabi.webp", "/img/aitor.webp", "/img/bobby.webp", "/img/jim.webp", "/img/sam.webp", "/img/drent.webp", "/img/lion.webp", "/img/simmons.webp", "/img/hillvalley.webp", "/img/sherman.webp", "/img/ares.webp", "/img/dionysus.webp", "/img/island.webp", "/img/downtown.webp", "/img/shawn.webp", "/img/ganymede.webp", "/img/baller.webp", "/img/clear.webp",  "/img/gele.webp",  "/img/kiburn.webp",  "/img/thor.webp", "/img/kalil.webp",  "/img/minion.webp",  "/img/mountain.webp",  "/img/gaines.webp", "/img/garcia.webp",  "/img/bump.webp",  "/img/lump.webp",  "/img/rubu.webp", "/img/nenel.webp", "/img/kraken.webp", "/img/loo.webp", "/img/quintet.webp", "/img/whittaker.webp", "/img/wanchang.webp"],
-  defensa3:   ["/img/petronio.webp","/img/yale.webp","/img/cobra.webp","/img/billy.webp","/img/acker.webp","/img/trevor.webp", "/img/golem.webp", "/img/zippy.webp", "/img/keenan.webp","/img/meteo.webp","/img/ogar.webp","/img/tulip.webp","/img/hamstah.webp","/img/mohrir.webp","/img/goldie.webp","/img/sor.webp","/img/ayt.webp","/img/dva.webp", "/img/catvari.webp", "/img/tyrah.webp","/img/papa.webp","/img/kilo.webp","/img/oscar.webp", "/img/golf.webp", "/img/skinny.webp","/img/smiley.webp","/img/jack.webp","/img/peabody.webp", "/img/sor.webp", "/img/thiago.webp", "/img/bargie.webp", "/img/gabi.webp", "/img/aitor.webp", "/img/bobby.webp", "/img/jim.webp", "/img/sam.webp", "/img/drent.webp", "/img/lion.webp", "/img/simmons.webp", "/img/hillvalley.webp", "/img/sherman.webp", "/img/ares.webp", "/img/dionysus.webp", "/img/island.webp", "/img/downtown.webp", "/img/shawn.webp", "/img/ganymede.webp", "/img/baller.webp", "/img/clear.webp",  "/img/gele.webp",  "/img/kiburn.webp",  "/img/thor.webp", "/img/kalil.webp",  "/img/minion.webp",  "/img/mountain.webp",  "/img/gaines.webp", "/img/garcia.webp",  "/img/bump.webp",  "/img/lump.webp",  "/img/rubu.webp", "/img/nenel.webp", "/img/kraken.webp", "/img/loo.webp", "/img/quintet.webp", "/img/whittaker.webp", "/img/wanchang.webp"],
-  defensa4:   ["/img/malik.webp", "/img/lus.webp","/img/baraja.webp","/img/kiko.webp","/img/trina.webp", "/img/foreman.webp","/img/smarty.webp", "/img/chunky.webp","/img/nathan.webp", "/img/tod.webp","/img/tulip.webp", "/img/scotty.webp", "/img/mohrir.webp","/img/aitor.webp", "/img/archer.webp", "/img/martin.webp", "/img/sor.webp", "/img/master.webp", "/img/monkey.webp", "/img/malcolm.webp",,"/img/oscar.webp", "/img/apollo.webp","/img/hamstah.webp", "/img/hephestus.webp", "/img/sweet.webp", "/img/smith.webp", "/img/shawn.webp", "/img/hurley.webp", "/img/bomber.webp",  "/img/icer.webp",  "/img/arkew.webp",  "/img/gocker.webp",  "/img/zohen.webp",  "/img/hauser.webp",  "/img/lagarto.webp",  "/img/vitesse.webp",  "/img/ferrum.webp",  "/img/mangrove.webp", "/img/ischer.webp",  "/img/jenkins.webp",  "/img/lephiel.webp",  "/img/hebimos.webp",  "/img/jp.webp", "/img/beamer.webp", "/img/obscura.webp", "/img/subaru.webp","/img/roma.webp",],
+  defensa1:   ["/img/nino.webp","/img/malik.webp", "/img/lus.webp","/img/baraja.webp","/img/kiko.webp","/img/trina.webp", "/img/foreman.webp","/img/smarty.webp", "/img/chunky.webp","/img/nathan.webp","/img/tod.webp","/img/tulip.webp", "/img/scotty.webp","/img/mohrir.webp", "/img/aitor.webp", "/img/archer.webp", "/img/martin.webp", "/img/sor.webp", "/img/master.webp", "/img/monkey.webp", "/img/malcolm.webp",,"/img/oscar.webp", "/img/apollo.webp","/img/hamstah.webp", "/img/hephestus.webp", "/img/sweet.webp", "/img/smith.webp", "/img/shawn.webp", "/img/hurley.webp", "/img/bomber.webp",  "/img/icer.webp",  "/img/arkew.webp",  "/img/gocker.webp",  "/img/zohen.webp",  "/img/hauser.webp",  "/img/lagarto.webp",  "/img/vitesse.webp",  "/img/ferrum.webp",  "/img/mangrove.webp", "/img/ischer.webp",  "/img/jenkins.webp",  "/img/lephiel.webp",  "/img/hebimos.webp",  "/img/jp.webp", "/img/beamer.webp", "/img/obscura.webp", "/img/subaru.webp"],
+  defensa2:   ["/img/lihao.webp","/img/malik.webp","/img/petronio.webp","/img/yale.webp","/img/cobra.webp","/img/billy.webp","/img/acker.webp","/img/trevor.webp", "/img/golem.webp", "/img/zippy.webp","/img/keenan.webp","/img/meteo.webp","/img/ogar.webp","/img/tulip.webp","/img/hamstah.webp","/img/mohrir.webp","/img/goldie.webp","/img/sor.webp","/img/ayt.webp","/img/dva.webp", "/img/catvari.webp", "/img/tyrah.webp","/img/papa.webp","/img/kilo.webp","/img/oscar.webp", "/img/golf.webp", "/img/skinny.webp","/img/smiley.webp","/img/jack.webp","/img/peabody.webp", "/img/sor.webp", "/img/thiago.webp", "/img/bargie.webp", "/img/gabi.webp", "/img/aitor.webp", "/img/bobby.webp", "/img/jim.webp", "/img/sam.webp", "/img/drent.webp", "/img/lion.webp", "/img/simmons.webp", "/img/hillvalley.webp", "/img/sherman.webp", "/img/ares.webp", "/img/dionysus.webp", "/img/island.webp", "/img/downtown.webp", "/img/shawn.webp", "/img/ganymede.webp", "/img/baller.webp", "/img/clear.webp",  "/img/gele.webp",  "/img/kiburn.webp",  "/img/thor.webp", "/img/kalil.webp",  "/img/minion.webp",  "/img/mountain.webp",  "/img/gaines.webp", "/img/garcia.webp",  "/img/bump.webp",  "/img/lump.webp",  "/img/rubu.webp", "/img/nenel.webp", "/img/kraken.webp", "/img/loo.webp", "/img/quintet.webp", "/img/whittaker.webp", "/img/wanchang.webp"],
+  defensa3:   ["/img/lihao.webp","/img/malik.webp","/img/petronio.webp","/img/yale.webp","/img/cobra.webp","/img/billy.webp","/img/acker.webp","/img/trevor.webp", "/img/golem.webp", "/img/zippy.webp", "/img/keenan.webp","/img/meteo.webp","/img/ogar.webp","/img/tulip.webp","/img/hamstah.webp","/img/mohrir.webp","/img/goldie.webp","/img/sor.webp","/img/ayt.webp","/img/dva.webp", "/img/catvari.webp", "/img/tyrah.webp","/img/papa.webp","/img/kilo.webp","/img/oscar.webp", "/img/golf.webp", "/img/skinny.webp","/img/smiley.webp","/img/jack.webp","/img/peabody.webp", "/img/sor.webp", "/img/thiago.webp", "/img/bargie.webp", "/img/gabi.webp", "/img/aitor.webp", "/img/bobby.webp", "/img/jim.webp", "/img/sam.webp", "/img/drent.webp", "/img/lion.webp", "/img/simmons.webp", "/img/hillvalley.webp", "/img/sherman.webp", "/img/ares.webp", "/img/dionysus.webp", "/img/island.webp", "/img/downtown.webp", "/img/shawn.webp", "/img/ganymede.webp", "/img/baller.webp", "/img/clear.webp",  "/img/gele.webp",  "/img/kiburn.webp",  "/img/thor.webp", "/img/kalil.webp",  "/img/minion.webp",  "/img/mountain.webp",  "/img/gaines.webp", "/img/garcia.webp",  "/img/bump.webp",  "/img/lump.webp",  "/img/rubu.webp", "/img/nenel.webp", "/img/kraken.webp", "/img/loo.webp", "/img/quintet.webp", "/img/whittaker.webp", "/img/wanchang.webp"],
+  defensa4:   ["/img/nino.webp","/img/malik.webp", "/img/lus.webp","/img/baraja.webp","/img/kiko.webp","/img/trina.webp", "/img/foreman.webp","/img/smarty.webp", "/img/chunky.webp","/img/nathan.webp", "/img/tod.webp","/img/tulip.webp", "/img/scotty.webp", "/img/mohrir.webp","/img/aitor.webp", "/img/archer.webp", "/img/martin.webp", "/img/sor.webp", "/img/master.webp", "/img/monkey.webp", "/img/malcolm.webp",,"/img/oscar.webp", "/img/apollo.webp","/img/hamstah.webp", "/img/hephestus.webp", "/img/sweet.webp", "/img/smith.webp", "/img/shawn.webp", "/img/hurley.webp", "/img/bomber.webp",  "/img/icer.webp",  "/img/arkew.webp",  "/img/gocker.webp",  "/img/zohen.webp",  "/img/hauser.webp",  "/img/lagarto.webp",  "/img/vitesse.webp",  "/img/ferrum.webp",  "/img/mangrove.webp", "/img/ischer.webp",  "/img/jenkins.webp",  "/img/lephiel.webp",  "/img/hebimos.webp",  "/img/jp.webp", "/img/beamer.webp", "/img/obscura.webp", "/img/subaru.webp","/img/roma.webp",],
   medio1:     ["/img/froy.webp","/img/emerico.webp","/img/clario.webp","/img/lihao.webp", "/img/zhou.webp","/img/satan.webp", "/img/onaxon.webp","/img/hikaru.webp","/img/kia.webp","/img/sonny.webp","/img/nino.webp", "/img/maxime.webp", "/img/valentin.webp", "/img/cesar.webp","/img/malik.webp", "/img/lus.webp","/img/banda.webp","/img/cerise.webp", "/img/buddy.webp","/img/plink.webp","/img/rondula.webp","/img/karan.webp","/img/felis.webp","/img/yurkeh.webp","/img/mehr.webp","/img/ghiris.webp","/img/djibz.webp","/img/garreau.webp","/img/arecks.webp","/img/sapta.webp", "/img/asta.webp","/img/panca.webp", "/img/sas.webp","/img/sierra.webp","/img/quebec.webp","/img/foxtrot.webp","/img/india.webp", "/img/lima.webp","/img/tiny.webp", "/img/hairy.webp", "/img/spikey.webp","/img/nathan.webp", "/img/fei.webp", "/img/arion.webp", "/img/jude.webp","/img/sol.webp", "/img/tori.webp", "/img/caleb.webp", "/img/riccardo.webp", "/img/timmy.webp", "/img/max.webp", "/img/steve.webp", "/img/erik.webp", "/img/bloom.webp", "/img/chicken.webp", "/img/eagle.webp", "/img/master.webp", "/img/monkey.webp", "/img/swing.webp", "/img/artemis.webp", "/img/hermes.webp", "/img/hera.webp", "/img/athena.webp", "/img/byron.webp", "/img/agentem.webp", "/img/soundtown.webp", "/img/pandora.webp", "/img/jordan.webp", "/img/dvalin.webp", "/img/sparrow.webp", "/img/bomber.webp",  "/img/bellatrix.webp",  "/img/heat.webp",  "/img/lean.webp",  "/img/droll.webp",  "/img/rhine.webp",  "/img/kiwill.webp",  "/img/ark.webp",  "/img/dolphin.webp", "/img/choi.webp", "/img/acuto.webp", "/img/krueger.webp", "/img/gabrini.webp", "/img/nakata.webp", "/img/diavolo.webp", "/img/ryan.webp", "/img/haddad.webp", "/img/hampton.webp", "/img/maximino.webp", "/img/vitrum.webp", "/img/leung.webp", "/img/stark.webp",  "/img/triumvir.webp",  "/img/gunter.webp",  "/img/lephiel.webp",  "/img/wenel.webp", "/img/maxim.webp", "/img/shun.webp", "/img/hugh.webp", "/img/inchy.webp", "/img/zaphod.webp", "/img/nemo.webp", "/img/laurel.webp", "/img/houdini.webp", "/img/spectrum.webp", "/img/crowe.webp", "/img/yang.webp", "/img/eugene.webp", "/img/ade.webp", "/img/roma.webp", "/img/mars.webp"],
   medio2:     ["/img/petronio.webp","/img/froy.webp","/img/emerico.webp","/img/clario.webp","/img/lihao.webp", "/img/zhou.webp","/img/satan.webp", "/img/onaxon.webp","/img/hikaru.webp","/img/kia.webp","/img/sonny.webp","/img/nino.webp", "/img/maxime.webp", "/img/valentin.webp", "/img/cesar.webp","/img/malik.webp", "/img/lus.webp","/img/banda.webp","/img/cerise.webp", "/img/buddy.webp","/img/plink.webp","/img/rondula.webp","/img/karan.webp","/img/felis.webp","/img/yurkeh.webp","/img/mehr.webp","/img/ghiris.webp","/img/arecks.webp","/img/djibz.webp","/img/garreau.webp","/img/sapta.webp", "/img/asta.webp","/img/panca.webp", "/img/sas.webp","/img/sierra.webp","/img/quebec.webp","/img/foxtrot.webp","/img/india.webp", "/img/lima.webp","/img/tiny.webp", "/img/hairy.webp", "/img/spikey.webp","/img/arion.webp", "/img/jude.webp", "/img/tori.webp", "/img/caleb.webp", "/img/riccardo.webp", "/img/timmy.webp", "/img/steve.webp", "/img/sam.webp", "/img/erik.webp", "/img/chicken.webp", "/img/eagle.webp", "/img/waldon.webp", "/img/hermes.webp", "/img/hera.webp", "/img/byron.webp", "/img/agentem.webp", "/img/soundtown.webp", "/img/jordan.webp", "/img/pandora.webp", "/img/dvalin.webp", "/img/metron.webp", "/img/sparrow.webp", "/img/bomber.webp",  "/img/heat.webp",  "/img/lean.webp",  "/img/neppten.webp",  "/img/kormer.webp",  "/img/bellatrix.webp",  "/img/thor.webp",  "/img/dolphin.webp", "/img/choi.webp", "/img/acuto.webp", "/img/krueger.webp", "/img/gabrini.webp", "/img/nakata.webp", "/img/diavolo.webp", "/img/ryan.webp", "/img/haddad.webp", "/img/hampton.webp", "/img/maximino.webp", "/img/vitrum.webp", "/img/leung.webp", "/img/stark.webp",  "/img/triumvir.webp",  "/img/gunter.webp",  "/img/lephiel.webp",  "/img/wenel.webp",  "/img/zanos.webp",  "/img/gaiel.webp", "/img/shun.webp", "/img/hugh.webp", "/img/inchy.webp", "/img/zaphod.webp", "/img/nemo.webp", "/img/laurel.webp", "/img/houdini.webp", "/img/spectrum.webp", "/img/crowe.webp", "/img/yang.webp", "/img/eugene.webp", "/img/ade.webp", "/img/roma.webp", "/img/mars.webp"],
   medio3:     ["/img/froy.webp","/img/emerico.webp","/img/clario.webp","/img/lihao.webp", "/img/zhou.webp","/img/satan.webp", "/img/onaxon.webp","/img/hikaru.webp","/img/kia.webp","/img/sonny.webp","/img/nino.webp", "/img/maxime.webp", "/img/valentin.webp", "/img/cesar.webp","/img/malik.webp", "/img/lus.webp","/img/banda.webp","/img/cerise.webp", "/img/buddy.webp","/img/plink.webp","/img/rondula.webp","/img/karan.webp","/img/felis.webp","/img/yurkeh.webp","/img/mehr.webp","/img/ghiris.webp","/img/arecks.webp","/img/djibz.webp","/img/garreau.webp","/img/sapta.webp", "/img/asta.webp","/img/panca.webp", "/img/sas.webp","/img/sierra.webp","/img/quebec.webp","/img/foxtrot.webp","/img/india.webp", "/img/lima.webp","/img/tiny.webp", "/img/hairy.webp", "/img/spikey.webp","/img/nathan.webp", "/img/fei.webp", "/img/arion.webp", "/img/jude.webp","/img/sol.webp", "/img/tori.webp", "/img/caleb.webp", "/img/riccardo.webp", "/img/timmy.webp", "/img/max.webp", "/img/steve.webp", "/img/erik.webp", "/img/bloom.webp", "/img/chicken.webp", "/img/eagle.webp", "/img/master.webp", "/img/monkey.webp", "/img/swing.webp", "/img/artemis.webp", "/img/hermes.webp", "/img/hera.webp", "/img/athena.webp", "/img/byron.webp", "/img/agentem.webp", "/img/soundtown.webp", "/img/pandora.webp", "/img/jordan.webp", "/img/dvalin.webp", "/img/sparrow.webp", "/img/bomber.webp",  "/img/bellatrix.webp", "/img/heat.webp",  "/img/lean.webp",  "/img/droll.webp",  "/img/rhine.webp",  "/img/kiwill.webp",  "/img/ark.webp",  "/img/dolphin.webp", "/img/choi.webp", "/img/acuto.webp", "/img/krueger.webp", "/img/gabrini.webp", "/img/nakata.webp", "/img/diavolo.webp", "/img/ryan.webp", "/img/haddad.webp", "/img/hampton.webp", "/img/maximino.webp", "/img/vitrum.webp", "/img/leung.webp", "/img/stark.webp",  "/img/triumvir.webp",  "/img/gunter.webp",  "/img/lephiel.webp",  "/img/wenel.webp", "/img/maxim.webp", "/img/shun.webp", "/img/hugh.webp", "/img/inchy.webp", "/img/zaphod.webp", "/img/nemo.webp", "/img/laurel.webp", "/img/houdini.webp", "/img/spectrum.webp", "/img/crowe.webp", "/img/yang.webp", "/img/eugene.webp", "/img/ade.webp", "/img/roma.webp", "/img/mars.webp"],
@@ -527,7 +527,7 @@ const LOGROS = [
     "/img/downtown.webp", "/img/shawn.webp", "/img/scotty.webp", "/img/bargie.webp","/img/caleb.webp", "/img/sparrow.webp", 
     "/img/sue.webp", "/img/dvalin.webp", "/img/metron.webp", "/img/mercury.webp", "/img/zell.webp", "/img/darren.webp",  "/img/hurley.webp", 
     "/img/soundtown.webp", "/img/grent.webp", "/img/bomber.webp", "/img/baller.webp", "/img/heat.webp", "/img/lean.webp", "/img/torch.webp", 
-    "/img/icer.webp",  "/img/arkew.webp",  "/img/gocker.webp", "/img/clear.webp", "/img/droll.webp",  "/img/rhine.webp",  "/img/gazelle.webp", 
+    "/img/icer.webp", "/img/kormer.webp", "/img/arkew.webp",  "/img/gocker.webp", "/img/clear.webp", "/img/droll.webp",  "/img/rhine.webp",  "/img/gazelle.webp", 
     "/img/nero.webp", "/img/zohen.webp",  "/img/hauser.webp", "/img/gele.webp",  "/img/kiburn.webp", "/img/bellatrix.webp", "/img/kiwill.webp", 
     "/img/ark.webp","/img/wittz.webp","/img/shadow.webp","/img/thor.webp","/img/jordan.webp", "/img/xavier.webp",
     ],
@@ -2026,26 +2026,38 @@ const handleRightClick = (e, pos) => {
                   title="Clic derecho para quitar"
                 />
               ) : (
-                <select
-                  onChange={e => handleSelect("portero", e.target.value)}
-                  value={alineacion.portero || ""}
-                  style={{
-                    padding: "6px",
-                    borderRadius: "6px",
-                    width: "120px",
-                    fontFamily: "'Montserrat', Arial, sans-serif",
-                    fontWeight: 600,
-                    fontSize: "1rem"
-                  }}
-                >
-                  <option value="">Selecciona carta</option>
-
-                  {cartasDisponibles
-                  .filter(carta => !cartasUsadas.includes(carta) || alineacion.portero === carta)
-                  .map(carta => (
-                    <option key={carta} value={carta}>{carta.replace("/img/", "").replace(".webp", "")}</option>
-                  ))}
-                </select>
+<select
+  onChange={e => handleSelect("portero", e.target.value)}
+  value={alineacion.portero || ""}
+  style={{
+    padding: "6px",
+    borderRadius: "6px",
+    width: "120px",
+    fontFamily: "'Montserrat', Arial, sans-serif",
+    fontWeight: 600,
+    fontSize: "1rem"
+  }}
+>
+  <option value="">Selecciona carta</option>
+  <optgroup label="PORTEROS">
+    {cartasDisponibles
+      .filter(carta => posiciones.portero.includes(carta) && (!cartasUsadas.includes(carta) || alineacion.portero === carta))
+      .map(carta => (
+        <option key={carta} value={carta}>
+          {carta.replace("/img/", "").replace(".webp", "").toUpperCase()}
+        </option>
+      ))}
+  </optgroup>
+  <optgroup label="OTROS">
+    {cartasDisponibles
+      .filter(carta => !posiciones.portero.includes(carta) && (!cartasUsadas.includes(carta) || alineacion.portero === carta))
+      .map(carta => (
+        <option key={carta} value={carta}>
+          {carta.replace("/img/", "").replace(".webp", "").toUpperCase()}
+        </option>
+      ))}
+  </optgroup>
+</select>
               )}
             </div>
           </div>
@@ -2067,25 +2079,38 @@ const handleRightClick = (e, pos) => {
                     title="Clic derecho para quitar"
                   />
                 ) : (
-                  <select
-                    onChange={e => handleSelect(pos, e.target.value)}
-                    value={alineacion[pos] || ""}
-                    style={{
-                      padding: "6px",
-                      borderRadius: "6px",
-                      width: "120px",
-                      fontFamily: "'Montserrat', Arial, sans-serif",
-                      fontWeight: 600,
-                      fontSize: "1rem"
-                    }}
-                  >
-                    <option value="">Selecciona carta</option>
-                    {cartasDisponibles
-                      .filter(carta => !cartasUsadas.includes(carta) || alineacion[pos] === carta)
-                      .map(carta => (
-                        <option key={carta} value={carta}>{carta.replace("/img/", "").replace(".webp", "")}</option>
-                      ))}
-                  </select>
+<select
+  onChange={e => handleSelect(pos, e.target.value)}
+  value={alineacion[pos] || ""}
+  style={{
+    padding: "6px",
+    borderRadius: "6px",
+    width: "120px",
+    fontFamily: "'Montserrat', Arial, sans-serif",
+    fontWeight: 600,
+    fontSize: "1rem"
+  }}
+>
+  <option value="">Selecciona carta</option>
+  <optgroup label="DEFENSAS">
+    {cartasDisponibles
+      .filter(carta => posiciones.defensa1.includes(carta) && (!cartasUsadas.includes(carta) || alineacion[pos] === carta))
+      .map(carta => (
+        <option key={carta} value={carta}>
+          {carta.replace("/img/", "").replace(".webp", "").toUpperCase()}
+        </option>
+      ))}
+  </optgroup>
+  <optgroup label="OTROS">
+    {cartasDisponibles
+      .filter(carta => !posiciones.defensa1.includes(carta) && (!cartasUsadas.includes(carta) || alineacion[pos] === carta))
+      .map(carta => (
+        <option key={carta} value={carta}>
+          {carta.replace("/img/", "").replace(".webp", "").toUpperCase()}
+        </option>
+      ))}
+  </optgroup>
+</select>
                 )}
               </div>
             ))}
@@ -2108,25 +2133,38 @@ const handleRightClick = (e, pos) => {
                     title="Clic derecho para quitar"
                   />
                 ) : (
-                  <select
-                    onChange={e => handleSelect(pos, e.target.value)}
-                    value={alineacion[pos] || ""}
-                    style={{
-                      padding: "6px",
-                      borderRadius: "6px",
-                      width: "120px",
-                      fontFamily: "'Montserrat', Arial, sans-serif",
-                      fontWeight: 600,
-                      fontSize: "1rem"
-                    }}
-                  >
-                    <option value="">Selecciona carta</option>
-                    {cartasDisponibles
-                      .filter(carta => !cartasUsadas.includes(carta) || alineacion[pos] === carta)
-                      .map(carta => (
-                        <option key={carta} value={carta}>{carta.replace("/img/", "").replace(".webp", "")}</option>
-                      ))}
-                  </select>
+<select
+  onChange={e => handleSelect(pos, e.target.value)}
+  value={alineacion[pos] || ""}
+  style={{
+    padding: "6px",
+    borderRadius: "6px",
+    width: "120px",
+    fontFamily: "'Montserrat', Arial, sans-serif",
+    fontWeight: 600,
+    fontSize: "1rem"
+  }}
+>
+  <option value="">Selecciona carta</option>
+  <optgroup label="MEDIOS">
+    {cartasDisponibles
+      .filter(carta => posiciones.medio1.includes(carta) && (!cartasUsadas.includes(carta) || alineacion[pos] === carta))
+      .map(carta => (
+        <option key={carta} value={carta}>
+          {carta.replace("/img/", "").replace(".webp", "").toUpperCase()}
+        </option>
+      ))}
+  </optgroup>
+  <optgroup label="OTROS">
+    {cartasDisponibles
+      .filter(carta => !posiciones.medio1.includes(carta) && (!cartasUsadas.includes(carta) || alineacion[pos] === carta))
+      .map(carta => (
+        <option key={carta} value={carta}>
+          {carta.replace("/img/", "").replace(".webp", "").toUpperCase()}
+        </option>
+      ))}
+  </optgroup>
+</select>
                 )}
               </div>
             ))}
@@ -2149,25 +2187,39 @@ const handleRightClick = (e, pos) => {
                     title="Clic derecho para quitar"
                   />
                 ) : (
-                  <select
-                    onChange={e => handleSelect(pos, e.target.value)}
-                    value={alineacion[pos] || ""}
-                    style={{
-                      padding: "6px",
-                      borderRadius: "6px",
-                      width: "120px",
-                      fontFamily: "'Montserrat', Arial, sans-serif",
-                      fontWeight: 600,
-                      fontSize: "1rem"
-                    }}
-                  >
-                    <option value="">Selecciona carta</option>
-                    {cartasDisponibles
-                      .filter(carta => !cartasUsadas.includes(carta) || alineacion[pos] === carta)
-                      .map(carta => (
-                        <option key={carta} value={carta}>{carta.replace("/img/", "").replace(".webp", "")}</option>
-                      ))}
-                  </select>
+                  // ...dentro de AlineacionModal, en el render de DELANTEROS...
+<select
+  onChange={e => handleSelect(pos, e.target.value)}
+  value={alineacion[pos] || ""}
+  style={{
+    padding: "6px",
+    borderRadius: "6px",
+    width: "120px",
+    fontFamily: "'Montserrat', Arial, sans-serif",
+    fontWeight: 600,
+    fontSize: "1rem"
+  }}
+>
+  <option value="">Selecciona carta</option>
+  <optgroup label="DELANTEROS">
+    {cartasDisponibles
+      .filter(carta => posiciones.delantero1.includes(carta) && (!cartasUsadas.includes(carta) || alineacion[pos] === carta))
+      .map(carta => (
+        <option key={carta} value={carta}>
+          {carta.replace("/img/", "").replace(".webp", "").toUpperCase()}
+        </option>
+      ))}
+  </optgroup>
+  <optgroup label="OTROS">
+    {cartasDisponibles
+      .filter(carta => !posiciones.delantero1.includes(carta) && (!cartasUsadas.includes(carta) || alineacion[pos] === carta))
+      .map(carta => (
+        <option key={carta} value={carta}>
+          {carta.replace("/img/", "").replace(".webp", "").toUpperCase()}
+        </option>
+      ))}
+  </optgroup>
+</select>
                 )}
               </div>
             ))}
