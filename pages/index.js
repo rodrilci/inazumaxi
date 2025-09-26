@@ -19,7 +19,7 @@ const CARTAS_POR_RISTRA = [
     "/img/soundtown.webp", "/img/grent.webp", "/img/bomber.webp", "/img/baller.webp", "/img/heat.webp", "/img/lean.webp", "/img/torch.webp", 
     "/img/icer.webp",  "/img/arkew.webp",  "/img/gocker.webp", "/img/clear.webp", "/img/droll.webp",  "/img/rhine.webp",  "/img/gazelle.webp", 
     "/img/nero.webp", "/img/zohen.webp",  "/img/hauser.webp", "/img/gele.webp",  "/img/kiburn.webp", "/img/kormer.webp", "/img/bellatrix.webp", "/img/kiwill.webp", 
-    "/img/ark.webp", "/img/wittz.webp", "img/xene.webp", "/img/jimoscuro.webp", "/img/samoscuro.webp", "/img/todoscuro.webp", "/img/steveoscuro.webp", 
+    "/img/ark.webp", "/img/wittz.webp", "/img/xene.webp", "/img/jimoscuro.webp", "/img/samoscuro.webp", "/img/todoscuro.webp", "/img/steveoscuro.webp", 
     "/img/maxoscuro.webp", "/img/timoscuro.webp","/img/nathanoscuro.webp","/img/kevinoscuro.webp", "/img/shadow.webp", "/img/archer.webp", "/img/thor.webp", 
     "/img/jordan.webp", "/img/xavier.webp", "/img/austin.webp", "/img/dolphin.webp", "/img/kalil.webp", "/img/choi.webp", "/img/partinus.webp", 
     "/img/acuto.webp", "/img/thiago.webp",  "/img/balone.webp",
