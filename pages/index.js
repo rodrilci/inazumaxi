@@ -1504,8 +1504,8 @@ function comprobarCartasSecretas(logrosCompletados, cartasDesbloqueadas, setCart
     alert("¡Has desbloqueado una carta secreta!");
   }
             else if (
-    cartasDesbloqueadas.includes("shawn") &&
-    cartasDesbloqueadas.includes("aiden") &&
+    cartasDesbloqueadas.includes("/img/shawn.webp") &&
+    cartasDesbloqueadas.includes("/img/aiden.webp") &&
     !cartasDesbloqueadas.includes("/img/shawnaiden.webp")
   ) {
     setCartasDesbloqueadas(prev => [...prev, "/img/shawnaiden.webp"]);
