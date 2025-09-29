@@ -199,6 +199,7 @@ const ESCUDOS = {
   InazumaJaponOrion: "/img/InazumaJaponOrion.webp",
   SombradeOrion: "/img/SombradeOrion.webp",
   FlechadeArtemisa: "/img/FlechadeArtemisa.webp",
+  RaimonVR: "/img/raimonvr.webp",
   Caseta: "/img/caseta.webp",
   Caravana: "/img/caravana.webp",
   Marvin: "/img/neogod.webp",
@@ -341,7 +342,7 @@ const LOGROS = [
     "/img/bloom.webp", "/img/swing.webp", "/img/samford.webp", "/img/hatch.webp", "/img/hillman.webp", "/img/island.webp", "/img/sweet.webp", 
     "/img/cloak.webp", "/img/hillvalley.webp", "/img/sherman.webp", "/img/malcolm.webp", "/img/tyler.webp", "/img/marvin.webp", "/img/thomas.webp", 
     "/img/poseidon.webp", "/img/apollo.webp", "/img/ares.webp", "/img/dionysus.webp", "/img/hephestus.webp", "/img/hermes.webp", "/img/artemis.webp", 
-    "/img/athena.webp", "/img/hera.webp", "/img/byron.webp", "/img/demeter.webp",
+    "/img/athena.webp", "/img/hera.webp", "/img/byron.webp", "/img/demeter.webp", "/img/maddie.webp"
     ],
     recompensa: { tipo: "escudo", valor: "Zeus" },
     drops: ["/img/apollo.webp", "/img/hephestus.webp", "/img/athena.webp", "/img/ares.webp", 
@@ -665,7 +666,7 @@ const LOGROS = [
       "/img/leung.webp", "/img/stark.webp",  "/img/triumvir.webp",  "/img/gunter.webp",  "/img/lephiel.webp",  "/img/wenel.webp",  
       "/img/zanos.webp",  "/img/gaiel.webp",  "/img/austin.webp", "/img/partinus.webp", "/img/balone.webp", "/img/keats.webp", 
       "/img/generani.webp", "/img/paolo.webp", "/img/robingo.webp", "/img/coyote.webp", "/img/flare.webp", "/img/drago.webp", 
-      "/img/hedgeer.webp",  "/img/callous.webp",  "/img/malice.webp",  "/img/lancer.webp",  "/img/sael.webp",  "/img/destra.webp"
+      "/img/hedgeer.webp",  "/img/callous.webp",  "/img/malice.webp",  "/img/lancer.webp",  "/img/sael.webp",  "/img/destra.webp", "/img/canon.webp"
     ],
     recompensa: { tipo: "escudo", valor: "Orfeo" },
     drops: ["/img/blasi.webp",  "/img/nakata.webp",  "/img/generani.webp",  "/img/paolo.webp", "/img/gabrini.webp", "/img/diavolo.webp"]
@@ -1327,6 +1328,28 @@ const LOGROS = [
     "/img/lihao.webp",  "/img/clario.webp", "/img/malik.webp","/img/lus.webp","/img/froy.webp","/img/arthur.webp","/img/petronio.webp"],
     recompensa: { tipo: "escudo", valor: "SombradeOrion" },
     drops: ["/img/yurika.webp",]
+  },
+                  {
+      id: "raimonvr",
+    nombre: "El Raimon de todos los tiempos",
+    descripcion: "Escoge a personajes que hayan jugado en el Raimon en cualquier saga.",
+    jugadores: ["/img/hillman.webp", "/img/island.webp", "/img/sweet.webp", "/img/mark.webp","/img/peabody.webp", "/img/jude.webp", "/img/axel.webp", "/img/nathan.webp",
+      "/img/shawn.webp", "/img/tod.webp", "/img/max.webp", "/img/jack.webp","/img/kevin.webp", "/img/timmy.webp", "/img/willy.webp", "/img/bobby.webp",
+      "/img/steve.webp", "/img/erik.webp", "/img/byron.webp", "/img/sam.webp", 
+      "/img/scotty.webp", "/img/hurley.webp", "/img/tori.webp", "/img/jim.webp",
+      "/img/darren.webp", "/img/sue.webp", "/img/shadow.webp", "/img/samguk.webp", "/img/jp.webp", "/img/subaru.webp", "/img/aitor.webp", "/img/wanchang.webp", 
+      "/img/gabi.webp", "/img/riccardo.webp", "/img/ade.webp", "/img/eugene.webp", "/img/arion.webp", "/img/lucian.webp", 
+      "/img/michael.webp", "/img/victor.webp", "/img/roma.webp", "/img/shun.webp", "/img/hugh.webp", "/img/doug.webp", "/img/sandra.webp", "/img/kiko.webp", "/img/trevor.webp", "/img/golem.webp", "/img/nino.webp", "/img/maxime.webp",
+      "/img/valentin.webp", "/img/cesar.webp", "/img/sonny.webp", "/img/adriano.webp", "/img/basile.webp"],
+    recompensa: { tipo: "escudo", valor: "RaimonVR" },
+    drops: ["/img/hillman.webp", "/img/island.webp", "/img/sweet.webp", "/img/mark.webp","/img/peabody.webp", "/img/jude.webp", "/img/axel.webp", "/img/nathan.webp",
+      "/img/shawn.webp", "/img/tod.webp", "/img/max.webp", "/img/jack.webp","/img/kevin.webp", "/img/timmy.webp", "/img/willy.webp", "/img/bobby.webp",
+      "/img/steve.webp", "/img/erik.webp", "/img/byron.webp", "/img/sam.webp", 
+      "/img/scotty.webp", "/img/hurley.webp", "/img/tori.webp", "/img/jim.webp",
+      "/img/darren.webp", "/img/sue.webp", "/img/shadow.webp", "/img/samguk.webp", "/img/jp.webp", "/img/subaru.webp", "/img/aitor.webp", "/img/wanchang.webp", 
+      "/img/gabi.webp", "/img/riccardo.webp", "/img/ade.webp", "/img/eugene.webp", "/img/arion.webp", "/img/lucian.webp", 
+      "/img/michael.webp", "/img/victor.webp", "/img/roma.webp", "/img/shun.webp", "/img/hugh.webp", "/img/doug.webp", "/img/sandra.webp", "/img/kiko.webp", "/img/trevor.webp", "/img/golem.webp", "/img/nino.webp", "/img/maxime.webp",
+      "/img/valentin.webp", "/img/cesar.webp", "/img/sonny.webp", "/img/adriano.webp", "/img/basile.webp"]
   },
 
   {
