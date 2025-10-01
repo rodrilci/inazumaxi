@@ -1053,6 +1053,8 @@ const LOGROS = [
   },
 {
   id: "InazumaJaponLegendario",
+  nombre: "Inazuma Japón Legendario",
+  descripcion: "Consigue los logros de Nuevo Inazuma Japón e Inazuma Japón.",
   recompensa: { tipo: "escudo", valor: "InazumaJaponLegendario" },
   jugadores: [],
   tipo: "secreto"
@@ -1341,7 +1343,7 @@ const LOGROS = [
       "/img/gabi.webp", "/img/riccardo.webp", "/img/ade.webp", "/img/eugene.webp", "/img/arion.webp", "/img/lucian.webp", 
       "/img/michael.webp", "/img/victor.webp", "/img/roma.webp", "/img/shun.webp", "/img/hugh.webp", "/img/doug.webp", "/img/sandra.webp", "/img/kiko.webp", "/img/trevor.webp", "/img/golem.webp", "/img/nino.webp", "/img/maxime.webp",
       "/img/valentin.webp", "/img/cesar.webp", "/img/sonny.webp", "/img/adriano.webp", "/img/basile.webp", "/img/austin.webp", 
-    "/img/sor.webp", "/img/goldie.webp", "/img/sol.webp", "/img/fei.webp"],
+    "/img/sor.webp", "/img/goldie.webp", "/img/sol.webp", "/img/fei.webp", "/img/elliot.webp"],
     recompensa: { tipo: "escudo", valor: "RaimonVR" },
     drops: ["/img/hillman.webp", "/img/island.webp", "/img/sweet.webp", "/img/mark.webp","/img/peabody.webp", "/img/jude.webp", "/img/axel.webp", "/img/nathan.webp",
       "/img/shawn.webp", "/img/tod.webp", "/img/max.webp", "/img/jack.webp","/img/kevin.webp", "/img/timmy.webp", "/img/willy.webp", "/img/bobby.webp",
@@ -1350,7 +1352,7 @@ const LOGROS = [
       "/img/darren.webp", "/img/sue.webp", "/img/shadow.webp", "/img/samguk.webp", "/img/jp.webp", "/img/subaru.webp", "/img/aitor.webp", "/img/wanchang.webp", 
       "/img/gabi.webp", "/img/riccardo.webp", "/img/ade.webp", "/img/eugene.webp", "/img/arion.webp", "/img/lucian.webp", 
       "/img/michael.webp", "/img/victor.webp", "/img/roma.webp", "/img/shun.webp", "/img/hugh.webp", "/img/doug.webp", "/img/sandra.webp", "/img/kiko.webp", "/img/trevor.webp", "/img/golem.webp", "/img/nino.webp", "/img/maxime.webp",
-      "/img/valentin.webp", "/img/cesar.webp", "/img/sonny.webp", "/img/adriano.webp", "/img/basile.webp", "/img/austin.webp"]
+      "/img/valentin.webp", "/img/cesar.webp", "/img/sonny.webp", "/img/adriano.webp", "/img/basile.webp", "/img/austin.webp", "/img/elliot.webp"]
   },
 
   {
