@@ -725,7 +725,7 @@ const LOGROS = [
     drops: ["/img/helio.webp", "/img/vitesse.webp", "/img/mountain.webp", "/img/gaines.webp", 
       "/img/ferrum.webp", "/img/hampton.webp", "/img/haddad.webp", "/img/ryan.webp",  
       "/img/maximino.webp",  "/img/flare.webp", "/img/drago.webp",  "/img/difortune.webp", 
-      "/img/mangrove.webp",  "/img/scotty.webp",  "/img/vitrum.webp","/img/leung.webp", "/img/hedgeer.webp",]
+      "/img/mangrove.webp",  "/img/vitrum.webp","/img/leung.webp", "/img/hedgeer.webp",]
 },
 
                       {
