@@ -2477,6 +2477,10 @@ useEffect(() => {
   }
 }, []);
 
+useEffect(() => {
+  if (!datosCargados) return;
+  comprobarCartasSecretas(logrosCompletados, cartasDesbloqueadas, setCartasDesbloqueadas);
+}, [datosCargados, logrosCompletados, cartasDesbloqueadas]);
 
 useEffect(() => {
   if (typeof window !== "undefined") {
